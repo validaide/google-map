@@ -11,13 +11,14 @@
 
 namespace Ivory\Tests\GoogleMap\Service\DistanceMatrix\Response;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Service\DistanceMatrix\Response\DistanceMatrixElement;
 use Ivory\GoogleMap\Service\DistanceMatrix\Response\DistanceMatrixRow;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class DistanceMatrixRowTest extends \PHPUnit_Framework_TestCase
+class DistanceMatrixRowTest extends TestCase
 {
     /**
      * @var DistanceMatrixRow

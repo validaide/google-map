@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Control;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Control\ControlPosition;
 use Ivory\GoogleMap\Control\CustomControl;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
@@ -22,7 +23,7 @@ use Ivory\GoogleMap\Map;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class CustomControlRendererTest extends \PHPUnit_Framework_TestCase
+class CustomControlRendererTest extends TestCase
 {
     /**
      * @var CustomControlRenderer

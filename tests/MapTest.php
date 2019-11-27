@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Bound;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Control\ControlManager;
@@ -24,7 +25,7 @@ use Ivory\GoogleMap\Utility\VariableAwareInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MapTest extends \PHPUnit_Framework_TestCase
+class MapTest extends TestCase
 {
     /**
      * @var Map

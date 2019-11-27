@@ -9,8 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Renderer\Image;
+namespace Ivory\Tests\GoogleMap\Helper\Renderer\Image\Overlay;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Helper\Renderer\Image\Base\CoordinateRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Image\Base\PointRenderer;
@@ -23,7 +24,7 @@ use Ivory\GoogleMap\Overlay\Marker;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MarkerRendererTest extends \PHPUnit_Framework_TestCase
+class MarkerRendererTest extends TestCase
 {
     /**
      * @var MarkerRenderer

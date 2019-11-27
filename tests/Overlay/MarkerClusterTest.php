@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Overlay;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Bound;
 use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\Marker;
@@ -23,7 +24,7 @@ use Ivory\GoogleMap\Utility\VariableAwareInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MarkerClusterTest extends \PHPUnit_Framework_TestCase
+class MarkerClusterTest extends TestCase
 {
     /**
      * @var MarkerCluster

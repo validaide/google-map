@@ -11,13 +11,14 @@
 
 namespace Ivory\Tests\GoogleMap\Event;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Event\Event;
 use Ivory\GoogleMap\Event\EventManager;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class EventManagerTest extends \PHPUnit_Framework_TestCase
+class EventManagerTest extends TestCase
 {
     /**
      * @var EventManager

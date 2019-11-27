@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Base;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Bound;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
@@ -21,7 +22,7 @@ use Ivory\GoogleMap\Overlay\ExtendableInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class BoundRendererTest extends \PHPUnit_Framework_TestCase
+class BoundRendererTest extends TestCase
 {
     /**
      * @var BoundRenderer

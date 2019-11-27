@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Builder;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Builder\AbstractJavascriptHelperBuilder;
 use Ivory\GoogleMap\Helper\Builder\PlaceAutocompleteHelperBuilder;
 use Ivory\GoogleMap\Helper\PlaceAutocompleteHelper;
@@ -18,7 +19,7 @@ use Ivory\GoogleMap\Helper\PlaceAutocompleteHelper;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PlaceAutocompleteHelperBuilderTest extends \PHPUnit_Framework_TestCase
+class PlaceAutocompleteHelperBuilderTest extends TestCase
 {
     /**
      * @var PlaceAutocompleteHelperBuilder

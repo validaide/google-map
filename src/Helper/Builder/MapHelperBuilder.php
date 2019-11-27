@@ -173,44 +173,44 @@ class MapHelperBuilder extends AbstractJavascriptHelperBuilder
      */
     protected function createSubscribers()
     {
-        $formatter = $this->getFormatter();
-        $jsonBuilder = $this->getJsonBuilder();
+        $formatter  = $this->getFormatter();
+        $serializer = $this->getSerializer();
 
         // Overlay collectors
-        $markerCollector = new MarkerCollector();
-        $polylineCollector = new PolylineCollector();
-        $circleCollector = new CircleCollector();
+        $markerCollector            = new MarkerCollector();
+        $polylineCollector          = new PolylineCollector();
+        $circleCollector            = new CircleCollector();
         $defaultInfoWindowCollector = new DefaultInfoWindowCollector($markerCollector);
-        $encodedPolylineCollector = new EncodedPolylineCollector();
-        $extendableCollector = new ExtendableCollector();
-        $groundOverlayCollector = new GroundOverlayCollector();
-        $iconSequenceCollector = new IconSequenceCollector($polylineCollector);
-        $infoBoxCollector = new InfoBoxCollector($markerCollector);
-        $infoWindowCollector = new InfoWindowCollector($markerCollector);
-        $iconCollector = new IconCollector($markerCollector);
-        $markerShapeCollector = new MarkerShapeCollector($markerCollector);
-        $polygonCollector = new PolygonCollector();
-        $rectangleCollector = new RectangleCollector();
-        $symbolCollector = new SymbolCollector($markerCollector, $iconSequenceCollector);
+        $encodedPolylineCollector   = new EncodedPolylineCollector();
+        $extendableCollector        = new ExtendableCollector();
+        $groundOverlayCollector     = new GroundOverlayCollector();
+        $iconSequenceCollector      = new IconSequenceCollector($polylineCollector);
+        $infoBoxCollector           = new InfoBoxCollector($markerCollector);
+        $infoWindowCollector        = new InfoWindowCollector($markerCollector);
+        $iconCollector              = new IconCollector($markerCollector);
+        $markerShapeCollector       = new MarkerShapeCollector($markerCollector);
+        $polygonCollector           = new PolygonCollector();
+        $rectangleCollector         = new RectangleCollector();
+        $symbolCollector            = new SymbolCollector($markerCollector, $iconSequenceCollector);
 
         // Layer collectors
         $geoJsonLayerCollector = new GeoJsonLayerCollector();
         $heatmapLayerCollector = new HeatmapLayerCollector();
-        $kmlLayerCollector = new KmlLayerCollector();
+        $kmlLayerCollector     = new KmlLayerCollector();
 
         // Event collectors
-        $domEventCollector = new DomEventCollector();
+        $domEventCollector     = new DomEventCollector();
         $domEventOnceCollector = new DomEventOnceCollector();
-        $eventCollector = new EventCollector();
-        $eventOnceCollector = new EventOnceCollector();
+        $eventCollector        = new EventCollector();
+        $eventOnceCollector    = new EventOnceCollector();
 
         // Control collectors
         $customControlCollector = new CustomControlCollector();
 
         // Base collectors
-        $boundCollector = new BoundCollector($groundOverlayCollector, $rectangleCollector);
-        $pointCollector = new PointCollector($markerCollector);
-        $sizeCollector = new SizeCollector($infoWindowCollector, $iconCollector);
+        $boundCollector      = new BoundCollector($groundOverlayCollector, $rectangleCollector);
+        $pointCollector      = new PointCollector($markerCollector);
+        $sizeCollector       = new SizeCollector($infoWindowCollector, $iconCollector);
         $coordinateCollector = new CoordinateCollector(
             $boundCollector,
             $circleCollector,
@@ -222,25 +222,25 @@ class MapHelperBuilder extends AbstractJavascriptHelperBuilder
         );
 
         // Base renderers
-        $boundRenderer = new BoundRenderer($formatter);
+        $boundRenderer      = new BoundRenderer($formatter);
         $coordinateRenderer = new CoordinateRenderer($formatter);
-        $mapTypeIdRenderer = new MapTypeIdRenderer($formatter);
-        $pointRenderer = new PointRenderer($formatter);
-        $sizeRenderer = new SizeRenderer($formatter);
+        $mapTypeIdRenderer  = new MapTypeIdRenderer($formatter);
+        $pointRenderer      = new PointRenderer($formatter);
+        $sizeRenderer       = new SizeRenderer($formatter);
 
         // Control renderers
-        $controlPositionRenderer = new ControlPositionRenderer($formatter);
-        $customControlRenderer = new CustomControlRenderer($formatter, $controlPositionRenderer);
-        $fullscreenControlRenderer = new FullscreenControlRenderer($formatter, $jsonBuilder, $controlPositionRenderer);
+        $controlPositionRenderer     = new ControlPositionRenderer($formatter);
+        $customControlRenderer       = new CustomControlRenderer($formatter, $controlPositionRenderer);
+        $fullscreenControlRenderer   = new FullscreenControlRenderer($formatter, $serializer, $controlPositionRenderer);
         $mapTypeControlStyleRenderer = new MapTypeControlStyleRenderer($formatter);
-        $rotateControlRenderer = new RotateControlRenderer($formatter, $jsonBuilder, $controlPositionRenderer);
-        $scaleControlStyleRenderer = new ScaleControlStyleRenderer($formatter);
-        $streetViewControlRenderer = new StreetViewControlRenderer($formatter, $jsonBuilder, $controlPositionRenderer);
-        $zoomControlStyleRenderer = new ZoomControlStyleRenderer($formatter);
+        $rotateControlRenderer       = new RotateControlRenderer($formatter, $serializer, $controlPositionRenderer);
+        $scaleControlStyleRenderer   = new ScaleControlStyleRenderer($formatter);
+        $streetViewControlRenderer   = new StreetViewControlRenderer($formatter, $serializer, $controlPositionRenderer);
+        $zoomControlStyleRenderer    = new ZoomControlStyleRenderer($formatter);
 
         $mapTypeControlRenderer = new MapTypeControlRenderer(
             $formatter,
-            $jsonBuilder,
+            $serializer,
             $mapTypeIdRenderer,
             $controlPositionRenderer,
             $mapTypeControlStyleRenderer
@@ -248,14 +248,14 @@ class MapHelperBuilder extends AbstractJavascriptHelperBuilder
 
         $scaleControlRenderer = new ScaleControlRenderer(
             $formatter,
-            $jsonBuilder,
+            $serializer,
             $controlPositionRenderer,
             $scaleControlStyleRenderer
         );
 
         $zoomControlRenderer = new ZoomControlRenderer(
             $formatter,
-            $jsonBuilder,
+            $serializer,
             $controlPositionRenderer,
             $zoomControlStyleRenderer
         );
@@ -270,63 +270,63 @@ class MapHelperBuilder extends AbstractJavascriptHelperBuilder
 
         // Event renderers
         $domEventOnceRenderer = new DomEventOnceRenderer($formatter);
-        $domEventRenderer = new DomEventRenderer($formatter);
-        $eventOnceRenderer = new EventOnceRenderer($formatter);
-        $eventRenderer = new EventRenderer($formatter);
+        $domEventRenderer     = new DomEventRenderer($formatter);
+        $eventOnceRenderer    = new EventOnceRenderer($formatter);
+        $eventRenderer        = new EventRenderer($formatter);
 
         // Geometry renderers
         $encodingRenderer = new EncodingRenderer($formatter);
 
         // Html renderers
-        $tagRenderer = new TagRenderer($formatter);
+        $tagRenderer           = new TagRenderer($formatter);
         $javascriptTagRenderer = new JavascriptTagRenderer($formatter, $tagRenderer);
-        $stylesheetRenderer = new StylesheetRenderer($formatter);
+        $stylesheetRenderer    = new StylesheetRenderer($formatter);
         $stylesheetTagRenderer = new StylesheetTagRenderer($formatter, $tagRenderer, $stylesheetRenderer);
 
         // Utility
-        $callbackRenderer = new CallbackRenderer($formatter);
+        $callbackRenderer      = new CallbackRenderer($formatter);
         $objectToArrayRenderer = new ObjectToArrayRenderer($formatter);
-        $requirementRenderer = new RequirementRenderer($formatter);
+        $requirementRenderer   = new RequirementRenderer($formatter);
 
         // Map renderers
-        $mapBoundRenderer = new MapBoundRenderer($formatter);
-        $mapCenterRenderer = new MapCenterRenderer($formatter);
-        $mapContainerRenderer = new MapContainerRenderer($formatter, $jsonBuilder);
-        $mapHtmlRenderer = new MapHtmlRenderer($formatter, $tagRenderer, $stylesheetRenderer);
-        $mapRenderer = new MapRenderer(
+        $mapBoundRenderer     = new MapBoundRenderer($formatter);
+        $mapCenterRenderer    = new MapCenterRenderer($formatter);
+        $mapContainerRenderer = new MapContainerRenderer($formatter, $serializer);
+        $mapHtmlRenderer      = new MapHtmlRenderer($formatter, $tagRenderer, $stylesheetRenderer);
+        $mapRenderer          = new MapRenderer(
             $formatter,
-            $jsonBuilder,
+            $serializer,
             $mapTypeIdRenderer,
             $controlManagerRenderer,
             $requirementRenderer
         );
 
         // Overlay renderers
-        $animationRenderer = new AnimationRenderer($formatter);
-        $circleRenderer = new CircleRenderer($formatter, $jsonBuilder);
-        $defaultInfoWindowRenderer = new DefaultInfoWindowRenderer($formatter, $jsonBuilder);
-        $encodedPolylineRenderer = new EncodedPolylineRenderer($formatter, $jsonBuilder, $encodingRenderer);
-        $groundOverlayRenderer = new GroundOverlayRenderer($formatter, $jsonBuilder);
-        $infoBoxRenderer = new InfoBoxRenderer($formatter, $jsonBuilder, $requirementRenderer);
-        $infoWindowCloseRenderer = new InfoWindowCloseRenderer($formatter);
-        $infoWindowOpenRenderer = new InfoWindowOpenRenderer($formatter);
-        $iconRenderer = new IconRenderer($formatter, $jsonBuilder);
-        $iconSequenceRenderer = new IconSequenceRenderer($formatter, $jsonBuilder);
-        $markerClustererRenderer = new MarkerClustererRenderer($formatter, $jsonBuilder, $requirementRenderer);
-        $markerRenderer = new MarkerRenderer($formatter, $jsonBuilder, $animationRenderer);
-        $markerShapeRenderer = new MarkerShapeRenderer($formatter, $jsonBuilder);
-        $polygonRenderer = new PolygonRenderer($formatter, $jsonBuilder);
-        $polylineRenderer = new PolylineRenderer($formatter, $jsonBuilder);
-        $rectangleRenderer = new RectangleRenderer($formatter, $jsonBuilder);
-        $symbolPathRenderer = new SymbolPathRenderer($formatter);
-        $symbolRenderer = new SymbolRenderer($formatter, $jsonBuilder, $symbolPathRenderer);
+        $animationRenderer         = new AnimationRenderer($formatter);
+        $circleRenderer            = new CircleRenderer($formatter, $serializer);
+        $defaultInfoWindowRenderer = new DefaultInfoWindowRenderer($formatter, $serializer);
+        $encodedPolylineRenderer   = new EncodedPolylineRenderer($formatter, $serializer, $encodingRenderer);
+        $groundOverlayRenderer     = new GroundOverlayRenderer($formatter, $serializer);
+        $infoBoxRenderer           = new InfoBoxRenderer($formatter, $serializer, $requirementRenderer);
+        $infoWindowCloseRenderer   = new InfoWindowCloseRenderer($formatter);
+        $infoWindowOpenRenderer    = new InfoWindowOpenRenderer($formatter);
+        $iconRenderer              = new IconRenderer($formatter, $serializer);
+        $iconSequenceRenderer      = new IconSequenceRenderer($formatter, $serializer);
+        $markerClustererRenderer   = new MarkerClustererRenderer($formatter, $serializer, $requirementRenderer);
+        $markerRenderer            = new MarkerRenderer($formatter, $serializer, $animationRenderer);
+        $markerShapeRenderer       = new MarkerShapeRenderer($formatter, $serializer);
+        $polygonRenderer           = new PolygonRenderer($formatter, $serializer);
+        $polylineRenderer          = new PolylineRenderer($formatter, $serializer);
+        $rectangleRenderer         = new RectangleRenderer($formatter, $serializer);
+        $symbolPathRenderer        = new SymbolPathRenderer($formatter);
+        $symbolRenderer            = new SymbolRenderer($formatter, $serializer, $symbolPathRenderer);
 
         // Extendable renderers
         $defaultViewportExtendableRenderer = new DefaultViewportExtendableRenderer($formatter);
-        $heatmapLayerExtendableRenderer = new HeatmapLayerExtendableRenderer($formatter);
-        $pathExtendableRenderer = new PathExtendableRenderer($formatter);
-        $positionExtendableRenderer = new PositionExtendableRenderer($formatter);
-        $boundsExtendableRenderer = new BoundsExtendableRenderer($formatter);
+        $heatmapLayerExtendableRenderer    = new HeatmapLayerExtendableRenderer($formatter);
+        $pathExtendableRenderer            = new PathExtendableRenderer($formatter);
+        $positionExtendableRenderer        = new PositionExtendableRenderer($formatter);
+        $boundsExtendableRenderer          = new BoundsExtendableRenderer($formatter);
 
         $extendableRenderer = new ExtendableRenderer();
         $extendableRenderer->setRenderer(Circle::class, $boundsExtendableRenderer);
@@ -341,9 +341,9 @@ class MapHelperBuilder extends AbstractJavascriptHelperBuilder
         $extendableRenderer->setRenderer(Rectangle::class, $boundsExtendableRenderer);
 
         // Layer renderers
-        $geoJsonLayerRenderer = new GeoJsonLayerRenderer($formatter, $jsonBuilder);
-        $heatmapLayerRenderer = new HeatmapLayerRenderer($formatter, $jsonBuilder);
-        $kmlLayerRenderer = new KmlLayerRenderer($formatter, $jsonBuilder);
+        $geoJsonLayerRenderer = new GeoJsonLayerRenderer($formatter, $serializer);
+        $heatmapLayerRenderer = new HeatmapLayerRenderer($formatter, $serializer);
+        $kmlLayerRenderer     = new KmlLayerRenderer($formatter, $serializer);
 
         return array_merge([
             // Base

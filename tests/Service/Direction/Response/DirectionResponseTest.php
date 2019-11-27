@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Direction\Response;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Service\Base\TravelMode;
 use Ivory\GoogleMap\Service\Direction\Request\DirectionRequestInterface;
 use Ivory\GoogleMap\Service\Direction\Response\DirectionGeocoded;
@@ -21,7 +22,7 @@ use Ivory\GoogleMap\Service\Direction\Response\DirectionStatus;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class DirectionResponseTest extends \PHPUnit_Framework_TestCase
+class DirectionResponseTest extends TestCase
 {
     /**
      * @var DirectionResponse

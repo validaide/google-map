@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Utility;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Utility\SourceRenderer;
@@ -18,7 +19,7 @@ use Ivory\GoogleMap\Helper\Renderer\Utility\SourceRenderer;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class SourceRendererTest extends \PHPUnit_Framework_TestCase
+class SourceRendererTest extends TestCase
 {
     /**
      * @var SourceRenderer

@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Collector\Overlay;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Collector\Overlay\PolygonCollector;
 use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\Polygon;
@@ -18,7 +19,7 @@ use Ivory\GoogleMap\Overlay\Polygon;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PolygonCollectorTest extends \PHPUnit_Framework_TestCase
+class PolygonCollectorTest extends TestCase
 {
     /**
      * @var PolygonCollector

@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Overlay;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
@@ -22,7 +23,7 @@ use Ivory\GoogleMap\Overlay\Marker;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class InfoWindowOpenRendererTest extends \PHPUnit_Framework_TestCase
+class InfoWindowOpenRendererTest extends TestCase
 {
     /**
      * @var InfoWindowOpenRenderer

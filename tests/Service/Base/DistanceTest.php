@@ -11,12 +11,13 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Base;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Service\Base\Distance;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class DistanceTest extends \PHPUnit_Framework_TestCase
+class DistanceTest extends TestCase
 {
     /**
      * @var Distance

@@ -11,12 +11,13 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Place\Base;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Service\Place\Base\Photo;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PhotoTest extends \PHPUnit_Framework_TestCase
+class PhotoTest extends TestCase
 {
     /**
      * @var Photo

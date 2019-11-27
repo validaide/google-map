@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Control;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Control\ScaleControl;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
@@ -18,12 +19,12 @@ use Ivory\GoogleMap\Helper\Renderer\Control\ControlPositionRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Control\ControlRendererInterface;
 use Ivory\GoogleMap\Helper\Renderer\Control\ScaleControlRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Control\ScaleControlStyleRenderer;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ScaleControlRendererTest extends\PHPUnit_Framework_TestCase
+class ScaleControlRendererTest extends TestCase
 {
     /**
      * @var ScaleControlRenderer
@@ -73,12 +74,10 @@ class ScaleControlRendererTest extends\PHPUnit_Framework_TestCase
         );
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Expected a "Ivory\GoogleMap\Control\ScaleControl", got "string".
-     */
     public function testRenderWithInvalidControl()
     {
+        $this->expectException('InvalidArgumentException');
+        $this->expectExceptionMessage('Expected a "Ivory\GoogleMap\Control\ScaleControl", got "string".');
         $this->scaleControlRenderer->render('foo');
     }
 

@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Overlay;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Bound;
 use Ivory\GoogleMap\Overlay\ExtendableInterface;
 use Ivory\GoogleMap\Overlay\GroundOverlay;
@@ -20,7 +21,7 @@ use Ivory\GoogleMap\Utility\VariableAwareInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class GroundOverlayTest extends \PHPUnit_Framework_TestCase
+class GroundOverlayTest extends TestCase
 {
     /**
      * @var GroundOverlay

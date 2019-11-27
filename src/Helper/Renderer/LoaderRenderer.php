@@ -12,7 +12,7 @@
 namespace Ivory\GoogleMap\Helper\Renderer;
 
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
@@ -31,11 +31,11 @@ class LoaderRenderer extends AbstractJsonRenderer
 
     /**
      * @param Formatter   $formatter
-     * @param JsonBuilder $serializer
+     * @param Serializer $serializer
      * @param string      $language
      * @param string|null $key
      */
-    public function __construct(Formatter $formatter, JsonBuilder $serializer, $language = 'en', $key = null)
+    public function __construct(Formatter $formatter, Serializer $serializer, $language = 'en', $key = null)
     {
         parent::__construct($formatter, $serializer);
 

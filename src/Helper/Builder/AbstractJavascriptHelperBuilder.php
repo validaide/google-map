@@ -12,31 +12,26 @@
 namespace Ivory\GoogleMap\Helper\Builder;
 
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
 abstract class AbstractJavascriptHelperBuilder extends AbstractHelperBuilder
 {
-    /**
-     * @var Formatter
-     */
+    /** @var Formatter */
     private $formatter;
+    /** @var Serializer */
+    private $serializer;
 
     /**
-     * @var JsonBuilder
+     * @param Formatter  $formatter
+     * @param Serializer $serializer
      */
-    private $jsonBuilder;
-
-    /**
-     * @param Formatter|null   $formatter
-     * @param JsonBuilder|null $jsonBuilder
-     */
-    public function __construct(Formatter $formatter = null, JsonBuilder $jsonBuilder = null)
+    public function __construct(Formatter $formatter, Serializer $serializer)
     {
-        $this->setFormatter($formatter ?: new Formatter());
-        $this->setJsonBuilder($jsonBuilder ?: new JsonBuilder());
+        $this->setFormatter($formatter);
+        $this->setSerializer($serializer);
     }
 
     /**
@@ -60,21 +55,21 @@ abstract class AbstractJavascriptHelperBuilder extends AbstractHelperBuilder
     }
 
     /**
-     * @return JsonBuilder
+     * @return Serializer
      */
-    public function getJsonBuilder()
+    public function getSerializer()
     {
-        return $this->jsonBuilder;
+        return $this->serializer;
     }
 
     /**
-     * @param JsonBuilder $jsonBuilder
+     * @param Serializer $serializer
      *
      * @return $this
      */
-    public function setJsonBuilder(JsonBuilder $jsonBuilder)
+    public function setSerializer(Serializer $serializer)
     {
-        $this->jsonBuilder = $jsonBuilder;
+        $this->serializer = $serializer;
 
         return $this;
     }

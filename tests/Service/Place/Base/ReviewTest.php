@@ -11,13 +11,15 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Place\Base;
 
+use PHPUnit\Framework\TestCase;
+use DateTime;
 use Ivory\GoogleMap\Service\Place\Base\AspectRating;
 use Ivory\GoogleMap\Service\Place\Base\Review;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ReviewTest extends \PHPUnit_Framework_TestCase
+class ReviewTest extends TestCase
 {
     /**
      * @var Review
@@ -84,7 +86,7 @@ class ReviewTest extends \PHPUnit_Framework_TestCase
 
     public function testTime()
     {
-        $this->review->setTime($time = new \DateTime());
+        $this->review->setTime($time = new DateTime());
 
         $this->assertTrue($this->review->hasTime());
         $this->assertSame($time, $this->review->getTime());

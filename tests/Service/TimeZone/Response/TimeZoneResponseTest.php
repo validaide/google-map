@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\TimeZone\Response;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Service\TimeZone\Request\TimeZoneRequestInterface;
 use Ivory\GoogleMap\Service\TimeZone\Response\TimeZoneResponse;
 use Ivory\GoogleMap\Service\TimeZone\Response\TimeZoneStatus;
@@ -18,7 +19,7 @@ use Ivory\GoogleMap\Service\TimeZone\Response\TimeZoneStatus;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class TimeZoneResponseTest extends \PHPUnit_Framework_TestCase
+class TimeZoneResponseTest extends TestCase
 {
     /**
      * @var TimeZoneResponse

@@ -11,15 +11,16 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Helper\Renderer\LoaderRenderer;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class LoaderRendererTest extends \PHPUnit_Framework_TestCase
+class LoaderRendererTest extends TestCase
 {
     /**
      * @var LoaderRenderer

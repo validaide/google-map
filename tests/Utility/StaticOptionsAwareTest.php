@@ -11,13 +11,14 @@
 
 namespace Ivory\Tests\GoogleMap\Utility;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Utility\StaticOptionsAwareInterface;
 use Ivory\GoogleMap\Utility\StaticOptionsAwareTrait;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class StaticOptionsAwareTest extends \PHPUnit_Framework_TestCase
+class StaticOptionsAwareTest extends TestCase
 {
     /**
      * @var StaticOptionsAwareTrait

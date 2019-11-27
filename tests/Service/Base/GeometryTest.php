@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Base;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Bound;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Service\Base\Geometry;
@@ -19,7 +20,7 @@ use Ivory\GoogleMap\Service\Base\GeometryLocationType;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class GeometryTest extends \PHPUnit_Framework_TestCase
+class GeometryTest extends TestCase
 {
     /**
      * @var Geometry

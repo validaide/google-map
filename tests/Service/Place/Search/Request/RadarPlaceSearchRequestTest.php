@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Place\Search\Request;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Service\Place\Search\Request\AbstractTextualPlaceSearchRequest;
 use Ivory\GoogleMap\Service\Place\Search\Request\RadarPlaceSearchRequest;
@@ -18,7 +19,7 @@ use Ivory\GoogleMap\Service\Place\Search\Request\RadarPlaceSearchRequest;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class RadarPlaceSearchRequestTest extends \PHPUnit_Framework_TestCase
+class RadarPlaceSearchRequestTest extends TestCase
 {
     /**
      * @var RadarPlaceSearchRequest

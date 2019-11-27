@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Functional\Place\Event;
 
+use PHPUnit_Extensions_Selenium2TestCase_Keys;
 use Ivory\GoogleMap\Event\Event;
 use Ivory\Tests\GoogleMap\Helper\Functional\Place\AbstractAutocompleteFunctionalTest;
 
@@ -38,8 +39,8 @@ abstract class AbstractEventFunctionalTest extends AbstractAutocompleteFunctiona
     {
         sleep(1);
 
-        $this->keys(\PHPUnit_Extensions_Selenium2TestCase_Keys::DOWN);
-        $this->keys(\PHPUnit_Extensions_Selenium2TestCase_Keys::ENTER);
+        $this->keys(PHPUnit_Extensions_Selenium2TestCase_Keys::DOWN);
+        $this->keys(PHPUnit_Extensions_Selenium2TestCase_Keys::ENTER);
 
         sleep(1);
     }

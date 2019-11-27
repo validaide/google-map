@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Place\Autocomplete\Response;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Service\Place\Autocomplete\Request\PlaceAutocompleteRequestInterface;
 use Ivory\GoogleMap\Service\Place\Autocomplete\Response\PlaceAutocompletePrediction;
 use Ivory\GoogleMap\Service\Place\Autocomplete\Response\PlaceAutocompleteResponse;
@@ -19,7 +20,7 @@ use Ivory\GoogleMap\Service\Place\Autocomplete\Response\PlaceAutocompleteStatus;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PlaceAutocompleteResponseTest extends \PHPUnit_Framework_TestCase
+class PlaceAutocompleteResponseTest extends TestCase
 {
     /**
      * @var PlaceAutocompleteResponse

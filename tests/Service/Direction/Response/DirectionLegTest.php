@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Direction\Response;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Service\Base\Distance;
 use Ivory\GoogleMap\Service\Base\Duration;
@@ -22,7 +23,7 @@ use Ivory\GoogleMap\Service\Direction\Response\DirectionWaypoint;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class DirectionLegTest extends \PHPUnit_Framework_TestCase
+class DirectionLegTest extends TestCase
 {
     /**
      * @var DirectionLeg

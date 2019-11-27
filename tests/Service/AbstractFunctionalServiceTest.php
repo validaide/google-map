@@ -11,6 +11,8 @@
 
 namespace Ivory\Tests\GoogleMap\Service;
 
+use PHPUnit\Framework\TestCase;
+use DateTime;
 use Http\Adapter\Guzzle6\Client;
 use Http\Client\Common\Plugin\CachePlugin;
 use Http\Client\Common\Plugin\ErrorPlugin as HttpErrorPlugin;
@@ -28,7 +30,7 @@ use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-abstract class AbstractFunctionalServiceTest extends \PHPUnit_Framework_TestCase
+abstract class AbstractFunctionalServiceTest extends TestCase
 {
     /**
      * @var Journal
@@ -99,7 +101,7 @@ abstract class AbstractFunctionalServiceTest extends \PHPUnit_Framework_TestCase
         $item = $this->pool->getItem(sha1(get_class().'::'.$key));
 
         if (!$item->isHit()) {
-            $item->set(new \DateTime($value));
+            $item->set(new DateTime($value));
             $this->pool->save($item);
         }
 

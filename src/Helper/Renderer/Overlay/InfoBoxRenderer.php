@@ -13,7 +13,7 @@ namespace Ivory\GoogleMap\Helper\Renderer\Overlay;
 
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\Utility\RequirementRenderer;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
@@ -32,7 +32,7 @@ class InfoBoxRenderer extends AbstractInfoWindowRenderer
      */
     public function __construct(
         Formatter $formatter,
-        JsonBuilder $serializer,
+        Serializer $serializer,
         RequirementRenderer $requirementRenderer
     ) {
         parent::__construct($formatter, $serializer);

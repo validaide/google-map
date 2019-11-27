@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Collector\Place\Base;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Bound;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Helper\Collector\Place\Base\AutocompleteBoundCollector;
@@ -20,7 +21,7 @@ use Ivory\GoogleMap\Place\Autocomplete;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class AutocompleteCoordinateCollectorTest extends \PHPUnit_Framework_TestCase
+class AutocompleteCoordinateCollectorTest extends TestCase
 {
     /**
      * @var AutocompleteCoordinateCollector

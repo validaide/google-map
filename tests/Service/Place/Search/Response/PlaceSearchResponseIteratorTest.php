@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Place\Search\Response;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Service\Place\Search\PlaceSearchService;
 use Ivory\GoogleMap\Service\Place\Search\Request\PageTokenPlaceSearchRequest;
 use Ivory\GoogleMap\Service\Place\Search\Response\PlaceSearchResponse;
@@ -19,7 +20,7 @@ use Ivory\GoogleMap\Service\Place\Search\Response\PlaceSearchResponseIterator;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PlaceSearchResponseIteratorTest extends \PHPUnit_Framework_TestCase
+class PlaceSearchResponseIteratorTest extends TestCase
 {
     /**
      * @var PlaceSearchResponseIterator

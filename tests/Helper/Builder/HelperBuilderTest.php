@@ -11,13 +11,14 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Builder;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Builder\AbstractHelperBuilder;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class HelperBuilderTest extends \PHPUnit_Framework_TestCase
+class HelperBuilderTest extends TestCase
 {
     /**
      * @var AbstractHelperBuilder

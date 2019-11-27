@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Control;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Control\ControlManager;
 use Ivory\GoogleMap\Control\MapTypeControl;
 use Ivory\GoogleMap\Control\RotateControl;
@@ -30,12 +31,12 @@ use Ivory\GoogleMap\Helper\Renderer\Control\StreetViewControlRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Control\ZoomControlRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Control\ZoomControlStyleRenderer;
 use Ivory\GoogleMap\Helper\Renderer\MapTypeIdRenderer;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ControlManagerRendererTest extends \PHPUnit_Framework_TestCase
+class ControlManagerRendererTest extends TestCase
 {
     /**
      * @var ControlManagerRenderer

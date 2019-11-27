@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Collector\Image;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Collector\Image\EncodedPolylineCollector;
 use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\EncodedPolyline;
@@ -18,7 +19,7 @@ use Ivory\GoogleMap\Overlay\EncodedPolyline;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class EncodedPolylineCollectorTest extends \PHPUnit_Framework_TestCase
+class EncodedPolylineCollectorTest extends TestCase
 {
     /**
      * @var EncodedPolylineCollector

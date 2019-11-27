@@ -11,12 +11,13 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Direction\Response\Transit;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Service\Direction\Response\Transit\DirectionTransitAgency;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class DirectionTransitAgencyTest extends \PHPUnit_Framework_TestCase
+class DirectionTransitAgencyTest extends TestCase
 {
     /**
      * @var DirectionTransitAgency

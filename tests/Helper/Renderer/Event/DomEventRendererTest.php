@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Event;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Event\Event;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\Event\AbstractEventRenderer;
@@ -19,7 +20,7 @@ use Ivory\GoogleMap\Helper\Renderer\Event\DomEventRenderer;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class DomEventRendererTest extends \PHPUnit_Framework_TestCase
+class DomEventRendererTest extends TestCase
 {
     /**
      * @var DomEventRenderer

@@ -11,6 +11,8 @@
 
 namespace Ivory\Tests\GoogleMap\Service\DistanceMatrix\Request;
 
+use PHPUnit\Framework\TestCase;
+use DateTime;
 use Ivory\GoogleMap\Service\Base\Avoid;
 use Ivory\GoogleMap\Service\Base\Location\AddressLocation;
 use Ivory\GoogleMap\Service\Base\Location\EncodedPolylineLocation;
@@ -27,7 +29,7 @@ use Ivory\GoogleMap\Service\RequestInterface;
 /**
  * @author GeLo <gelon.eric@gmail.com>
  */
-class DistanceMatrixRequestTest extends \PHPUnit_Framework_TestCase
+class DistanceMatrixRequestTest extends TestCase
 {
     /**
      * @var DistanceMatrixRequest
@@ -167,7 +169,7 @@ class DistanceMatrixRequestTest extends \PHPUnit_Framework_TestCase
 
     public function testDepartureTime()
     {
-        $this->request->setDepartureTime($departureTime = new \DateTime());
+        $this->request->setDepartureTime($departureTime = new DateTime());
 
         $this->assertTrue($this->request->hasDepartureTime());
         $this->assertSame($departureTime, $this->request->getDepartureTime());
@@ -175,7 +177,7 @@ class DistanceMatrixRequestTest extends \PHPUnit_Framework_TestCase
 
     public function testResetDepartureTime()
     {
-        $this->request->setDepartureTime(new \DateTime());
+        $this->request->setDepartureTime(new DateTime());
         $this->request->setDepartureTime(null);
 
         $this->assertFalse($this->request->hasDepartureTime());
@@ -184,7 +186,7 @@ class DistanceMatrixRequestTest extends \PHPUnit_Framework_TestCase
 
     public function testArrivalTime()
     {
-        $this->request->setArrivalTime($arrivalTime = new \DateTime());
+        $this->request->setArrivalTime($arrivalTime = new DateTime());
 
         $this->assertTrue($this->request->hasArrivalTime());
         $this->assertSame($arrivalTime, $this->request->getArrivalTime());
@@ -192,7 +194,7 @@ class DistanceMatrixRequestTest extends \PHPUnit_Framework_TestCase
 
     public function testArrivalTimeWithNullValue()
     {
-        $this->request->setArrivalTime(new \DateTime());
+        $this->request->setArrivalTime(new DateTime());
         $this->request->setArrivalTime(null);
 
         $this->assertFalse($this->request->hasArrivalTime());
@@ -365,14 +367,14 @@ class DistanceMatrixRequestTest extends \PHPUnit_Framework_TestCase
 
     public function testBuildQueryWithDepartureTime()
     {
-        $this->request->setDepartureTime($departureTime = new \DateTime());
+        $this->request->setDepartureTime($departureTime = new DateTime());
 
         $this->assertBuild($this->request->buildQuery(), ['departure_time' => $departureTime->getTimestamp()]);
     }
 
     public function testBuildQueryWithArrivalTime()
     {
-        $this->request->setArrivalTime($arrivalTime = new \DateTime());
+        $this->request->setArrivalTime($arrivalTime = new DateTime());
 
         $this->assertBuild($this->request->buildQuery(), ['arrival_time' => $arrivalTime->getTimestamp()]);
     }

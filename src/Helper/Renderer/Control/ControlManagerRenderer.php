@@ -12,16 +12,14 @@
 namespace Ivory\GoogleMap\Helper\Renderer\Control;
 
 use Ivory\GoogleMap\Control\ControlManager;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
 class ControlManagerRenderer
 {
-    /**
-     * @var ControlRendererInterface[]
-     */
+    /** @var ControlRendererInterface[] */
     private $renderers = [];
 
     /**
@@ -90,11 +88,11 @@ class ControlManagerRenderer
 
     /**
      * @param ControlManager $controlManager
-     * @param JsonBuilder    $jsonBuilder
+     * @param Serializer     $serializer
      *
      * @return string
      */
-    public function render(ControlManager $controlManager, JsonBuilder $jsonBuilder)
+    public function render(ControlManager $controlManager, Serializer $serializer)
     {
         foreach ($this->renderers as $renderer) {
             $control = get_class($renderer);
@@ -103,12 +101,12 @@ class ControlManagerRenderer
                 $control = substr($control, ++$position, -8);
             }
 
-            if ($controlManager->{'has'.$control}()) {
+            if ($controlManager->{'has' . $control}()) {
                 $lcControl = lcfirst($control);
 
-                $jsonBuilder
-                    ->setValue('['.$lcControl.']', true)
-                    ->setValue('['.$lcControl.'Options]', $renderer->render($controlManager->{'get'.$control}()), false);
+                $serializer
+                    ->setValue('[' . $lcControl . ']', true)
+                    ->setValue('[' . $lcControl . 'Options]', $renderer->render($controlManager->{'get' . $control}()), false);
             }
         }
     }

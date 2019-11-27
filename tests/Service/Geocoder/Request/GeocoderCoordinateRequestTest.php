@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Geocoder\Request;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Service\Geocoder\Request\AbstractGeocoderReverseRequest;
 use Ivory\GoogleMap\Service\Geocoder\Request\GeocoderCoordinateRequest;
@@ -18,7 +19,7 @@ use Ivory\GoogleMap\Service\Geocoder\Request\GeocoderCoordinateRequest;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class GeocoderCoordinateRequestTest extends \PHPUnit_Framework_TestCase
+class GeocoderCoordinateRequestTest extends TestCase
 {
     /**
      * @var GeocoderCoordinateRequest

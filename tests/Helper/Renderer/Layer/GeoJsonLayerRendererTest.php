@@ -11,17 +11,18 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Layer;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Layer\GeoJsonLayerRenderer;
 use Ivory\GoogleMap\Layer\GeoJsonLayer;
 use Ivory\GoogleMap\Map;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class GeoJsonLayerRendererTest extends \PHPUnit_Framework_TestCase
+class GeoJsonLayerRendererTest extends TestCase
 {
     /**
      * @var GeoJsonLayerRenderer

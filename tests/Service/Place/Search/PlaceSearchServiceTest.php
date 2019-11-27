@@ -439,12 +439,11 @@ class PlaceSearchServiceTest extends AbstractPlaceSerializableServiceTest
      * @param string $format
      *
      * @dataProvider formatProvider
-     *
-     * @expectedException \Http\Client\Common\Exception\ClientErrorException
-     * @expectedExceptionMessage REQUEST_DENIED
      */
     public function testErrorRequest($format)
     {
+        $this->expectException('Http\Client\Common\Exception\ClientErrorException');
+        $this->expectExceptionMessage('REQUEST_DENIED');
         $this->service->setFormat($format);
         $this->service->setKey('invalid');
 

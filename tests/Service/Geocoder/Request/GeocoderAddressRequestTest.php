@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Geocoder\Request;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Bound;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Service\Geocoder\Request\AbstractGeocoderRequest;
@@ -20,7 +21,7 @@ use Ivory\GoogleMap\Service\Geocoder\Request\GeocoderComponentType;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class GeocoderAddressRequestTest extends \PHPUnit_Framework_TestCase
+class GeocoderAddressRequestTest extends TestCase
 {
     /**
      * @var GeocoderAddressRequest

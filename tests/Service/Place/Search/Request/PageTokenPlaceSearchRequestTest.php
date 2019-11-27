@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Place\Search\Request;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Service\ContextualizedRequestInterface;
 use Ivory\GoogleMap\Service\Place\Search\Request\PageTokenPlaceSearchRequest;
 use Ivory\GoogleMap\Service\Place\Search\Request\PlaceSearchRequestInterface;
@@ -20,7 +21,7 @@ use Ivory\GoogleMap\Service\RequestInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PageTokenPlaceSearchRequestTest extends \PHPUnit_Framework_TestCase
+class PageTokenPlaceSearchRequestTest extends TestCase
 {
     /**
      * @var PageTokenPlaceSearchRequest

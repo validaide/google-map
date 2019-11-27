@@ -11,12 +11,13 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Base;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Service\Base\AddressComponent;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class AddressComponentTest extends \PHPUnit_Framework_TestCase
+class AddressComponentTest extends TestCase
 {
     /**
      * @var AddressComponent

@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Collector\Overlay;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Collector\Overlay\DefaultInfoWindowCollector;
 use Ivory\GoogleMap\Helper\Collector\Overlay\MarkerCollector;
 use Ivory\GoogleMap\Overlay\InfoWindowType;
@@ -18,7 +19,7 @@ use Ivory\GoogleMap\Overlay\InfoWindowType;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class DefaultInfoWindowCollectorTest extends \PHPUnit_Framework_TestCase
+class DefaultInfoWindowCollectorTest extends TestCase
 {
     /**
      * @var DefaultInfoWindowCollector

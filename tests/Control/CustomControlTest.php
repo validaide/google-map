@@ -11,13 +11,14 @@
 
 namespace Ivory\Tests\GoogleMap\Control;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Control\ControlPosition;
 use Ivory\GoogleMap\Control\CustomControl;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class CustomControlTest extends \PHPUnit_Framework_TestCase
+class CustomControlTest extends TestCase
 {
     /**
      * @var CustomControl

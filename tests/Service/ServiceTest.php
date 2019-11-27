@@ -11,13 +11,14 @@
 
 namespace Ivory\Tests\GoogleMap\Service;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Service\AbstractService;
 use Ivory\GoogleMap\Service\BusinessAccount;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ServiceTest extends \PHPUnit_Framework_TestCase
+class ServiceTest extends TestCase
 {
     /**
      * @var AbstractService|\PHPUnit_Framework_MockObject_MockObject

@@ -11,6 +11,8 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Event;
 
+use PHPUnit\Framework\TestCase;
+use stdClass;
 use Ivory\GoogleMap\Helper\Event\AbstractEvent;
 use Ivory\GoogleMap\Helper\Event\ApiEvent;
 use Ivory\GoogleMap\Map;
@@ -18,7 +20,7 @@ use Ivory\GoogleMap\Map;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ApiEventTest extends \PHPUnit_Framework_TestCase
+class ApiEventTest extends TestCase
 {
     /**
      * @var ApiEvent
@@ -35,7 +37,7 @@ class ApiEventTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->objects = [new \stdClass(), new \stdClass()];
+        $this->objects = [new stdClass(), new stdClass()];
         $this->apiEvent = new ApiEvent($this->objects);
     }
 
@@ -60,8 +62,8 @@ class ApiEventTest extends \PHPUnit_Framework_TestCase
 
     public function testObjects()
     {
-        $this->assertTrue($this->apiEvent->hasObjects(\stdClass::class));
-        $this->assertSame($this->objects, $this->apiEvent->getObjects(\stdClass::class));
+        $this->assertTrue($this->apiEvent->hasObjects(stdClass::class));
+        $this->assertSame($this->objects, $this->apiEvent->getObjects(stdClass::class));
 
         $this->assertFalse($this->apiEvent->hasObjects(Map::class));
         $this->assertEmpty($this->apiEvent->getObjects(Map::class));
@@ -145,8 +147,8 @@ class ApiEventTest extends \PHPUnit_Framework_TestCase
 
     public function testAddCallback()
     {
-        $this->apiEvent->addCallback(new \stdClass(), 'callback1');
-        $this->apiEvent->addCallback($object = new \stdClass(), $callback = 'callback2');
+        $this->apiEvent->addCallback(new stdClass(), 'callback1');
+        $this->apiEvent->addCallback($object = new stdClass(), $callback = 'callback2');
 
         $this->assertTrue($this->apiEvent->hasCallbacks());
         $this->assertTrue($this->apiEvent->hasCallback($callback));
@@ -159,7 +161,7 @@ class ApiEventTest extends \PHPUnit_Framework_TestCase
 
     public function testRemoveCallback()
     {
-        $this->apiEvent->addCallback($object = new \stdClass(), $callback = 'callback');
+        $this->apiEvent->addCallback($object = new stdClass(), $callback = 'callback');
         $this->apiEvent->removeCallback($callback);
 
         $this->assertFalse($this->apiEvent->hasCallbacks());
@@ -173,7 +175,7 @@ class ApiEventTest extends \PHPUnit_Framework_TestCase
 
     public function testSetRequirements()
     {
-        $this->apiEvent->setRequirements($object = new \stdClass(), $requirements = [$requirement = 'requirement']);
+        $this->apiEvent->setRequirements($object = new stdClass(), $requirements = [$requirement = 'requirement']);
         $this->apiEvent->setRequirements($object, $requirements);
 
         $this->assertTrue($this->apiEvent->hasRequirements());
@@ -185,7 +187,7 @@ class ApiEventTest extends \PHPUnit_Framework_TestCase
 
     public function testAddRequirements()
     {
-        $this->apiEvent->setRequirements($object = new \stdClass(), $firstRequirements = ['requirement1']);
+        $this->apiEvent->setRequirements($object = new stdClass(), $firstRequirements = ['requirement1']);
         $this->apiEvent->addRequirements($object, $secondRequirements = ['requirement2']);
 
         $this->assertTrue($this->apiEvent->hasRequirements());
@@ -199,7 +201,7 @@ class ApiEventTest extends \PHPUnit_Framework_TestCase
 
     public function testAddRequirement()
     {
-        $this->apiEvent->addRequirement($object = new \stdClass(), $requirement = 'requirement');
+        $this->apiEvent->addRequirement($object = new stdClass(), $requirement = 'requirement');
 
         $this->assertTrue($this->apiEvent->hasRequirements());
         $this->assertTrue($this->apiEvent->hasRequirements($object));
@@ -210,7 +212,7 @@ class ApiEventTest extends \PHPUnit_Framework_TestCase
 
     public function testRemoveRequirement()
     {
-        $this->apiEvent->addRequirement($object = new \stdClass(), $requirement1 = 'requirement1');
+        $this->apiEvent->addRequirement($object = new stdClass(), $requirement1 = 'requirement1');
         $this->apiEvent->addRequirement($object, $requirement2 = 'requirement2');
         $this->apiEvent->removeRequirement($object, $requirement2);
 

@@ -11,13 +11,14 @@
 
 namespace Ivory\Tests\GoogleMap\Layer;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Layer\GeoJsonLayer;
 use Ivory\GoogleMap\Utility\OptionsAwareInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class GeoJsonLayerTest extends \PHPUnit_Framework_TestCase
+class GeoJsonLayerTest extends TestCase
 {
     /**
      * @var GeoJsonLayer

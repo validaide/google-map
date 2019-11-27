@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Overlay;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Point;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
@@ -18,12 +19,12 @@ use Ivory\GoogleMap\Helper\Renderer\Overlay\SymbolPathRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Overlay\SymbolRenderer;
 use Ivory\GoogleMap\Overlay\Symbol;
 use Ivory\GoogleMap\Overlay\SymbolPath;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class SymbolRendererTest extends \PHPUnit_Framework_TestCase
+class SymbolRendererTest extends TestCase
 {
     /**
      * @var SymbolRenderer

@@ -9,15 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Service\Service\Base\Location;
+namespace Ivory\Tests\GoogleMap\Service\Base\Location;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Service\Base\Location\EncodedPolylineLocation;
 use Ivory\GoogleMap\Service\Base\Location\LocationInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class EncodedPolylineLocationTest extends \PHPUnit_Framework_TestCase
+class EncodedPolylineLocationTest extends TestCase
 {
     /**
      * @var EncodedPolylineLocation

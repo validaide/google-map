@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Place;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\Html\AbstractTagRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Html\TagRenderer;
@@ -20,7 +21,7 @@ use Ivory\GoogleMap\Place\Autocomplete;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class AutocompleteHtmlRendererTest extends \PHPUnit_Framework_TestCase
+class AutocompleteHtmlRendererTest extends TestCase
 {
     /**
      * @var AutocompleteHtmlRenderer

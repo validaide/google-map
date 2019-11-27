@@ -11,13 +11,14 @@
 
 namespace Ivory\Tests\GoogleMap\Base;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Point;
 use Ivory\GoogleMap\Utility\VariableAwareInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PointTest extends \PHPUnit_Framework_TestCase
+class PointTest extends TestCase
 {
     /**
      * @var Point

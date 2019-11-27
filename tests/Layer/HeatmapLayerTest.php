@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Layer;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Layer\HeatmapLayer;
 use Ivory\GoogleMap\Overlay\ExtendableInterface;
@@ -19,7 +20,7 @@ use Ivory\GoogleMap\Utility\OptionsAwareInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class HeatmapLayerTest extends \PHPUnit_Framework_TestCase
+class HeatmapLayerTest extends TestCase
 {
     /**
      * @var HeatmapLayer

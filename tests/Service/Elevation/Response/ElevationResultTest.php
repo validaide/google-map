@@ -11,13 +11,14 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Elevation\Response;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Service\Elevation\Response\ElevationResult;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ElevationResultTest extends \PHPUnit_Framework_TestCase
+class ElevationResultTest extends TestCase
 {
     /**
      * @var ElevationResult

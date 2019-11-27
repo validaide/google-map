@@ -64,7 +64,7 @@ class PlaceAutocompleteHelperBuilder extends AbstractJavascriptHelperBuilder
     protected function createSubscribers()
     {
         $formatter = $this->getFormatter();
-        $jsonBuilder = $this->getJsonBuilder();
+        $jsonBuilder = $this->getSerializer();
 
         // Base collectors
         $boundCollector = new AutocompleteBoundCollector();

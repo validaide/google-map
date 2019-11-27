@@ -14,7 +14,7 @@ namespace Ivory\GoogleMap\Helper\Renderer\Overlay;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Overlay\Symbol;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
@@ -28,10 +28,10 @@ class SymbolRenderer extends AbstractJsonRenderer
 
     /**
      * @param Formatter          $formatter
-     * @param JsonBuilder        $serializer
+     * @param Serializer         $serializer
      * @param SymbolPathRenderer $symbolPathRenderer
      */
-    public function __construct(Formatter $formatter, JsonBuilder $serializer, SymbolPathRenderer $symbolPathRenderer)
+    public function __construct(Formatter $formatter, Serializer $serializer, SymbolPathRenderer $symbolPathRenderer)
     {
         parent::__construct($formatter, $serializer);
 

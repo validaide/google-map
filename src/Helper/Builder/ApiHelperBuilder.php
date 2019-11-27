@@ -42,37 +42,29 @@ use Ivory\GoogleMap\Helper\Subscriber\Overlay\EncodedPolylineSubscriber;
 use Ivory\GoogleMap\Helper\Subscriber\Overlay\InfoBoxSubscriber;
 use Ivory\GoogleMap\Helper\Subscriber\Overlay\MarkerClustererSubscriber;
 use Ivory\GoogleMap\Helper\Subscriber\Place\AutocompleteJavascriptSubscriber;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
 class ApiHelperBuilder extends AbstractJavascriptHelperBuilder
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     private $language;
-
-    /**
-     * @var string|null
-     */
+    /** @var string|null */
     private $key;
 
     /**
-     * @param Formatter|null   $formatter
-     * @param JsonBuilder|null $jsonBuilder
-     * @param string           $language
-     * @param string|null      $key
+     * @param Formatter|null  $formatter
+     * @param Serializer|null $serializer
+     * @param string          $language
+     * @param string|null     $key
      */
-    public function __construct(
-        Formatter $formatter = null,
-        JsonBuilder $jsonBuilder = null,
-        $language = 'en',
-        $key = null
-    ) {
-        parent::__construct($formatter, $jsonBuilder);
+    public function __construct(Formatter $formatter = null, Serializer $serializer = null, $language = 'en', $key = null)
+    {
+        parent::__construct($formatter, $serializer);
 
+        $this->setKey($key);
         $this->setLanguage($language);
     }
 
@@ -137,16 +129,16 @@ class ApiHelperBuilder extends AbstractJavascriptHelperBuilder
      */
     protected function createSubscribers()
     {
-        $formatter = $this->getFormatter();
-        $jsonBuilder = $this->getJsonBuilder();
+        $formatter   = $this->getFormatter();
+        $jsonBuilder = $this->getSerializer();
 
         // Layer collectors
         $heatmapLayerCollector = new HeatmapLayerCollector();
 
         // Overlay collectors
         $encodedPolylineCollector = new EncodedPolylineCollector();
-        $markerCollector = new MarkerCollector();
-        $infoBoxCollector = new InfoBoxCollector($markerCollector);
+        $markerCollector          = new MarkerCollector();
+        $infoBoxCollector         = new InfoBoxCollector($markerCollector);
 
         // Control renderers
         $controlManagerRenderer = new ControlManagerRenderer();
@@ -155,15 +147,15 @@ class ApiHelperBuilder extends AbstractJavascriptHelperBuilder
         $heatmapLayerRenderer = new HeatmapLayerRenderer($formatter, $jsonBuilder);
 
         // Utility renderers
-        $callbackRenderer = new CallbackRenderer($formatter);
-        $loaderRenderer = new LoaderRenderer($formatter, $jsonBuilder, $this->language, $this->key);
+        $callbackRenderer          = new CallbackRenderer($formatter);
+        $loaderRenderer            = new LoaderRenderer($formatter, $jsonBuilder, $this->language, $this->key);
         $requirementLoaderRenderer = new RequirementLoaderRenderer($formatter);
-        $requirementRenderer = new RequirementRenderer($formatter);
-        $sourceRenderer = new SourceRenderer($formatter);
+        $requirementRenderer       = new RequirementRenderer($formatter);
+        $sourceRenderer            = new SourceRenderer($formatter);
 
         // Map renderers
         $mapTypeIdRenderer = new MapTypeIdRenderer($formatter);
-        $mapRenderer = new MapRenderer(
+        $mapRenderer       = new MapRenderer(
             $formatter,
             $jsonBuilder,
             $mapTypeIdRenderer,
@@ -172,21 +164,21 @@ class ApiHelperBuilder extends AbstractJavascriptHelperBuilder
         );
 
         // Overlay renderers
-        $encodingRenderer = new EncodingRenderer($formatter);
+        $encodingRenderer        = new EncodingRenderer($formatter);
         $encodedPolylineRenderer = new EncodedPolylineRenderer($formatter, $jsonBuilder, $encodingRenderer);
-        $infoBoxRenderer = new InfoBoxRenderer($formatter, $jsonBuilder, $requirementRenderer);
+        $infoBoxRenderer         = new InfoBoxRenderer($formatter, $jsonBuilder, $requirementRenderer);
         $markerClustererRenderer = new MarkerClustererRenderer($formatter, $jsonBuilder, $requirementRenderer);
 
         // Place renderers
         $autocompleteRenderer = new AutocompleteRenderer($formatter, $jsonBuilder, $requirementRenderer);
 
         // Html renderers
-        $tagRenderer = new TagRenderer($formatter);
+        $tagRenderer           = new TagRenderer($formatter);
         $javascriptTagRenderer = new JavascriptTagRenderer($formatter, $tagRenderer);
 
         // Api renderers
         $apiInitRenderer = new ApiInitRenderer($formatter);
-        $apiRenderer = new ApiRenderer(
+        $apiRenderer     = new ApiRenderer(
             $formatter,
             $apiInitRenderer,
             $loaderRenderer,

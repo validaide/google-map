@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Elevation\Response;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Service\Elevation\Request\ElevationRequestInterface;
 use Ivory\GoogleMap\Service\Elevation\Response\ElevationResponse;
 use Ivory\GoogleMap\Service\Elevation\Response\ElevationResult;
@@ -19,7 +20,7 @@ use Ivory\GoogleMap\Service\Elevation\Response\ElevationStatus;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ElevationResponseTest extends \PHPUnit_Framework_TestCase
+class ElevationResponseTest extends TestCase
 {
     /**
      * @var ElevationResponse

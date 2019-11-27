@@ -15,7 +15,7 @@ use InvalidArgumentException;
 use Ivory\GoogleMap\Control\StreetViewControl;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
@@ -34,7 +34,7 @@ class StreetViewControlRenderer extends AbstractJsonRenderer implements ControlR
      */
     public function __construct(
         Formatter $formatter,
-        JsonBuilder $serializer,
+        Serializer $serializer,
         ControlPositionRenderer $controlPositionRenderer
     ) {
         parent::__construct($formatter, $serializer);

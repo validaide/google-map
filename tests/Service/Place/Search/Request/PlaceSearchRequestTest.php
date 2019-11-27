@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Place\Search\Request;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Service\ContextualizedRequestInterface;
 use Ivory\GoogleMap\Service\Place\Base\PlaceType;
@@ -22,7 +23,7 @@ use Ivory\GoogleMap\Service\RequestInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PlaceSearchRequestTest extends \PHPUnit_Framework_TestCase
+class PlaceSearchRequestTest extends TestCase
 {
     /**
      * @var AbstractPlaceSearchRequest|\PHPUnit_Framework_MockObject_MockObject

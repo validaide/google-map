@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Direction\Response;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Bound;
 use Ivory\GoogleMap\Overlay\EncodedPolyline;
 use Ivory\GoogleMap\Service\Base\Fare;
@@ -20,7 +21,7 @@ use Ivory\GoogleMap\Service\Direction\Response\DirectionRoute;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class DirectionRouteTest extends \PHPUnit_Framework_TestCase
+class DirectionRouteTest extends TestCase
 {
     /**
      * @var DirectionRoute

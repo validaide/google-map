@@ -11,13 +11,14 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Image\Base;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Helper\Renderer\Image\Base\CoordinateRenderer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class CoordinateRendererTest extends \PHPUnit_Framework_TestCase
+class CoordinateRendererTest extends TestCase
 {
     /**
      * @var CoordinateRenderer

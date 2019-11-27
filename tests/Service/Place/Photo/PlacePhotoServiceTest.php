@@ -9,8 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Service\Photo;
+namespace Ivory\Tests\GoogleMap\Service\Place\Photo;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Service\BusinessAccount;
 use Ivory\GoogleMap\Service\Place\Photo\PlacePhotoService;
 use Ivory\GoogleMap\Service\Place\Photo\Request\PlacePhotoRequest;
@@ -18,7 +19,7 @@ use Ivory\GoogleMap\Service\Place\Photo\Request\PlacePhotoRequest;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PlacePhotoServiceTest extends \PHPUnit_Framework_TestCase
+class PlacePhotoServiceTest extends TestCase
 {
     /**
      * @var PlacePhotoService

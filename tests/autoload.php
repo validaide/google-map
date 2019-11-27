@@ -19,4 +19,4 @@ if (isset($_SERVER['CACHE_PATH'])) {
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-\PHPUnit_Extensions_Selenium2TestCase::shareSession(true);
+//\PHPUnit_Extensions_Selenium2TestCase::shareSession(true);

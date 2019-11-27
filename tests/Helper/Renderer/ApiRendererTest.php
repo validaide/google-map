@@ -11,6 +11,9 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer;
 
+use PHPUnit\Framework\TestCase;
+use stdClass;
+use SplObjectStorage;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
 use Ivory\GoogleMap\Helper\Renderer\ApiInitRenderer;
@@ -18,12 +21,12 @@ use Ivory\GoogleMap\Helper\Renderer\ApiRenderer;
 use Ivory\GoogleMap\Helper\Renderer\LoaderRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Utility\RequirementLoaderRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Utility\SourceRenderer;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ApiRendererTest extends \PHPUnit_Framework_TestCase
+class ApiRendererTest extends TestCase
 {
     /**
      * @var ApiRenderer
@@ -83,7 +86,7 @@ class ApiRendererTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(
             'function ivory_google_map_load(){google.load("maps","3",{"other_params":"language=en&libraries=library1,library2","callback":ivory_google_map_init})};function ivory_google_map_init_source(src){var script=document.createElement("script");script.type="text/javascript";script.async=true;script.src=src;document.getElementsByTagName("head")[0].appendChild(script);};function ivory_google_map_init_requirement(c,r){if(r()){c();}else{var i=setInterval(function(){if(r()){clearInterval(i);c();}},100);}};function ivory_google_map_init(){ivory_google_map_init_source("source1");ivory_google_map_init_source("source2");ivory_google_map_init_requirement(main_callback,function(){return requirement1&&requirement2;});};ivory_google_map_init_source("https://www.google.com/jsapi?callback=ivory_google_map_load");',
             $this->apiRenderer->render(
-                $this->createCallbacks($object = new \stdClass()),
+                $this->createCallbacks($object = new stdClass()),
                 $this->createRequirements($object),
                 ['source1', 'source2'],
                 ['library1', 'library2']
@@ -132,7 +135,7 @@ ivory_google_map_init_source("https://www.google.com/jsapi?callback=ivory_google
 EOF;
 
         $this->assertSame($expected, $this->apiRenderer->render(
-            $this->createCallbacks($object = new \stdClass()),
+            $this->createCallbacks($object = new stdClass()),
             $this->createRequirements($object),
             ['source1', 'source2'],
             ['library1', 'library2']
@@ -146,7 +149,7 @@ EOF;
      */
     private function createCallbacks($object)
     {
-        $callbacks = new \SplObjectStorage();
+        $callbacks = new SplObjectStorage();
         $callbacks[$object] = 'main_callback';
 
         return $callbacks;
@@ -159,7 +162,7 @@ EOF;
      */
     private function createRequirements($object)
     {
-        $requirements = new \SplObjectStorage();
+        $requirements = new SplObjectStorage();
         $requirements[$object] = ['requirement1', 'requirement2'];
 
         return $requirements;

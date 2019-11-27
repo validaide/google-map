@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\DistanceMatrix\Response;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Service\Base\Distance;
 use Ivory\GoogleMap\Service\Base\Duration;
 use Ivory\GoogleMap\Service\Base\Fare;
@@ -20,7 +21,7 @@ use Ivory\GoogleMap\Service\DistanceMatrix\Response\DistanceMatrixElementStatus;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class DistanceMatrixElementTest extends \PHPUnit_Framework_TestCase
+class DistanceMatrixElementTest extends TestCase
 {
     /**
      * @var DistanceMatrixElement

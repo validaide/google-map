@@ -11,13 +11,14 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Image;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Renderer\Image\SizeRenderer;
 use Ivory\GoogleMap\Map;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class SizeRendererTest extends \PHPUnit_Framework_TestCase
+class SizeRendererTest extends TestCase
 {
     /**
      * @var SizeRenderer

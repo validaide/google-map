@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Place;
 
+use DateTime;
 use Ivory\GoogleMap\Service\Place\Base\AlternatePlaceId;
 use Ivory\GoogleMap\Service\Place\Base\AspectRating;
 use Ivory\GoogleMap\Service\Place\Base\OpenClosePeriod;
@@ -215,7 +216,7 @@ abstract class AbstractPlaceSerializableServiceTest extends AbstractSerializable
         $this->assertSame($options['author_url'], $review->getAuthorUrl());
         $this->assertSame($options['text'], $review->getText());
         $this->assertSame((float) $options['rating'], $review->getRating());
-        $this->assertSame((new \DateTime('@'.$options['time']))->getTimestamp(), $review->getTime()->getTimestamp());
+        $this->assertSame((new DateTime('@'.$options['time']))->getTimestamp(), $review->getTime()->getTimestamp());
         $this->assertSame($options['language'], $review->getLanguage());
 
         $this->assertCount(count($options['aspects']), $aspects = $review->getAspects());

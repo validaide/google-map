@@ -11,13 +11,14 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Direction\Request;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Service\Base\Location\LocationInterface;
 use Ivory\GoogleMap\Service\Direction\Request\DirectionWaypoint;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class DirectionWaypointTest extends \PHPUnit_Framework_TestCase
+class DirectionWaypointTest extends TestCase
 {
     /**
      * @var DirectionWaypoint

@@ -15,7 +15,7 @@ use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Utility\RequirementRenderer;
 use Ivory\GoogleMap\Place\Autocomplete;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
@@ -34,7 +34,7 @@ class AutocompleteRenderer extends AbstractJsonRenderer
      */
     public function __construct(
         Formatter $formatter,
-        JsonBuilder $serializer,
+        Serializer $serializer,
         RequirementRenderer $requirementRenderer
     ) {
         parent::__construct($formatter, $serializer);

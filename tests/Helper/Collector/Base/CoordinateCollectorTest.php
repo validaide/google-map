@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Collector\Base;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Bound;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Helper\Collector\Base\BoundCollector;
@@ -36,7 +37,7 @@ use Ivory\GoogleMap\Overlay\Rectangle;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class CoordinateCollectorTest extends \PHPUnit_Framework_TestCase
+class CoordinateCollectorTest extends TestCase
 {
     /**
      * @var CoordinateCollector

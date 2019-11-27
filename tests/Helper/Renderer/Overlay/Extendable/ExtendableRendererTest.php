@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Overlay\Extendable;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Bound;
 use Ivory\GoogleMap\Helper\Renderer\Overlay\Extendable\ExtendableRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Overlay\Extendable\ExtendableRendererInterface;
@@ -19,7 +20,7 @@ use Ivory\GoogleMap\Overlay\ExtendableInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ExtendableRendererTest extends \PHPUnit_Framework_TestCase
+class ExtendableRendererTest extends TestCase
 {
     /**
      * @var ExtendableRenderer
@@ -102,12 +103,10 @@ class ExtendableRendererTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($result, $this->extendableRenderer->render($extendable, $bound));
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessageRegExp  /The extendable renderer for ".*" could not be found\./
-     */
     public function testRenderWithInvalidExtendable()
     {
+        $this->expectException('InvalidArgumentException');
+        $this->expectExceptionMessageRegExp('/The extendable renderer for ".*" could not be found\./');
         $this->extendableRenderer->render($this->createExtendableMock(), $this->createBoundMock());
     }
 

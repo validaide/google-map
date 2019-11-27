@@ -1,0 +1,5 @@
+# rector.yaml
+parameters:
+    autoload_paths:
+        - 'tests/autoload.php'
+        - 'vendor/autoload.php'

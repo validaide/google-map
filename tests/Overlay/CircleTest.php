@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Overlay;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Overlay\Circle;
 use Ivory\GoogleMap\Overlay\ExtendableInterface;
@@ -20,7 +21,7 @@ use Ivory\GoogleMap\Utility\VariableAwareInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class CircleTest extends \PHPUnit_Framework_TestCase
+class CircleTest extends TestCase
 {
     /**
      * @var \Ivory\GoogleMap\Overlay\Circle

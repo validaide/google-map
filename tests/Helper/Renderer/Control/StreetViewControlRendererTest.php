@@ -11,18 +11,19 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Control;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Control\StreetViewControl;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Control\ControlPositionRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Control\ControlRendererInterface;
 use Ivory\GoogleMap\Helper\Renderer\Control\StreetViewControlRenderer;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class StreetViewControlRendererTest extends \PHPUnit_Framework_TestCase
+class StreetViewControlRendererTest extends TestCase
 {
     /**
      * @var StreetViewControlRenderer
@@ -63,12 +64,10 @@ class StreetViewControlRendererTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Expected a "Ivory\GoogleMap\Control\StreetViewControl", got "string".
-     */
     public function testRenderWithInvalidControl()
     {
+        $this->expectException('InvalidArgumentException');
+        $this->expectExceptionMessage('Expected a "Ivory\GoogleMap\Control\StreetViewControl", got "string".');
         $this->streetViewControlRenderer->render('foo');
     }
 

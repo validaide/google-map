@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Overlay;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Overlay\AnimationRenderer;
@@ -19,7 +20,7 @@ use Ivory\GoogleMap\Overlay\Animation;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class AnimationRendererTest extends \PHPUnit_Framework_TestCase
+class AnimationRendererTest extends TestCase
 {
     /**
      * @var AnimationRenderer

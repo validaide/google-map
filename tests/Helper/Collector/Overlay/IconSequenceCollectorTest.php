@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Collector\Overlay;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Collector\Overlay\IconSequenceCollector;
 use Ivory\GoogleMap\Helper\Collector\Overlay\PolylineCollector;
 use Ivory\GoogleMap\Map;
@@ -22,7 +23,7 @@ use Ivory\GoogleMap\Overlay\SymbolPath;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class IconSequenceCollectorTest extends \PHPUnit_Framework_TestCase
+class IconSequenceCollectorTest extends TestCase
 {
     /**
      * @var IconSequenceCollector

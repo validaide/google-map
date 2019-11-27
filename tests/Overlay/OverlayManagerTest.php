@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Overlay;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Bound;
 use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\Circle;
@@ -27,7 +28,7 @@ use Ivory\GoogleMap\Overlay\Rectangle;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class OverlayManagerTest extends \PHPUnit_Framework_TestCase
+class OverlayManagerTest extends TestCase
 {
     /**
      * @var OverlayManager

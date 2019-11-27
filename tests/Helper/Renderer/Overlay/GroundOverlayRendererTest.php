@@ -11,18 +11,19 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Overlay;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Bound;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Overlay\GroundOverlayRenderer;
 use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\GroundOverlay;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class GroundOverlayRendererTest extends \PHPUnit_Framework_TestCase
+class GroundOverlayRendererTest extends TestCase
 {
     /**
      * @var GroundOverlayRenderer

@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service;
 
+use PHPUnit\Framework\TestCase;
 use Http\Client\HttpClient;
 use Http\Message\MessageFactory;
 use Ivory\GoogleMap\Service\BusinessAccount;
@@ -22,7 +23,7 @@ use Psr\Http\Message\StreamInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-abstract class AbstractUnitServiceTest extends \PHPUnit_Framework_TestCase
+abstract class AbstractUnitServiceTest extends TestCase
 {
     /**
      * @var HttpClient|\PHPUnit_Framework_MockObject_MockObject

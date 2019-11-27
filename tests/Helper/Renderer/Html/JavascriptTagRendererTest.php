@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Html;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\Html\AbstractTagRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Html\JavascriptTagRenderer;
@@ -19,7 +20,7 @@ use Ivory\GoogleMap\Helper\Renderer\Html\TagRenderer;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class JavascriptTagRendererTest extends \PHPUnit_Framework_TestCase
+class JavascriptTagRendererTest extends TestCase
 {
     /**
      * @var JavascriptTagRenderer

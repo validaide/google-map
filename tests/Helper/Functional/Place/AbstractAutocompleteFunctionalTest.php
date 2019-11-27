@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Functional\Place;
 
+use Exception;
 use Ivory\GoogleMap\Helper\Builder\PlaceAutocompleteHelperBuilder;
 use Ivory\GoogleMap\Helper\PlaceAutocompleteHelper;
 use Ivory\GoogleMap\Place\Autocomplete;
@@ -54,10 +55,10 @@ abstract class AbstractAutocompleteFunctionalTest extends AbstractApiFunctionalT
                     $this->assertObjectExists($autocomplete);
 
                     return true;
-                } catch (\Exception $e) {
+                } catch (Exception $e) {
                 }
             }, 5000);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
         }
 
         $this->assertSame([], $this->log('browser'));

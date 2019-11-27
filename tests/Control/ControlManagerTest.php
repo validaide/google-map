@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Control;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Control\ControlManager;
 use Ivory\GoogleMap\Control\CustomControl;
 use Ivory\GoogleMap\Control\FullscreenControl;
@@ -23,7 +24,7 @@ use Ivory\GoogleMap\Control\ZoomControl;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ControlManagerTest extends \PHPUnit_Framework_TestCase
+class ControlManagerTest extends TestCase
 {
     /**
      * @var ControlManager

@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Control;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Control\ControlPosition;
 use Ivory\GoogleMap\Control\ScaleControl;
 use Ivory\GoogleMap\Control\ScaleControlStyle;
@@ -18,7 +19,7 @@ use Ivory\GoogleMap\Control\ScaleControlStyle;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class ScaleControlTest extends \PHPUnit_Framework_TestCase
+class ScaleControlTest extends TestCase
 {
     /**
      * @var ScaleControl

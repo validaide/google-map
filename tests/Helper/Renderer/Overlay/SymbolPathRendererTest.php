@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Overlay;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Overlay\SymbolPathRenderer;
@@ -19,7 +20,7 @@ use Ivory\GoogleMap\Overlay\SymbolPath;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class SymbolPathRendererTest extends \PHPUnit_Framework_TestCase
+class SymbolPathRendererTest extends TestCase
 {
     /**
      * @var SymbolPathRenderer

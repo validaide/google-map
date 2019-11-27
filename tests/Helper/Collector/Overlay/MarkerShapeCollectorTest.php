@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Collector\Overlay;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Helper\Collector\Overlay\MarkerCollector;
 use Ivory\GoogleMap\Helper\Collector\Overlay\MarkerShapeCollector;
@@ -22,7 +23,7 @@ use Ivory\GoogleMap\Overlay\MarkerShapeType;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MarkerShapeCollectorTest extends \PHPUnit_Framework_TestCase
+class MarkerShapeCollectorTest extends TestCase
 {
     /**
      * @var MarkerShapeCollector

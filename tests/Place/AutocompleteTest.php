@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Place;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Bound;
 use Ivory\GoogleMap\Event\EventManager;
 use Ivory\GoogleMap\Place\Autocomplete;
@@ -21,7 +22,7 @@ use Ivory\GoogleMap\Utility\VariableAwareInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class AutocompleteTest extends \PHPUnit_Framework_TestCase
+class AutocompleteTest extends TestCase
 {
     /**
      * @var Autocomplete

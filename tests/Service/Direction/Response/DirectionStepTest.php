@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Direction\Response;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Overlay\EncodedPolyline;
 use Ivory\GoogleMap\Service\Base\Distance;
@@ -22,7 +23,7 @@ use Ivory\GoogleMap\Service\Direction\Response\Transit\DirectionTransitDetails;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class DirectionStepTest extends \PHPUnit_Framework_TestCase
+class DirectionStepTest extends TestCase
 {
     /**
      * @var DirectionStep

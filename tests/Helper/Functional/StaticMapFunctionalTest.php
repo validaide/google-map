@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Functional;
 
+use PHPUnit\Framework\TestCase;
 use Http\Adapter\Guzzle6\Client;
 use Http\Client\Common\Plugin\CachePlugin;
 use Http\Client\Common\PluginClient;
@@ -36,7 +37,7 @@ use Symfony\Component\Cache\Adapter\FilesystemAdapter;
  *
  * @group functional
  */
-class StaticMapFunctionalTest extends \PHPUnit_Framework_TestCase
+class StaticMapFunctionalTest extends TestCase
 {
     /**
      * @var StaticMapHelper

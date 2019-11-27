@@ -11,12 +11,13 @@
 
 namespace Ivory\Tests\GoogleMap\Service;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Service\UrlSigner;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class UrlSignerTest extends \PHPUnit_Framework_TestCase
+class UrlSignerTest extends TestCase
 {
     /**
      * @param string      $expected

@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Utility;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Utility\CallbackRenderer;
@@ -18,7 +19,7 @@ use Ivory\GoogleMap\Helper\Renderer\Utility\CallbackRenderer;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class CallbackRendererTest extends \PHPUnit_Framework_TestCase
+class CallbackRendererTest extends TestCase
 {
     /**
      * @var CallbackRenderer

@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Overlay;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Overlay\MarkerShape;
 use Ivory\GoogleMap\Overlay\MarkerShapeType;
 use Ivory\GoogleMap\Utility\VariableAwareInterface;
@@ -18,7 +19,7 @@ use Ivory\GoogleMap\Utility\VariableAwareInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MarkerShapeTest extends \PHPUnit_Framework_TestCase
+class MarkerShapeTest extends TestCase
 {
     /**
      * @var MarkerShape

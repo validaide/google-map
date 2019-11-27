@@ -15,28 +15,23 @@ use InvalidArgumentException;
 use Ivory\GoogleMap\Control\FullscreenControl;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
 class FullscreenControlRenderer extends AbstractJsonRenderer implements ControlRendererInterface
 {
-    /**
-     * @var ControlPositionRenderer
-     */
+    /** @var ControlPositionRenderer */
     private $controlPositionRenderer;
 
     /**
      * @param Formatter               $formatter
-     * @param JsonBuilder             $serializer
+     * @param Serializer              $serializer
      * @param ControlPositionRenderer $controlPositionRenderer
      */
-    public function __construct(
-        Formatter $formatter,
-        JsonBuilder $serializer,
-        ControlPositionRenderer $controlPositionRenderer
-    ) {
+    public function __construct(Formatter $formatter, Serializer $serializer, ControlPositionRenderer $controlPositionRenderer)
+    {
         parent::__construct($formatter, $serializer);
 
         $this->setControlPositionRenderer($controlPositionRenderer);

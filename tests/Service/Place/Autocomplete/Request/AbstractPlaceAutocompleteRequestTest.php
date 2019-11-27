@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Place\Autocomplete\Request;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Service\ContextualizedRequestInterface;
 use Ivory\GoogleMap\Service\Place\Autocomplete\Request\AbstractPlaceAutocompleteRequest;
@@ -20,7 +21,7 @@ use Ivory\GoogleMap\Service\RequestInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class AbstractPlaceAutocompleteRequestTest extends \PHPUnit_Framework_TestCase
+class AbstractPlaceAutocompleteRequestTest extends TestCase
 {
     /**
      * @var AbstractPlaceAutocompleteRequest|\PHPUnit_Framework_MockObject_MockObject

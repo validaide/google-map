@@ -9,15 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Service\Service\Base\Location;
+namespace Ivory\Tests\GoogleMap\Service\Base\Location;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Service\Base\Location\LocationInterface;
 use Ivory\GoogleMap\Service\Base\Location\PlaceIdLocation;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PlaceIdLocationTest extends \PHPUnit_Framework_TestCase
+class PlaceIdLocationTest extends TestCase
 {
     /**
      * @var PlaceIdLocation

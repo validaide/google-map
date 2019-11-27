@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Layer;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Bound;
 use Ivory\GoogleMap\Layer\GeoJsonLayer;
 use Ivory\GoogleMap\Layer\HeatmapLayer;
@@ -21,7 +22,7 @@ use Ivory\GoogleMap\Map;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class LayerManagerTest extends \PHPUnit_Framework_TestCase
+class LayerManagerTest extends TestCase
 {
     /**
      * @var LayerManager

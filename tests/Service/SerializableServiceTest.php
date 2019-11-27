@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service;
 
+use PHPUnit\Framework\TestCase;
 use Http\Client\HttpClient;
 use Http\Message\MessageFactory;
 use Ivory\GoogleMap\Service\AbstractHttpService;
@@ -21,7 +22,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class SerializableServiceTest extends \PHPUnit_Framework_TestCase
+class SerializableServiceTest extends TestCase
 {
     /**
      * @var AbstractSerializableService|\PHPUnit_Framework_MockObject_MockObject

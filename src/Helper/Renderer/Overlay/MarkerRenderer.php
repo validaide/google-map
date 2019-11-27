@@ -15,7 +15,7 @@ use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\Marker;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
@@ -34,7 +34,7 @@ class MarkerRenderer extends AbstractJsonRenderer
      */
     public function __construct(
         Formatter $formatter,
-        JsonBuilder $serializer,
+        Serializer $serializer,
         AnimationRenderer $animationRenderer
     ) {
         parent::__construct($formatter, $serializer);

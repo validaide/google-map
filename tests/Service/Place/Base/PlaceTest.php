@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Service\Place\Base;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Service\Base\AddressComponent;
 use Ivory\GoogleMap\Service\Base\Geometry;
 use Ivory\GoogleMap\Service\Place\Base\AlternatePlaceId;
@@ -25,7 +26,7 @@ use Ivory\GoogleMap\Service\Place\Base\Review;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PlaceTest extends \PHPUnit_Framework_TestCase
+class PlaceTest extends TestCase
 {
     /**
      * @var Place

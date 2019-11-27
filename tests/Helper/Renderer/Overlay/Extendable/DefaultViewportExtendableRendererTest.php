@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Overlay\Extendable;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Bound;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
@@ -21,7 +22,7 @@ use Ivory\GoogleMap\Overlay\ExtendableInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class DefaultViewportExtendableRendererTest extends \PHPUnit_Framework_TestCase
+class DefaultViewportExtendableRendererTest extends TestCase
 {
     /**
      * @var DefaultViewportExtendableRenderer

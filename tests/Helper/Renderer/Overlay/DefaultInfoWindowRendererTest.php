@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Overlay;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Base\Size;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
@@ -18,12 +19,12 @@ use Ivory\GoogleMap\Helper\Renderer\Overlay\AbstractInfoWindowRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Overlay\DefaultInfoWindowRenderer;
 use Ivory\GoogleMap\Overlay\InfoWindow;
 use Ivory\GoogleMap\Overlay\InfoWindowType;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class DefaultInfoWindowRendererTest extends \PHPUnit_Framework_TestCase
+class DefaultInfoWindowRendererTest extends TestCase
 {
     /**
      * @var DefaultInfoWindowRenderer|\PHPUnit_Framework_MockObject_MockObject

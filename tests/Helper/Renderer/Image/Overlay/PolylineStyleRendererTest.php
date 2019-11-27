@@ -9,8 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ivory\Tests\GoogleMap\Helper\Renderer\Image;
+namespace Ivory\Tests\GoogleMap\Helper\Renderer\Image\Overlay;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Renderer\Image\Overlay\PolylineStyleRenderer;
 use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\Polyline;
@@ -18,7 +19,7 @@ use Ivory\GoogleMap\Overlay\Polyline;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PolylineStyleRendererTest extends \PHPUnit_Framework_TestCase
+class PolylineStyleRendererTest extends TestCase
 {
     /**
      * @var PolylineStyleRenderer

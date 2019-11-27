@@ -16,7 +16,7 @@ use Ivory\GoogleMap\Control\MapTypeControl;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Helper\Renderer\MapTypeIdRenderer;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
@@ -47,7 +47,7 @@ class MapTypeControlRenderer extends AbstractJsonRenderer implements ControlRend
      */
     public function __construct(
         Formatter $formatter,
-        JsonBuilder $serializer,
+        Serializer $serializer,
         MapTypeIdRenderer $mapTypeIdRenderer,
         ControlPositionRenderer $controlPositionRenderer,
         MapTypeControlStyleRenderer $mapTypeControlStyleRenderer

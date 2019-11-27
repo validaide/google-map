@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Collector\Layer;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Collector\Layer\GeoJsonLayerCollector;
 use Ivory\GoogleMap\Layer\GeoJsonLayer;
 use Ivory\GoogleMap\Map;
@@ -18,7 +19,7 @@ use Ivory\GoogleMap\Map;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class GeoJsonLayerCollectorTest extends \PHPUnit_Framework_TestCase
+class GeoJsonLayerCollectorTest extends TestCase
 {
     /**
      * @var GeoJsonLayerCollector

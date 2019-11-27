@@ -11,6 +11,7 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Control;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Control\MapTypeControl;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
@@ -19,12 +20,12 @@ use Ivory\GoogleMap\Helper\Renderer\Control\ControlRendererInterface;
 use Ivory\GoogleMap\Helper\Renderer\Control\MapTypeControlRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Control\MapTypeControlStyleRenderer;
 use Ivory\GoogleMap\Helper\Renderer\MapTypeIdRenderer;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class MapTypeControlRendererTest extends \PHPUnit_Framework_TestCase
+class MapTypeControlRendererTest extends TestCase
 {
     /**
      * @var MapTypeControlRenderer
@@ -86,12 +87,10 @@ class MapTypeControlRendererTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Expected a "Ivory\GoogleMap\Control\MapTypeControl", got "string".
-     */
     public function testRenderWithInvalidControl()
     {
+        $this->expectException('InvalidArgumentException');
+        $this->expectExceptionMessage('Expected a "Ivory\GoogleMap\Control\MapTypeControl", got "string".');
         $this->mapTypeControlRenderer->render('foo');
     }
 

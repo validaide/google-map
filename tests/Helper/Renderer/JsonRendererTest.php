@@ -11,15 +11,16 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class JsonRendererTest extends \PHPUnit_Framework_TestCase
+class JsonRendererTest extends TestCase
 {
     /**
      * @var AbstractJsonRenderer|\PHPUnit_Framework_MockObject_MockObject
@@ -73,7 +74,7 @@ class JsonRendererTest extends \PHPUnit_Framework_TestCase
      *
      * @return \PHPUnit_Framework_MockObject_MockObject|AbstractJsonRenderer
      */
-    private function createAbstractJsonRendererMock(Formatter $formatter = null, JsonBuilder $jsonBuilder = null)
+    private function createAbstractJsonRendererMock(Formatter $formatter = null, Serializer $serializer = null)
     {
         return $this->getMockBuilder(AbstractJsonRenderer::class)
             ->setConstructorArgs([

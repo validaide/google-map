@@ -11,13 +11,14 @@
 
 namespace Ivory\Tests\GoogleMap\Utility;
 
+use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Utility\VariableAwareInterface;
 use Ivory\GoogleMap\Utility\VariableAwareTrait;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class VariableAwareTest extends \PHPUnit_Framework_TestCase
+class VariableAwareTest extends TestCase
 {
     /**
      * @var VariableAwareTrait
