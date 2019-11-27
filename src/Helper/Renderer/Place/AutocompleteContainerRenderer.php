@@ -23,14 +23,16 @@ class AutocompleteContainerRenderer extends AbstractJsonRenderer
      */
     public function render()
     {
-        return $this->getSerializer()
-            ->setValue('[base][coordinates]', [])
-            ->setValue('[base][bounds]', [])
-            ->setValue('[autocomplete]', null)
-            ->setValue('[events][dom_events]', [])
-            ->setValue('[events][dom_events_once]', [])
-            ->setValue('[events][events]', [])
-            ->setValue('[events][events_once]', [])
-            ->build();
+        $data = [];
+
+        $data['base']['coordinates']       = [];
+        $data['base']['bounds']            = [];
+        $data['autocomplete']              = null;
+        $data['events']['dom_events']      = [];
+        $data['events']['dom_events_once'] = [];
+        $data['events']['events']          = [];
+        $data['events']['events_once']     = [];
+
+        return $this->getSerializer()->serialize($data, 'json');
     }
 }

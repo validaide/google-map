@@ -12,6 +12,8 @@
 namespace Ivory\GoogleMap\Helper\Builder;
 
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\JsonSerializableNormalizer;
 use Symfony\Component\Serializer\Serializer;
 
 /**
@@ -32,6 +34,14 @@ abstract class AbstractJavascriptHelperBuilder extends AbstractHelperBuilder
     {
         $this->setFormatter($formatter);
         $this->setSerializer($serializer);
+    }
+
+    /**
+     * @return static
+     */
+    public static function create()
+    {
+        return new static(new Formatter(), new Serializer([new JsonSerializableNormalizer()], [new JsonEncoder()]));
     }
 
     /**

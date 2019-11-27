@@ -17,6 +17,7 @@ use Ivory\GoogleMap\Helper\Collector\Place\Event\AutocompleteDomEventCollector;
 use Ivory\GoogleMap\Helper\Collector\Place\Event\AutocompleteDomEventOnceCollector;
 use Ivory\GoogleMap\Helper\Collector\Place\Event\AutocompleteEventCollector;
 use Ivory\GoogleMap\Helper\Collector\Place\Event\AutocompleteEventOnceCollector;
+use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\PlaceAutocompleteHelper;
 use Ivory\GoogleMap\Helper\Renderer\Base\BoundRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Base\CoordinateRenderer;
@@ -44,12 +45,23 @@ use Ivory\GoogleMap\Helper\Subscriber\Place\Event\AutocompleteDomEventSubscriber
 use Ivory\GoogleMap\Helper\Subscriber\Place\Event\AutocompleteEventOnceSubscriber;
 use Ivory\GoogleMap\Helper\Subscriber\Place\Event\AutocompleteEventSubscriber;
 use Ivory\GoogleMap\Helper\Subscriber\Place\Event\AutocompleteSimpleEventSubscriber;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\JsonSerializableNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
 class PlaceAutocompleteHelperBuilder extends AbstractJavascriptHelperBuilder
 {
+    /**
+     * @return static
+     */
+    public static function create()
+    {
+        return new self(new Formatter(), new Serializer([new JsonSerializableNormalizer()], [new JsonEncoder()]));
+    }
+
     /**
      * @return PlaceAutocompleteHelper
      */

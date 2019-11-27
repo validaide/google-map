@@ -11,10 +11,11 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer;
 
-use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Helper\Renderer\AbstractRenderer;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Serializer\Serializer;
 
 /**
@@ -22,19 +23,11 @@ use Symfony\Component\Serializer\Serializer;
  */
 class JsonRendererTest extends TestCase
 {
-    /**
-     * @var AbstractJsonRenderer|\PHPUnit_Framework_MockObject_MockObject
-     */
+    /** @var AbstractJsonRenderer|MockObject */
     private $jsonRenderer;
-
-    /**
-     * @var JsonBuilder|\PHPUnit_Framework_MockObject_MockObject
-     */
-    private $jsonBuilder;
-
-    /**
-     * @var Formatter|\PHPUnit_Framework_MockObject_MockObject
-     */
+    /** @var Serializer|MockObject */
+    private $serializer;
+    /** @var Formatter|MockObject */
     private $formatter;
 
     /**
@@ -42,11 +35,15 @@ class JsonRendererTest extends TestCase
      */
     protected function setUp()
     {
-        $this->formatter = $this->createFormatterMock();
-        $this->jsonBuilder = $this->createJsonBuilderMock();
+        $this->formatter  = $this->createFormatterMock();
+        $this->serializer = $this->createSerializerMock();
 
-        $this->jsonRenderer = $this->createAbstractJsonRendererMock($this->formatter, $this->jsonBuilder);
+        $this->jsonRenderer = $this->createAbstractJsonRendererMock($this->formatter, $this->serializer);
     }
+
+    /*****************************************************************************/
+    /* Tests
+    /*****************************************************************************/
 
     public function testInheritance()
     {
@@ -56,36 +53,36 @@ class JsonRendererTest extends TestCase
     public function testDefaultState()
     {
         $this->assertSame($this->formatter, $this->jsonRenderer->getFormatter());
-        $this->assertNotSame($this->jsonBuilder, $this->jsonRenderer->getSerializer());
-        $this->assertInstanceOf(JsonBuilder::class, $this->jsonRenderer->getSerializer());
+        $this->assertSame($this->serializer, $this->jsonRenderer->getSerializer());
+        $this->assertInstanceOf(Serializer::class, $this->jsonRenderer->getSerializer());
     }
 
     public function testJsonBuilder()
     {
-        $this->jsonRenderer->setSerializer($jsonBuilder = $this->createJsonBuilderMock());
+        $this->jsonRenderer->setSerializer($jsonBuilder = $this->createSerializerMock());
 
-        $this->assertNotSame($jsonBuilder, $this->jsonRenderer->getSerializer());
-        $this->assertInstanceOf(JsonBuilder::class, $this->jsonRenderer->getSerializer());
+        $this->assertSame($jsonBuilder, $this->jsonRenderer->getSerializer());
+        $this->assertInstanceOf(Serializer::class, $this->jsonRenderer->getSerializer());
     }
 
     /**
-     * @param Formatter|null   $formatter
-     * @param JsonBuilder|null $jsonBuilder
+     * @param Formatter|null  $formatter
+     * @param Serializer|null $serializer
      *
-     * @return \PHPUnit_Framework_MockObject_MockObject|AbstractJsonRenderer
+     * @return MockObject|AbstractJsonRenderer
      */
     private function createAbstractJsonRendererMock(Formatter $formatter = null, Serializer $serializer = null)
     {
         return $this->getMockBuilder(AbstractJsonRenderer::class)
             ->setConstructorArgs([
                 $formatter ?: $this->createFormatterMock(),
-                $jsonBuilder ?: $this->createJsonBuilderMock(),
+                $serializer ?: $this->createSerializerMock(),
             ])
             ->getMockForAbstractClass();
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Formatter
+     * @return MockObject|Formatter
      */
     private function createFormatterMock()
     {
@@ -93,21 +90,10 @@ class JsonRendererTest extends TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|JsonBuilder
+     * @return MockObject|Serializer
      */
-    private function createJsonBuilderMock()
+    private function createSerializerMock()
     {
-        $jsonBuilder = $this->createMock(JsonBuilder::class);
-        $jsonBuilder
-            ->expects($this->any())
-            ->method('reset')
-            ->will($this->returnSelf());
-
-        $jsonBuilder
-            ->expects($this->any())
-            ->method('setJsonEncodeOptions')
-            ->will($this->returnSelf());
-
-        return $jsonBuilder;
+        return $this->createMock(Serializer::class);
     }
 }

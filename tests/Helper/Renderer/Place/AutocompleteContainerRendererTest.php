@@ -11,10 +11,11 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Renderer\Place;
 
-use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Place\AutocompleteContainerRenderer;
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Serializer;
 
 /**
@@ -32,8 +33,12 @@ class AutocompleteContainerRendererTest extends TestCase
      */
     protected function setUp()
     {
-        $this->autocompleteContainerRenderer = new AutocompleteContainerRenderer(new Formatter(), new JsonBuilder());
+        $this->autocompleteContainerRenderer = new AutocompleteContainerRenderer(new Formatter(), new Serializer([], [new JsonEncoder()]));
     }
+
+    /*****************************************************************************/
+    /* Tests
+    /*****************************************************************************/
 
     public function testInheritance()
     {

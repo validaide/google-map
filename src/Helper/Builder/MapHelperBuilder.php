@@ -38,6 +38,7 @@ use Ivory\GoogleMap\Helper\Collector\Overlay\PolygonCollector;
 use Ivory\GoogleMap\Helper\Collector\Overlay\PolylineCollector;
 use Ivory\GoogleMap\Helper\Collector\Overlay\RectangleCollector;
 use Ivory\GoogleMap\Helper\Collector\Overlay\SymbolCollector;
+use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\MapHelper;
 use Ivory\GoogleMap\Helper\Renderer\Base\BoundRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Base\CoordinateRenderer;
@@ -154,12 +155,16 @@ use Ivory\GoogleMap\Overlay\Marker;
 use Ivory\GoogleMap\Overlay\Polygon;
 use Ivory\GoogleMap\Overlay\Polyline;
 use Ivory\GoogleMap\Overlay\Rectangle;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\JsonSerializableNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
 class MapHelperBuilder extends AbstractJavascriptHelperBuilder
 {
+
     /**
      * @return MapHelper
      */

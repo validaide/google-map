@@ -42,6 +42,9 @@ use Ivory\GoogleMap\Helper\Subscriber\Overlay\EncodedPolylineSubscriber;
 use Ivory\GoogleMap\Helper\Subscriber\Overlay\InfoBoxSubscriber;
 use Ivory\GoogleMap\Helper\Subscriber\Overlay\MarkerClustererSubscriber;
 use Ivory\GoogleMap\Helper\Subscriber\Place\AutocompleteJavascriptSubscriber;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\JsonSerializableNormalizer;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 
 /**
@@ -66,6 +69,14 @@ class ApiHelperBuilder extends AbstractJavascriptHelperBuilder
 
         $this->setKey($key);
         $this->setLanguage($language);
+    }
+
+    /**
+     * @return static
+     */
+    public static function create()
+    {
+        return new self(new Formatter(), new Serializer([new JsonSerializableNormalizer()], [new JsonEncoder()]));
     }
 
     /**

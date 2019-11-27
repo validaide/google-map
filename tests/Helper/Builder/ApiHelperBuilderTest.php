@@ -21,9 +21,7 @@ use Ivory\GoogleMap\Helper\Builder\ApiHelperBuilder;
  */
 class ApiHelperBuilderTest extends TestCase
 {
-    /**
-     * @var ApiHelperBuilder
-     */
+    /** @var ApiHelperBuilder */
     private $apiHelperBuilder;
 
     /**
@@ -33,6 +31,10 @@ class ApiHelperBuilderTest extends TestCase
     {
         $this->apiHelperBuilder = ApiHelperBuilder::create();
     }
+
+    /*****************************************************************************/
+    /* Tests
+    /*****************************************************************************/
 
     public function testInheritance()
     {

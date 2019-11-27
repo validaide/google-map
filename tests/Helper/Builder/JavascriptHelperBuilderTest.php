@@ -11,10 +11,11 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Builder;
 
-use PHPUnit\Framework\TestCase;
 use Ivory\GoogleMap\Helper\Builder\AbstractHelperBuilder;
 use Ivory\GoogleMap\Helper\Builder\AbstractJavascriptHelperBuilder;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Serializer\Serializer;
 
 /**
@@ -22,9 +23,7 @@ use Symfony\Component\Serializer\Serializer;
  */
 class JavascriptHelperBuilderTest extends TestCase
 {
-    /**
-     * @var AbstractJavascriptHelperBuilder
-     */
+    /** @var AbstractJavascriptHelperBuilder */
     private $helperBuilder;
 
     /**
@@ -32,8 +31,12 @@ class JavascriptHelperBuilderTest extends TestCase
      */
     protected function setUp()
     {
-        $this->helperBuilder = $this->createAbstractJavascriptHelperBuilder();
+        $this->helperBuilder = $this->createAbstractJavascriptHelperBuilder(new Formatter(), new Serializer());
     }
+
+    /*****************************************************************************/
+    /* Tests
+    /*****************************************************************************/
 
     public function testInheritance()
     {
@@ -43,14 +46,14 @@ class JavascriptHelperBuilderTest extends TestCase
     public function testDefaultState()
     {
         $this->assertInstanceOf(Formatter::class, $this->helperBuilder->getFormatter());
-        $this->assertInstanceOf(JsonBuilder::class, $this->helperBuilder->getSerializer());
+        $this->assertInstanceOf(Serializer::class, $this->helperBuilder->getSerializer());
     }
 
     public function testInitialState()
     {
         $this->helperBuilder = $this->createAbstractJavascriptHelperBuilder(
             $formatter = $this->createFormatterMock(),
-            $jsonBuilder = $this->createJsonBuilderMock()
+            $jsonBuilder = $this->createSerializerMock()
         );
 
         $this->assertSame($formatter, $this->helperBuilder->getFormatter());
@@ -71,27 +74,31 @@ class JavascriptHelperBuilderTest extends TestCase
     {
         $this->assertSame(
             $this->helperBuilder,
-            $this->helperBuilder->setSerializer($jsonBuilder = $this->createJsonBuilderMock())
+            $this->helperBuilder->setSerializer($jsonBuilder = $this->createSerializerMock())
         );
 
         $this->assertSame($jsonBuilder, $this->helperBuilder->getSerializer());
     }
 
+    /*****************************************************************************/
+    /* Helpers
+    /*****************************************************************************/
+
     /**
-     * @param Formatter|null   $formatter
-     * @param JsonBuilder|null $jsonBuilder
+     * @param Formatter|null  $formatter
+     * @param Serializer|null $serializer
      *
-     * @return \PHPUnit_Framework_MockObject_MockObject|AbstractJavascriptHelperBuilder
+     * @return MockObject|AbstractJavascriptHelperBuilder
      */
     private function createAbstractJavascriptHelperBuilder(Formatter $formatter = null, Serializer $serializer = null)
     {
         return $this->getMockBuilder(AbstractJavascriptHelperBuilder::class)
-            ->setConstructorArgs([$formatter, $jsonBuilder])
+            ->setConstructorArgs([$formatter, $serializer])
             ->getMockForAbstractClass();
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|Formatter
+     * @return MockObject|Formatter
      */
     private function createFormatterMock()
     {
@@ -99,10 +106,10 @@ class JavascriptHelperBuilderTest extends TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|JsonBuilder
+     * @return MockObject|Serializer
      */
-    private function createJsonBuilderMock()
+    private function createSerializerMock()
     {
-        return $this->createMock(JsonBuilder::class);
+        return $this->createMock(Serializer::class);
     }
 }
