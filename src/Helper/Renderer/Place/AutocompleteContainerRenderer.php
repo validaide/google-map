@@ -23,7 +23,7 @@ class AutocompleteContainerRenderer extends AbstractJsonRenderer
      */
     public function render()
     {
-        return $this->getJsonBuilder()
+        return $this->getSerializer()
             ->setValue('[base][coordinates]', [])
             ->setValue('[base][bounds]', [])
             ->setValue('[autocomplete]', null)

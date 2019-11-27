@@ -13,32 +13,24 @@ namespace Ivory\GoogleMap\Service;
 
 use Http\Client\HttpClient;
 use Http\Message\MessageFactory;
-use Ivory\GoogleMap\Service\Serializer\SerializerBuilder;
-use Ivory\Serializer\Context\ContextInterface;
-use Ivory\Serializer\Format;
-use Ivory\Serializer\SerializerInterface;
 use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
 abstract class AbstractSerializableService extends AbstractHttpService
 {
-    const FORMAT_JSON = Format::JSON;
-    const FORMAT_XML = Format::XML;
+    const FORMAT_JSON = 'json';
+    const FORMAT_XML  = 'xml';
 
-    /**
-     * @var SerializerInterface
-     */
+    /** @var SerializerInterface */
     private $serializer;
-
-    /**
-     * @var string
-     */
+    /** @var string */
     private $format = self::FORMAT_JSON;
 
     /**
-     * @param string                   $url
+     * @param                          $url
      * @param HttpClient               $client
      * @param MessageFactory           $messageFactory
      * @param SerializerInterface|null $serializer
@@ -48,10 +40,11 @@ abstract class AbstractSerializableService extends AbstractHttpService
         HttpClient $client,
         MessageFactory $messageFactory,
         SerializerInterface $serializer = null
-    ) {
+    )
+    {
         parent::__construct($url, $client, $messageFactory);
 
-        $this->setSerializer($serializer ?: SerializerBuilder::create());
+        // $this->setSerializer($serializer ?: new Serializer());
     }
 
     /**
@@ -62,9 +55,6 @@ abstract class AbstractSerializableService extends AbstractHttpService
         return $this->serializer;
     }
 
-    /**
-     * @param SerializerInterface $serializer
-     */
     public function setSerializer(SerializerInterface $serializer)
     {
         $this->serializer = $serializer;
@@ -91,18 +81,18 @@ abstract class AbstractSerializableService extends AbstractHttpService
      */
     protected function createBaseUrl(RequestInterface $request)
     {
-        return parent::createBaseUrl($request).'/'.$this->format;
+        return parent::createBaseUrl($request) . '/' . $this->format;
     }
 
     /**
-     * @param ResponseInterface     $response
-     * @param string                $type
-     * @param ContextInterface|null $context
+     * @param ResponseInterface $response
+     * @param string            $type
+     * @param array             $context
      *
-     * @return mixed
+     * @return array|object
      */
-    protected function deserialize(ResponseInterface $response, $type, ContextInterface $context = null)
+    protected function deserialize(ResponseInterface $response, string $type, array $context = [])
     {
-        return $this->serializer->deserialize((string) $response->getBody(), $type, $this->format, $context);
+        return $this->serializer->deserialize((string)$response->getBody(), $type, $this->format, $context);
     }
 }

@@ -28,12 +28,12 @@ class SymbolRenderer extends AbstractJsonRenderer
 
     /**
      * @param Formatter          $formatter
-     * @param JsonBuilder        $jsonBuilder
+     * @param JsonBuilder        $serializer
      * @param SymbolPathRenderer $symbolPathRenderer
      */
-    public function __construct(Formatter $formatter, JsonBuilder $jsonBuilder, SymbolPathRenderer $symbolPathRenderer)
+    public function __construct(Formatter $formatter, JsonBuilder $serializer, SymbolPathRenderer $symbolPathRenderer)
     {
-        parent::__construct($formatter, $jsonBuilder);
+        parent::__construct($formatter, $serializer);
 
         $this->setSymbolPathRenderer($symbolPathRenderer);
     }
@@ -61,7 +61,7 @@ class SymbolRenderer extends AbstractJsonRenderer
      */
     public function render(Symbol $symbol)
     {
-        $jsonBuilder = $this->getJsonBuilder()
+        $jsonBuilder = $this->getSerializer()
             ->setValue('[path]', $this->symbolPathRenderer->render($symbol->getPath()), false);
 
         if ($symbol->hasAnchor()) {

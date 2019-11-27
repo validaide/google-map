@@ -11,6 +11,7 @@
 
 namespace Ivory\GoogleMap\Service\DistanceMatrix\Request;
 
+use DateTime;
 use Ivory\GoogleMap\Service\Base\Location\EncodedPolylineLocation;
 use Ivory\GoogleMap\Service\Base\Location\LocationInterface;
 
@@ -238,7 +239,7 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
     /**
      * @param \DateTime|null $departureTime
      */
-    public function setDepartureTime(\DateTime $departureTime = null)
+    public function setDepartureTime(DateTime $departureTime = null)
     {
         $this->departureTime = $departureTime;
     }
@@ -262,7 +263,7 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
     /**
      * @param \DateTime|null $arrivalTime
      */
-    public function setArrivalTime(\DateTime $arrivalTime = null)
+    public function setArrivalTime(DateTime $arrivalTime = null)
     {
         $this->arrivalTime = $arrivalTime;
     }

@@ -27,7 +27,7 @@ class IconSequenceRenderer extends AbstractJsonRenderer
      */
     public function render(IconSequence $icon)
     {
-        $jsonBuilder = $this->getJsonBuilder()
+        $jsonBuilder = $this->getSerializer()
             ->setValue('[icon]', $icon->getSymbol()->getVariable(), false)
             ->setValues($icon->getOptions());
 

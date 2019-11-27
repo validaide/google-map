@@ -11,6 +11,7 @@
 
 namespace Ivory\GoogleMap\Helper\Renderer;
 
+use SplObjectStorage;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\Utility\RequirementLoaderRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Utility\SourceRenderer;
@@ -135,8 +136,8 @@ class ApiRenderer extends AbstractRenderer
      * @return string
      */
     public function render(
-        \SplObjectStorage $callbacks,
-        \SplObjectStorage $requirements,
+        SplObjectStorage $callbacks,
+        SplObjectStorage $requirements,
         array $sources = [],
         array $libraries = []
     ) {

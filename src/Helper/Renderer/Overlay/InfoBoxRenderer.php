@@ -27,15 +27,15 @@ class InfoBoxRenderer extends AbstractInfoWindowRenderer
 
     /**
      * @param Formatter           $formatter
-     * @param JsonBuilder         $jsonBuilder
+     * @param JsonBuilder         $serializer
      * @param RequirementRenderer $requirementRenderer
      */
     public function __construct(
         Formatter $formatter,
-        JsonBuilder $jsonBuilder,
+        JsonBuilder $serializer,
         RequirementRenderer $requirementRenderer
     ) {
-        parent::__construct($formatter, $jsonBuilder);
+        parent::__construct($formatter, $serializer);
 
         $this->setRequirementRenderer($requirementRenderer);
     }

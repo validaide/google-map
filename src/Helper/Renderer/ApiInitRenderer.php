@@ -11,6 +11,7 @@
 
 namespace Ivory\GoogleMap\Helper\Renderer;
 
+use SplObjectStorage;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
@@ -29,8 +30,8 @@ class ApiInitRenderer extends AbstractRenderer
      */
     public function render(
         $name,
-        \SplObjectStorage $callbacks,
-        \SplObjectStorage $requirements,
+        SplObjectStorage $callbacks,
+        SplObjectStorage $requirements,
         array $sources,
         $sourceCallback,
         $requirementCallback,

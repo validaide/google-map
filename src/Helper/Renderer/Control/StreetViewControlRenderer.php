@@ -11,6 +11,7 @@
 
 namespace Ivory\GoogleMap\Helper\Renderer\Control;
 
+use InvalidArgumentException;
 use Ivory\GoogleMap\Control\StreetViewControl;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
@@ -28,15 +29,15 @@ class StreetViewControlRenderer extends AbstractJsonRenderer implements ControlR
 
     /**
      * @param Formatter               $formatter
-     * @param JsonBuilder             $jsonBuilder
+     * @param JsonBuilder             $serializer
      * @param ControlPositionRenderer $controlPositionRenderer
      */
     public function __construct(
         Formatter $formatter,
-        JsonBuilder $jsonBuilder,
+        JsonBuilder $serializer,
         ControlPositionRenderer $controlPositionRenderer
     ) {
-        parent::__construct($formatter, $jsonBuilder);
+        parent::__construct($formatter, $serializer);
 
         $this->setControlPositionRenderer($controlPositionRenderer);
     }
@@ -63,14 +64,14 @@ class StreetViewControlRenderer extends AbstractJsonRenderer implements ControlR
     public function render($control)
     {
         if (!$control instanceof StreetViewControl) {
-            throw new \InvalidArgumentException(sprintf(
+            throw new InvalidArgumentException(sprintf(
                 'Expected a "%s", got "%s".',
                 StreetViewControl::class,
                 is_object($control) ? get_class($control) : gettype($control)
             ));
         }
 
-        return $this->getJsonBuilder()
+        return $this->getSerializer()
             ->setValue('[position]', $this->controlPositionRenderer->render($control->getPosition()), false)
             ->build();
     }

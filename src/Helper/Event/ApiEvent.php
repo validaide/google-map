@@ -11,6 +11,7 @@
 
 namespace Ivory\GoogleMap\Helper\Event;
 
+use SplObjectStorage;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
@@ -47,8 +48,8 @@ class ApiEvent extends AbstractEvent
     public function __construct(array $objects)
     {
         $this->objects = $objects;
-        $this->callbacks = new \SplObjectStorage();
-        $this->requirements = new \SplObjectStorage();
+        $this->callbacks = new SplObjectStorage();
+        $this->requirements = new SplObjectStorage();
     }
 
     /**
@@ -350,7 +351,7 @@ class ApiEvent extends AbstractEvent
      */
     public function setRequirements($object, array $requirements)
     {
-        $this->requirements = new \SplObjectStorage();
+        $this->requirements = new SplObjectStorage();
         $this->addRequirements($object, $requirements);
     }
 

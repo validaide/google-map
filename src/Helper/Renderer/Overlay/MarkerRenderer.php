@@ -29,15 +29,15 @@ class MarkerRenderer extends AbstractJsonRenderer
 
     /**
      * @param Formatter         $formatter
-     * @param JsonBuilder       $jsonBuilder
+     * @param JsonBuilder       $serializer
      * @param AnimationRenderer $animationRenderer
      */
     public function __construct(
         Formatter $formatter,
-        JsonBuilder $jsonBuilder,
+        JsonBuilder $serializer,
         AnimationRenderer $animationRenderer
     ) {
-        parent::__construct($formatter, $jsonBuilder);
+        parent::__construct($formatter, $serializer);
 
         $this->setAnimationRenderer($animationRenderer);
     }
@@ -67,7 +67,7 @@ class MarkerRenderer extends AbstractJsonRenderer
     public function render(Marker $marker, Map $map = null)
     {
         $formatter = $this->getFormatter();
-        $jsonBuilder = $this->getJsonBuilder()
+        $jsonBuilder = $this->getSerializer()
             ->setValue('[position]', $marker->getPosition()->getVariable(), false);
 
         if ($map !== null) {

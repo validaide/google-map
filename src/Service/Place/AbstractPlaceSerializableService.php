@@ -14,7 +14,7 @@ namespace Ivory\GoogleMap\Service\Place;
 use Http\Client\HttpClient;
 use Http\Message\MessageFactory;
 use Ivory\GoogleMap\Service\AbstractSerializableService;
-use Ivory\Serializer\SerializerInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>

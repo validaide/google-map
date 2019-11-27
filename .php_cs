@@ -12,12 +12,14 @@
 use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
 
+/*
 $finder = Finder::create()
     ->in([
         __DIR__.'/src',
         __DIR__.'/tests',
     ])
     ->exclude('tests/Fixture/Resource/config');
+*/
 
 return Config::create()
     ->setUsingCache(true)

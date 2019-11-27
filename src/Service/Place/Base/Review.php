@@ -11,6 +11,7 @@
 
 namespace Ivory\GoogleMap\Service\Place\Base;
 
+use DateTime;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
@@ -166,7 +167,7 @@ class Review
     /**
      * @param \DateTime|null $time
      */
-    public function setTime(\DateTime $time = null)
+    public function setTime(DateTime $time = null)
     {
         $this->time = $time;
     }

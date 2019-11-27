@@ -29,7 +29,7 @@ class HeatmapLayerRenderer extends AbstractJsonRenderer
     public function render(HeatmapLayer $heatmapLayer, Map $map)
     {
         $formatter = $this->getFormatter();
-        $jsonBuilder = $this->getJsonBuilder();
+        $jsonBuilder = $this->getSerializer();
 
         foreach ($heatmapLayer->getCoordinates() as $index => $coordinate) {
             $jsonBuilder->setValue('[data]['.$index.']', $coordinate->getVariable(), false);

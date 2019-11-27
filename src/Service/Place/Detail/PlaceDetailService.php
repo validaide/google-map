@@ -11,14 +11,13 @@
 
 namespace Ivory\GoogleMap\Service\Place\Detail;
 
+use Http\Client\Exception;
 use Http\Client\HttpClient;
 use Http\Message\MessageFactory;
 use Ivory\GoogleMap\Service\AbstractSerializableService;
 use Ivory\GoogleMap\Service\Place\Detail\Request\PlaceDetailRequestInterface;
 use Ivory\GoogleMap\Service\Place\Detail\Response\PlaceDetailResponse;
-use Ivory\Serializer\Context\Context;
-use Ivory\Serializer\Naming\SnakeCaseNamingStrategy;
-use Ivory\Serializer\SerializerInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
@@ -30,11 +29,8 @@ class PlaceDetailService extends AbstractSerializableService
      * @param MessageFactory           $messageFactory
      * @param SerializerInterface|null $serializer
      */
-    public function __construct(
-        HttpClient $client,
-        MessageFactory $messageFactory,
-        SerializerInterface $serializer = null
-    ) {
+    public function __construct(HttpClient $client, MessageFactory $messageFactory, SerializerInterface $serializer = null)
+    {
         parent::__construct(
             'https://maps.googleapis.com/maps/api/place/details',
             $client,
@@ -46,18 +42,17 @@ class PlaceDetailService extends AbstractSerializableService
     /**
      * @param PlaceDetailRequestInterface $request
      *
-     * @return PlaceDetailResponse
+     * @return array|object
+     * @throws Exception
      */
     public function process(PlaceDetailRequestInterface $request)
     {
-        $httpRequest = $this->createRequest($request);
+        $httpRequest  = $this->createRequest($request);
         $httpResponse = $this->getClient()->sendRequest($httpRequest);
 
-        $response = $this->deserialize(
-            $httpResponse,
-            PlaceDetailResponse::class,
-            (new Context())->setNamingStrategy(new SnakeCaseNamingStrategy())
-        );
+        $response = $this->deserialize($httpResponse, PlaceDetailResponse::class);
+
+        // (new Context())->setNamingStrategy(new SnakeCaseNamingStrategy())
 
         $response->setRequest($request);
 

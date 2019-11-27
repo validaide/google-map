@@ -25,7 +25,7 @@ abstract class AbstractInfoWindowRenderer extends AbstractJsonRenderer implement
     public function render(InfoWindow $infoWindow, $position = true)
     {
         $formatter = $this->getFormatter();
-        $jsonBuilder = $this->getJsonBuilder();
+        $jsonBuilder = $this->getSerializer();
 
         if ($position) {
             $jsonBuilder->setValue('[position]', $infoWindow->getPosition()->getVariable(), false);

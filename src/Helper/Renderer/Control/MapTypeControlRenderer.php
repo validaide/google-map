@@ -11,6 +11,7 @@
 
 namespace Ivory\GoogleMap\Helper\Renderer\Control;
 
+use InvalidArgumentException;
 use Ivory\GoogleMap\Control\MapTypeControl;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
@@ -39,19 +40,19 @@ class MapTypeControlRenderer extends AbstractJsonRenderer implements ControlRend
 
     /**
      * @param Formatter                   $formatter
-     * @param JsonBuilder                 $jsonBuilder
+     * @param JsonBuilder                 $serializer
      * @param MapTypeIdRenderer           $mapTypeIdRenderer
      * @param ControlPositionRenderer     $controlPositionRenderer
      * @param MapTypeControlStyleRenderer $mapTypeControlStyleRenderer
      */
     public function __construct(
         Formatter $formatter,
-        JsonBuilder $jsonBuilder,
+        JsonBuilder $serializer,
         MapTypeIdRenderer $mapTypeIdRenderer,
         ControlPositionRenderer $controlPositionRenderer,
         MapTypeControlStyleRenderer $mapTypeControlStyleRenderer
     ) {
-        parent::__construct($formatter, $jsonBuilder);
+        parent::__construct($formatter, $serializer);
 
         $this->setMapTypeIdRenderer($mapTypeIdRenderer);
         $this->setControlPositionRenderer($controlPositionRenderer);
@@ -112,14 +113,14 @@ class MapTypeControlRenderer extends AbstractJsonRenderer implements ControlRend
     public function render($control)
     {
         if (!$control instanceof MapTypeControl) {
-            throw new \InvalidArgumentException(sprintf(
+            throw new InvalidArgumentException(sprintf(
                 'Expected a "%s", got "%s".',
                 MapTypeControl::class,
                 is_object($control) ? get_class($control) : gettype($control)
             ));
         }
 
-        $jsonBuilder = $this->getJsonBuilder();
+        $jsonBuilder = $this->getSerializer();
 
         foreach ($control->getIds() as $index => $id) {
             $jsonBuilder->setValue('[mapTypeIds]['.$index.']', $this->mapTypeIdRenderer->render($id), false);

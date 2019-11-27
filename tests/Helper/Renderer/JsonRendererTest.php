@@ -55,16 +55,16 @@ class JsonRendererTest extends \PHPUnit_Framework_TestCase
     public function testDefaultState()
     {
         $this->assertSame($this->formatter, $this->jsonRenderer->getFormatter());
-        $this->assertNotSame($this->jsonBuilder, $this->jsonRenderer->getJsonBuilder());
-        $this->assertInstanceOf(JsonBuilder::class, $this->jsonRenderer->getJsonBuilder());
+        $this->assertNotSame($this->jsonBuilder, $this->jsonRenderer->getSerializer());
+        $this->assertInstanceOf(JsonBuilder::class, $this->jsonRenderer->getSerializer());
     }
 
     public function testJsonBuilder()
     {
-        $this->jsonRenderer->setJsonBuilder($jsonBuilder = $this->createJsonBuilderMock());
+        $this->jsonRenderer->setSerializer($jsonBuilder = $this->createJsonBuilderMock());
 
-        $this->assertNotSame($jsonBuilder, $this->jsonRenderer->getJsonBuilder());
-        $this->assertInstanceOf(JsonBuilder::class, $this->jsonRenderer->getJsonBuilder());
+        $this->assertNotSame($jsonBuilder, $this->jsonRenderer->getSerializer());
+        $this->assertInstanceOf(JsonBuilder::class, $this->jsonRenderer->getSerializer());
     }
 
     /**

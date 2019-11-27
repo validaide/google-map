@@ -29,7 +29,7 @@ class PolygonRenderer extends AbstractJsonRenderer
     public function render(Polygon $polygon, Map $map)
     {
         $formatter = $this->getFormatter();
-        $jsonBuilder = $this->getJsonBuilder()
+        $jsonBuilder = $this->getSerializer()
             ->setValue('[map]', $map->getVariable(), false)
             ->setValue('[paths]', []);
 

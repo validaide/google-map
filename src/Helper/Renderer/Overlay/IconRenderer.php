@@ -26,7 +26,7 @@ class IconRenderer extends AbstractJsonRenderer
      */
     public function render(Icon $icon)
     {
-        $jsonBuilder = $this->getJsonBuilder()
+        $jsonBuilder = $this->getSerializer()
             ->setValue('[url]', $icon->getUrl());
 
         if ($icon->hasAnchor()) {

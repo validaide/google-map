@@ -14,7 +14,7 @@ namespace Ivory\Tests\GoogleMap\Service;
 use Http\Client\HttpClient;
 use Http\Message\MessageFactory;
 use Ivory\GoogleMap\Service\BusinessAccount;
-use Ivory\Serializer\SerializerInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;

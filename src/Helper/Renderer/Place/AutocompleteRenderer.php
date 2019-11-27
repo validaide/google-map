@@ -29,15 +29,15 @@ class AutocompleteRenderer extends AbstractJsonRenderer
 
     /**
      * @param Formatter           $formatter
-     * @param JsonBuilder         $jsonBuilder
+     * @param JsonBuilder         $serializer
      * @param RequirementRenderer $requirementRenderer
      */
     public function __construct(
         Formatter $formatter,
-        JsonBuilder $jsonBuilder,
+        JsonBuilder $serializer,
         RequirementRenderer $requirementRenderer
     ) {
-        parent::__construct($formatter, $jsonBuilder);
+        parent::__construct($formatter, $serializer);
 
         $this->setRequirementRenderer($requirementRenderer);
     }
@@ -66,7 +66,7 @@ class AutocompleteRenderer extends AbstractJsonRenderer
     public function render(Autocomplete $autocomplete)
     {
         $formatter = $this->getFormatter();
-        $jsonBuilder = $this->getJsonBuilder();
+        $jsonBuilder = $this->getSerializer();
 
         if ($autocomplete->hasTypes()) {
             $jsonBuilder->setValue('[types]', $autocomplete->getTypes());

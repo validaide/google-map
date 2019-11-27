@@ -11,6 +11,7 @@
 
 namespace Ivory\GoogleMap\Service\Direction\Request;
 
+use DateTime;
 use Ivory\GoogleMap\Service\Base\Location\LocationInterface;
 
 /**
@@ -156,7 +157,7 @@ class DirectionRequest implements DirectionRequestInterface
     /**
      * @param \DateTime|null $departureTime
      */
-    public function setDepartureTime(\DateTime $departureTime = null)
+    public function setDepartureTime(DateTime $departureTime = null)
     {
         $this->departureTime = $departureTime;
     }
@@ -180,7 +181,7 @@ class DirectionRequest implements DirectionRequestInterface
     /**
      * @param \DateTime|null $arrivalTime
      */
-    public function setArrivalTime(\DateTime $arrivalTime = null)
+    public function setArrivalTime(DateTime $arrivalTime = null)
     {
         $this->arrivalTime = $arrivalTime;
     }

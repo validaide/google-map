@@ -29,7 +29,7 @@ class PolylineRenderer extends AbstractJsonRenderer
     public function render(Polyline $polyline, Map $map)
     {
         $formatter = $this->getFormatter();
-        $jsonBuilder = $this->getJsonBuilder()
+        $jsonBuilder = $this->getSerializer()
             ->setValue('[map]', $map->getVariable(), false)
             ->setValue('[path]', []);
 

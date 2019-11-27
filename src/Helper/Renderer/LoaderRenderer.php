@@ -31,13 +31,13 @@ class LoaderRenderer extends AbstractJsonRenderer
 
     /**
      * @param Formatter   $formatter
-     * @param JsonBuilder $jsonBuilder
+     * @param JsonBuilder $serializer
      * @param string      $language
      * @param string|null $key
      */
-    public function __construct(Formatter $formatter, JsonBuilder $jsonBuilder, $language = 'en', $key = null)
+    public function __construct(Formatter $formatter, JsonBuilder $serializer, $language = 'en', $key = null)
     {
-        parent::__construct($formatter, $jsonBuilder);
+        parent::__construct($formatter, $serializer);
 
         $this->setLanguage($language);
         $this->setKey($key);
@@ -98,7 +98,7 @@ class LoaderRenderer extends AbstractJsonRenderer
         $newLine = true
     ) {
         $formatter = $this->getFormatter();
-        $jsonBuilder = $this->getJsonBuilder();
+        $jsonBuilder = $this->getSerializer();
 
         $parameters = ['language' => $this->language];
 

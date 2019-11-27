@@ -11,6 +11,7 @@
 
 namespace Ivory\GoogleMap\Helper\Renderer\Control;
 
+use InvalidArgumentException;
 use Ivory\GoogleMap\Control\ScaleControl;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
@@ -33,17 +34,17 @@ class ScaleControlRenderer extends AbstractJsonRenderer implements ControlRender
 
     /**
      * @param Formatter                 $formatter
-     * @param JsonBuilder               $jsonBuilder
+     * @param JsonBuilder               $serializer
      * @param ControlPositionRenderer   $controlPositionRenderer
      * @param ScaleControlStyleRenderer $scaleControlStyleRenderer
      */
     public function __construct(
         Formatter $formatter,
-        JsonBuilder $jsonBuilder,
+        JsonBuilder $serializer,
         ControlPositionRenderer $controlPositionRenderer,
         ScaleControlStyleRenderer $scaleControlStyleRenderer
     ) {
-        parent::__construct($formatter, $jsonBuilder);
+        parent::__construct($formatter, $serializer);
 
         $this->setControlPositionRenderer($controlPositionRenderer);
         $this->setScaleControlStyleRenderer($scaleControlStyleRenderer);
@@ -89,14 +90,14 @@ class ScaleControlRenderer extends AbstractJsonRenderer implements ControlRender
     public function render($control)
     {
         if (!$control instanceof ScaleControl) {
-            throw new \InvalidArgumentException(sprintf(
+            throw new InvalidArgumentException(sprintf(
                 'Expected a "%s", got "%s".',
                 ScaleControl::class,
                 is_object($control) ? get_class($control) : gettype($control)
             ));
         }
 
-        return $this->getJsonBuilder()
+        return $this->getSerializer()
             ->setValue('[position]', $this->controlPositionRenderer->render($control->getPosition()), false)
             ->setValue('[style]', $this->scaleControlStyleRenderer->render($control->getStyle()), false)
             ->build();

@@ -16,7 +16,7 @@ use Http\Message\MessageFactory;
 use Ivory\GoogleMap\Service\AbstractHttpService;
 use Ivory\GoogleMap\Service\AbstractSerializableService;
 use Ivory\GoogleMap\Service\BusinessAccount;
-use Ivory\Serializer\SerializerInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>

@@ -11,12 +11,13 @@
 
 namespace Ivory\GoogleMap\Service\Elevation;
 
+use Http\Client\Exception;
 use Http\Client\HttpClient;
 use Http\Message\MessageFactory;
 use Ivory\GoogleMap\Service\AbstractSerializableService;
 use Ivory\GoogleMap\Service\Elevation\Request\ElevationRequestInterface;
 use Ivory\GoogleMap\Service\Elevation\Response\ElevationResponse;
-use Ivory\Serializer\SerializerInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
@@ -28,22 +29,20 @@ class ElevationService extends AbstractSerializableService
      * @param MessageFactory           $messageFactory
      * @param SerializerInterface|null $serializer
      */
-    public function __construct(
-        HttpClient $client,
-        MessageFactory $messageFactory,
-        SerializerInterface $serializer = null
-    ) {
+    public function __construct(HttpClient $client, MessageFactory $messageFactory, SerializerInterface $serializer = null)
+    {
         parent::__construct('https://maps.googleapis.com/maps/api/elevation', $client, $messageFactory, $serializer);
     }
 
     /**
      * @param ElevationRequestInterface $request
      *
-     * @return ElevationResponse
+     * @return array|object
+     * @throws Exception
      */
     public function process(ElevationRequestInterface $request)
     {
-        $httpRequest = $this->createRequest($request);
+        $httpRequest  = $this->createRequest($request);
         $httpResponse = $this->getClient()->sendRequest($httpRequest);
 
         $response = $this->deserialize($httpResponse, ElevationResponse::class);

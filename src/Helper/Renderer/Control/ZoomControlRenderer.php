@@ -11,6 +11,7 @@
 
 namespace Ivory\GoogleMap\Helper\Renderer\Control;
 
+use InvalidArgumentException;
 use Ivory\GoogleMap\Control\ZoomControl;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
@@ -33,17 +34,17 @@ class ZoomControlRenderer extends AbstractJsonRenderer implements ControlRendere
 
     /**
      * @param Formatter                $formatter
-     * @param JsonBuilder              $jsonBuilder
+     * @param JsonBuilder              $serializer
      * @param ControlPositionRenderer  $controlPositionRenderer
      * @param ZoomControlStyleRenderer $zoomControlStyleRenderer
      */
     public function __construct(
         Formatter $formatter,
-        JsonBuilder $jsonBuilder,
+        JsonBuilder $serializer,
         ControlPositionRenderer $controlPositionRenderer,
         ZoomControlStyleRenderer $zoomControlStyleRenderer
     ) {
-        parent::__construct($formatter, $jsonBuilder);
+        parent::__construct($formatter, $serializer);
 
         $this->setControlPositionRenderer($controlPositionRenderer);
         $this->setZoomControlStyleRenderer($zoomControlStyleRenderer);
@@ -87,14 +88,14 @@ class ZoomControlRenderer extends AbstractJsonRenderer implements ControlRendere
     public function render($control)
     {
         if (!$control instanceof ZoomControl) {
-            throw new \InvalidArgumentException(sprintf(
+            throw new InvalidArgumentException(sprintf(
                 'Expected a "%s", got "%s".',
                 ZoomControl::class,
                 is_object($control) ? get_class($control) : gettype($control)
             ));
         }
 
-        return $this->getJsonBuilder()
+        return $this->getSerializer()
             ->setValue('[position]', $this->controlPositionRenderer->render($control->getPosition()), false)
             ->setValue('[style]', $this->zoomControlStyleRenderer->render($control->getStyle()), false)
             ->build();

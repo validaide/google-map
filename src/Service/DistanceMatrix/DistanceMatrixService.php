@@ -11,14 +11,13 @@
 
 namespace Ivory\GoogleMap\Service\DistanceMatrix;
 
+use Http\Client\Exception;
 use Http\Client\HttpClient;
 use Http\Message\MessageFactory;
 use Ivory\GoogleMap\Service\AbstractSerializableService;
 use Ivory\GoogleMap\Service\DistanceMatrix\Request\DistanceMatrixRequestInterface;
 use Ivory\GoogleMap\Service\DistanceMatrix\Response\DistanceMatrixResponse;
-use Ivory\Serializer\Context\Context;
-use Ivory\Serializer\Naming\SnakeCaseNamingStrategy;
-use Ivory\Serializer\SerializerInterface;
+use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
@@ -30,11 +29,8 @@ class DistanceMatrixService extends AbstractSerializableService
      * @param MessageFactory           $messageFactory
      * @param SerializerInterface|null $serializer
      */
-    public function __construct(
-        HttpClient $client,
-        MessageFactory $messageFactory,
-        SerializerInterface $serializer = null
-    ) {
+    public function __construct(HttpClient $client, MessageFactory $messageFactory, SerializerInterface $serializer = null)
+    {
         parent::__construct(
             'https://maps.googleapis.com/maps/api/distancematrix',
             $client,
@@ -46,18 +42,20 @@ class DistanceMatrixService extends AbstractSerializableService
     /**
      * @param DistanceMatrixRequestInterface $request
      *
-     * @return DistanceMatrixResponse
+     * @return array|object
+     * @throws Exception
      */
     public function process(DistanceMatrixRequestInterface $request)
     {
-        $httpRequest = $this->createRequest($request);
+        $httpRequest  = $this->createRequest($request);
         $httpResponse = $this->getClient()->sendRequest($httpRequest);
 
         $response = $this->deserialize(
             $httpResponse,
-            DistanceMatrixResponse::class,
-            (new Context())->setNamingStrategy(new SnakeCaseNamingStrategy())
+            DistanceMatrixResponse::class
         );
+
+        //(new Context())->setNamingStrategy(new SnakeCaseNamingStrategy())
 
         $response->setRequest($request);
 

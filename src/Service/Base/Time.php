@@ -11,6 +11,7 @@
 
 namespace Ivory\GoogleMap\Service\Base;
 
+use DateTime;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
@@ -36,7 +37,7 @@ class Time
      * @param string    $timeZone
      * @param string    $text
      */
-    public function __construct(\DateTime $value, $timeZone, $text)
+    public function __construct(DateTime $value, $timeZone, $text)
     {
         $this->setValue($value);
         $this->setTimeZone($timeZone);
@@ -54,7 +55,7 @@ class Time
     /**
      * @param \DateTime $value
      */
-    public function setValue(\DateTime $value)
+    public function setValue(DateTime $value)
     {
         $this->value = $value;
     }

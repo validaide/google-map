@@ -40,19 +40,19 @@ class MapRenderer extends AbstractJsonRenderer
 
     /**
      * @param Formatter              $formatter
-     * @param JsonBuilder            $jsonBuilder
+     * @param JsonBuilder            $serializer
      * @param MapTypeIdRenderer      $mapTypeIdRenderer
      * @param ControlManagerRenderer $controlManagerRenderer
      * @param RequirementRenderer    $requirementRenderer
      */
     public function __construct(
         Formatter $formatter,
-        JsonBuilder $jsonBuilder,
+        JsonBuilder $serializer,
         MapTypeIdRenderer $mapTypeIdRenderer,
         ControlManagerRenderer $controlManagerRenderer,
         RequirementRenderer $requirementRenderer
     ) {
-        parent::__construct($formatter, $jsonBuilder);
+        parent::__construct($formatter, $serializer);
 
         $this->setMapTypeIdRenderer($mapTypeIdRenderer);
         $this->setControlManagerRenderer($controlManagerRenderer);
@@ -115,7 +115,7 @@ class MapRenderer extends AbstractJsonRenderer
     public function render(Map $map)
     {
         $formatter = $this->getFormatter();
-        $jsonBuilder = $this->getJsonBuilder();
+        $jsonBuilder = $this->getSerializer();
 
         $options = $map->getMapOptions();
         unset($options['mapTypeId']);

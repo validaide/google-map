@@ -11,6 +11,7 @@
 
 namespace Ivory\GoogleMap\Helper\Renderer\Overlay\Extendable;
 
+use InvalidArgumentException;
 use Ivory\GoogleMap\Base\Bound;
 use Ivory\GoogleMap\Overlay\ExtendableInterface;
 
@@ -104,7 +105,7 @@ class ExtendableRenderer implements ExtendableRendererInterface
         $renderer = $this->getRenderer(get_class($extendable));
 
         if ($renderer === null) {
-            throw new \InvalidArgumentException(sprintf(
+            throw new InvalidArgumentException(sprintf(
                 'The extendable renderer for "%s" could not be found.',
                 get_class($extendable)
             ));

@@ -11,13 +11,14 @@
 
 namespace Ivory\GoogleMap\Service\Place\Search\Response;
 
+use Iterator;
 use Ivory\GoogleMap\Service\Place\Search\PlaceSearchService;
 use Ivory\GoogleMap\Service\Place\Search\Request\PageTokenPlaceSearchRequest;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
-class PlaceSearchResponseIterator implements \Iterator
+class PlaceSearchResponseIterator implements Iterator
 {
     /**
      * @var PlaceSearchService

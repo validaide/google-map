@@ -29,7 +29,7 @@ class RectangleRenderer extends AbstractJsonRenderer
     public function render(Rectangle $rectangle, Map $map)
     {
         $formatter = $this->getFormatter();
-        $jsonBuilder = $this->getJsonBuilder()
+        $jsonBuilder = $this->getSerializer()
             ->setValue('[map]', $map->getVariable(), false)
             ->setValue('[bounds]', $rectangle->getBound()->getVariable(), false)
             ->setValues($rectangle->getOptions());

@@ -16,29 +16,24 @@ use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Geometry\EncodingRenderer;
 use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\EncodedPolyline;
-use Ivory\JsonBuilder\JsonBuilder;
+use Symfony\Component\Serializer\Serializer;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */
 class EncodedPolylineRenderer extends AbstractJsonRenderer
 {
-    /**
-     * @var EncodingRenderer
-     */
+    /** @var EncodingRenderer */
     private $encodingRenderer;
 
     /**
      * @param Formatter        $formatter
-     * @param JsonBuilder      $jsonBuilder
+     * @param Serializer       $serializer
      * @param EncodingRenderer $encodingRenderer
      */
-    public function __construct(
-        Formatter $formatter,
-        JsonBuilder $jsonBuilder,
-        EncodingRenderer $encodingRenderer
-    ) {
-        parent::__construct($formatter, $jsonBuilder);
+    public function __construct(Formatter $formatter, Serializer $serializer, EncodingRenderer $encodingRenderer)
+    {
+        parent::__construct($formatter, $serializer);
 
         $this->setEncodingRenderer($encodingRenderer);
     }
@@ -68,13 +63,12 @@ class EncodedPolylineRenderer extends AbstractJsonRenderer
     public function render(EncodedPolyline $encodedPolyline, Map $map)
     {
         $formatter = $this->getFormatter();
-        $jsonBuilder = $this->getJsonBuilder()
-            ->setValue('[map]', $map->getVariable(), false)
-            ->setValue('[path]', $this->encodingRenderer->renderDecodePath($encodedPolyline->getValue()), false)
-            ->setValues($encodedPolyline->getOptions());
 
-        return $formatter->renderObjectAssignment($encodedPolyline, $formatter->renderObject('Polyline', [
-            $jsonBuilder->build(),
-        ]));
+        $data         = [];
+        $data['map']  = $map->getVariable();
+        $data['path'] = $this->encodingRenderer->renderDecodePath($encodedPolyline->getValue());
+        $data[]       = $encodedPolyline->getOptions();
+
+        return $formatter->renderObjectAssignment($encodedPolyline, $formatter->renderObject('Polyline', [$this->getSerializer()->serialize($data, 'json')]));
     }
 }
