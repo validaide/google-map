@@ -88,10 +88,7 @@ class AutocompleteRendererTest extends TestCase
         );
     }
 
-    /**
-     * @return MockObject|RequirementRenderer
-     */
-    private function createRequirementRendererMock()
+    private function createRequirementRendererMock(): MockObject|RequirementRenderer
     {
         return $this->createMock(RequirementRenderer::class);
     }

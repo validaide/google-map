@@ -121,26 +121,17 @@ class MapRendererTest extends TestCase
         $this->assertSame('typeof google.maps!==typeof undefined', $this->mapRenderer->renderRequirement());
     }
 
-    /**
-     * @return MockObject|MapTypeIdRenderer
-     */
-    private function createMapTypeIdRendererMock()
+    private function createMapTypeIdRendererMock(): MockObject|MapTypeIdRenderer
     {
         return $this->createMock(MapTypeIdRenderer::class);
     }
 
-    /**
-     * @return MockObject|ControlManagerRenderer
-     */
-    private function createControlManagerRendererMock()
+    private function createControlManagerRendererMock(): MockObject|ControlManagerRenderer
     {
         return $this->createMock(ControlManagerRenderer::class);
     }
 
-    /**
-     * @return MockObject|RequirementRenderer
-     */
-    private function createRequirementRendererMock()
+    private function createRequirementRendererMock(): MockObject|RequirementRenderer
     {
         return $this->createMock(RequirementRenderer::class);
     }

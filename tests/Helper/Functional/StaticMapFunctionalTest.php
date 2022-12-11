@@ -350,20 +350,14 @@ class StaticMapFunctionalTest extends TestCase
         $this->renderMap(new Map());
     }
 
-    /**
-     * @return StaticMapHelper
-     */
-    protected function createStaticMapHelper()
+    protected function createStaticMapHelper(): StaticMapHelper
     {
         return StaticMapHelperBuilder::create()
             ->setKey($_SERVER['API_KEY'])
             ->build();
     }
 
-    /**
-     * @return Polyline
-     */
-    private function createPolyline()
+    private function createPolyline(): Polyline
     {
         return new Polyline([
             new Coordinate(40.737102, -73.990318),
@@ -373,10 +367,7 @@ class StaticMapFunctionalTest extends TestCase
         ]);
     }
 
-    /**
-     * @return Polyline
-     */
-    private function createPolylineAddress()
+    private function createPolylineAddress(): Polyline
     {
         $polyline = new Polyline();
         $polyline->setStaticOption('locations', [

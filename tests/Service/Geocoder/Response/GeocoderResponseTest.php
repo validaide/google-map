@@ -94,18 +94,12 @@ class GeocoderResponseTest extends TestCase
         $this->assertEmpty($this->response->getResults());
     }
 
-    /**
-     * @return MockObject|GeocoderRequestInterface
-     */
-    private function createRequestMock()
+    private function createRequestMock(): MockObject|GeocoderRequestInterface
     {
         return $this->createMock(GeocoderRequestInterface::class);
     }
 
-    /**
-     * @return MockObject|GeocoderResult
-     */
-    private function createResultMock()
+    private function createResultMock(): MockObject|GeocoderResult
     {
         return $this->createMock(GeocoderResult::class);
     }

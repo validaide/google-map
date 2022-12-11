@@ -80,10 +80,7 @@ class PlacePhotoServiceTest extends TestCase
         return new PlacePhotoRequest('bar');
     }
 
-    /**
-     * @return MockObject|BusinessAccount
-     */
-    private function createBusinessAccountMock()
+    private function createBusinessAccountMock(): MockObject|BusinessAccount
     {
         return $this->createMock(BusinessAccount::class);
     }

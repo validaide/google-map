@@ -31,9 +31,9 @@ class SerializableServiceTest extends TestCase
     private ?string $url = null;
 
     /**
-     * @var HttpClient|MockObject
+     * @var HttpClient|MockObject|null
      */
-    private $client;
+    private HttpClient|MockObject|null $client = null;
 
     /**
      * @var MessageFactory|MockObject
@@ -41,9 +41,9 @@ class SerializableServiceTest extends TestCase
     private $messageFactory;
 
     /**
-     * @var SerializerInterface|MockObject
+     * @var MockObject|SerializerInterface|null
      */
-    private $serializer;
+    private MockObject|SerializerInterface|null $serializer = null;
 
     protected function setUp(): void
     {
@@ -125,25 +125,16 @@ class SerializableServiceTest extends TestCase
         $this->assertNull($this->service->getBusinessAccount());
     }
 
-    /**
-     * @return MockObject|HttpClient
-     */
-    private function createHttpClientMock()
+    private function createHttpClientMock(): MockObject|HttpClient
     {
         return $this->createMock(HttpClient::class);
     }
-    /**
-     * @return MockObject|SerializerInterface
-     */
-    private function createSerializerMock()
+    private function createSerializerMock(): MockObject|SerializerInterface
     {
         return $this->createMock(SerializerInterface::class);
     }
 
-    /**
-     * @return MockObject|BusinessAccount
-     */
-    private function createBusinessAccountMock()
+    private function createBusinessAccountMock(): MockObject|BusinessAccount
     {
         return $this->createMock(BusinessAccount::class);
     }

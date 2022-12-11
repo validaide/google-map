@@ -76,7 +76,7 @@ class GeocoderAddressRequestTest extends TestCase
 
         $this->assertTrue($this->request->hasComponents());
         $this->assertSame(
-            array_merge($firstComponents, $secondComponents),
+            [...$firstComponents, ...$secondComponents],
             $this->request->getComponents()
         );
     }
@@ -205,18 +205,12 @@ class GeocoderAddressRequestTest extends TestCase
         ], $this->request->buildQuery());
     }
 
-    /**
-     * @return MockObject|Coordinate
-     */
-    private function createCoordinateMock()
+    private function createCoordinateMock(): MockObject|Coordinate
     {
         return $this->createMock(Coordinate::class);
     }
 
-    /**
-     * @return MockObject|Bound
-     */
-    private function createBoundMock()
+    private function createBoundMock(): MockObject|Bound
     {
         return $this->createMock(Bound::class);
     }

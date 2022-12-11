@@ -141,10 +141,7 @@ class ControlManagerRendererTest extends TestCase
         $this->assertSame('[]', $jsonBuilder->build());
     }
 
-    /**
-     * @return MockObject|ControlRendererInterface
-     */
-    private function createControlRendererMock()
+    private function createControlRendererMock(): MockObject|ControlRendererInterface
     {
         return $this->createMock(ControlRendererInterface::class);
     }

@@ -49,7 +49,7 @@ class OptionsAwareTest extends TestCase
         $this->optionsAware->addOptions($secondOptions = ['baz' => 'bat']);
 
         $this->assertTrue($this->optionsAware->hasOptions());
-        $this->assertSame(array_merge($firstOptions, $secondOptions), $this->optionsAware->getOptions());
+        $this->assertSame([...$firstOptions, ...$secondOptions], $this->optionsAware->getOptions());
     }
 
     public function testSetOption()

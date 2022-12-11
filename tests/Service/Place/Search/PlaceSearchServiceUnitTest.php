@@ -88,18 +88,12 @@ class PlaceSearchServiceUnitTest extends AbstractUnitServiceTest
         $this->assertSame($response, $this->service->process($request)->current());
     }
 
-    /**
-     * @return MockObject|PlaceSearchRequestInterface
-     */
-    private function createPlaceSearchRequestMock()
+    private function createPlaceSearchRequestMock(): MockObject|PlaceSearchRequestInterface
     {
         return $this->createMock(PlaceSearchRequestInterface::class);
     }
 
-    /**
-     * @return MockObject|PlaceSearchResponse
-     */
-    private function createPlaceSearchResponseMock()
+    private function createPlaceSearchResponseMock(): MockObject|PlaceSearchResponse
     {
         return $this->createMock(PlaceSearchResponse::class);
     }

@@ -94,10 +94,7 @@ class HeatmapLayerTest extends TestCase
         $this->assertEmpty($this->heatmapLayer->getCoordinates());
     }
 
-    /**
-     * @return MockObject|Coordinate
-     */
-    private function createCoordinateMock()
+    private function createCoordinateMock(): MockObject|Coordinate
     {
         return $this->createMock(Coordinate::class);
     }

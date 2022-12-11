@@ -21,11 +21,8 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class StyleSubscriber implements EventSubscriberInterface
 {
-    private StyleRenderer $styleRenderer;
-
-    public function __construct(StyleRenderer $styleRenderer)
+    public function __construct(private readonly StyleRenderer $styleRenderer)
     {
-        $this->styleRenderer = $styleRenderer;
     }
 
     public function handleMap(StaticMapEvent $event): void

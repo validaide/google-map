@@ -24,10 +24,7 @@ class CoordinateLocationTest extends TestCase
 {
     private CoordinateLocation $coordinateLocation;
 
-    /**
-     * @var Coordinate|MockObject
-     */
-    private $coordinate;
+    private Coordinate|MockObject $coordinate;
 
     protected function setUp(): void
     {
@@ -67,10 +64,7 @@ class CoordinateLocationTest extends TestCase
         $this->assertSame('1.2,2.3', $this->coordinateLocation->buildQuery());
     }
 
-    /**
-     * @return MockObject|Coordinate
-     */
-    private function createCoordinateMock()
+    private function createCoordinateMock(): MockObject|Coordinate
     {
         return $this->createMock(Coordinate::class);
     }

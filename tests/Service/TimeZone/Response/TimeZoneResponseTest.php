@@ -93,10 +93,7 @@ class TimeZoneResponseTest extends TestCase
         $this->assertSame($timeZoneName, $this->response->getTimeZoneName());
     }
 
-    /**
-     * @return MockObject|TimeZoneRequestInterface
-     */
-    private function createRequestMock()
+    private function createRequestMock(): MockObject|TimeZoneRequestInterface
     {
         return $this->createMock(TimeZoneRequestInterface::class);
     }

@@ -20,11 +20,8 @@ use Ivory\GoogleMap\Overlay\Polyline;
  */
 class PolylineLocationRenderer
 {
-    private CoordinateRenderer $coordinateRenderer;
-
-    public function __construct(CoordinateRenderer $coordinateRenderer)
+    public function __construct(private readonly CoordinateRenderer $coordinateRenderer)
     {
-        $this->coordinateRenderer = $coordinateRenderer;
     }
 
     public function render(Polyline $polyline): string

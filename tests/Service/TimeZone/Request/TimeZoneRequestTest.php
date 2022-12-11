@@ -27,9 +27,9 @@ class TimeZoneRequestTest extends TestCase
     private TimeZoneRequest $request;
 
     /**
-     * @var Coordinate|MockObject
+     * @var Coordinate|MockObject|null
      */
-    private $location;
+    private Coordinate|MockObject|null $location = null;
 
     private ?DateTime $date = null;
 
@@ -95,10 +95,7 @@ class TimeZoneRequestTest extends TestCase
         ], $this->request->buildQuery());
     }
 
-    /**
-     * @return MockObject|Coordinate
-     */
-    private function createCoordinateMock()
+    private function createCoordinateMock(): MockObject|Coordinate
     {
         $coordinate = $this->createMock(Coordinate::class);
         $coordinate

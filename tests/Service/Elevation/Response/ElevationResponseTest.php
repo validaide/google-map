@@ -94,18 +94,12 @@ class ElevationResponseTest extends TestCase
         $this->assertEmpty($this->response->getResults());
     }
 
-    /**
-     * @return MockObject|ElevationRequestInterface
-     */
-    private function createRequestMock()
+    private function createRequestMock(): MockObject|ElevationRequestInterface
     {
         return $this->createMock(ElevationRequestInterface::class);
     }
 
-    /**
-     * @return MockObject|ElevationResult
-     */
-    private function createResultMock()
+    private function createResultMock(): MockObject|ElevationResult
     {
         return $this->createMock(ElevationResult::class);
     }

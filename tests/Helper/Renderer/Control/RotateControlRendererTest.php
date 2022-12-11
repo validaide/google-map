@@ -67,10 +67,7 @@ class RotateControlRendererTest extends TestCase
         $this->rotateControlRenderer->render('foo');
     }
 
-    /**
-     * @return MockObject|ControlPositionRenderer
-     */
-    private function createControlPositionRendererMock()
+    private function createControlPositionRendererMock(): MockObject|ControlPositionRenderer
     {
         return $this->createMock(ControlPositionRenderer::class);
     }

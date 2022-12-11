@@ -13,9 +13,9 @@ class DirectionResponseWaypointNormalizer extends Normalizer
     {
         $waypoint = new DirectionWaypoint();
 
-        $this->setIfPresent('step_index', $data, [$waypoint, 'setStepIndex']);
-        $this->setIfPresent('step_interpolation', $data, [$waypoint, 'setStepInterpolation']);
-        $this->setIfPresentDenormalize('location', $data, [$waypoint, 'setLocation'],Coordinate::class, $format, $context);
+        $this->setIfPresent('step_index', $data, $waypoint->setStepIndex(...));
+        $this->setIfPresent('step_interpolation', $data, $waypoint->setStepInterpolation(...));
+        $this->setIfPresentDenormalize('location', $data, $waypoint->setLocation(...),Coordinate::class, $format, $context);
 
         return $waypoint;
     }

@@ -53,10 +53,7 @@ class IconSequenceCollectorTest extends TestCase
         $this->assertSame([$iconSequence], $this->iconSequenceCollector->collect($map));
     }
 
-    /**
-     * @return MockObject|PolylineCollector
-     */
-    private function createPolylineCollectorMock()
+    private function createPolylineCollectorMock(): MockObject|PolylineCollector
     {
         return $this->createMock(PolylineCollector::class);
     }

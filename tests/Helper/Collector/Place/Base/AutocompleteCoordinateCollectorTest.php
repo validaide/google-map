@@ -55,10 +55,7 @@ class AutocompleteCoordinateCollectorTest extends TestCase
         $this->assertSame([$southWest, $northEast], $this->autocompleteCoordinateCollector->collect($autocomplete));
     }
 
-    /**
-     * @return MockObject|AutocompleteBoundCollector
-     */
-    private function createAutocompleteBoundCollectorMock()
+    private function createAutocompleteBoundCollectorMock(): MockObject|AutocompleteBoundCollector
     {
         return $this->createMock(AutocompleteBoundCollector::class);
     }

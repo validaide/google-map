@@ -132,10 +132,7 @@ class MarkerRendererTest extends TestCase
         );
     }
 
-    /**
-     * @return MockObject|AnimationRenderer
-     */
-    private function createAnimationRendererMock()
+    private function createAnimationRendererMock(): MockObject|AnimationRenderer
     {
         return $this->createMock(AnimationRenderer::class);
     }

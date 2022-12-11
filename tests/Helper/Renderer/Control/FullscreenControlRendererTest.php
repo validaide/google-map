@@ -67,10 +67,7 @@ class FullscreenControlRendererTest extends TestCase
         $this->fullscreenControlRenderer->render('foo');
     }
 
-    /**
-     * @return MockObject|ControlPositionRenderer
-     */
-    private function createControlPositionRendererMock()
+    private function createControlPositionRendererMock(): MockObject|ControlPositionRenderer
     {
         return $this->createMock(ControlPositionRenderer::class);
     }

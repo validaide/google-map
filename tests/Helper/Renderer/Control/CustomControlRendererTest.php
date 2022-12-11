@@ -60,10 +60,7 @@ class CustomControlRendererTest extends TestCase
         );
     }
 
-    /**
-     * @return MockObject|ControlPositionRenderer
-     */
-    private function createControlPositionRendererMock()
+    private function createControlPositionRendererMock(): MockObject|ControlPositionRenderer
     {
         return $this->createMock(ControlPositionRenderer::class);
     }

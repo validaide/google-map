@@ -83,18 +83,12 @@ class DistanceMatrixServiceUnitTest extends AbstractUnitServiceTest
         $this->assertSame($response, $this->service->process($request));
     }
 
-    /**
-     * @return MockObject|DistanceMatrixRequestInterface
-     */
-    private function createDistanceMatrixRequestMock()
+    private function createDistanceMatrixRequestMock(): MockObject|DistanceMatrixRequestInterface
     {
         return $this->createMock(DistanceMatrixRequestInterface::class);
     }
 
-    /**
-     * @return MockObject|DistanceMatrixResponse
-     */
-    private function createDistanceMatrixResponseMock()
+    private function createDistanceMatrixResponseMock(): MockObject|DistanceMatrixResponse
     {
         return $this->createMock(DistanceMatrixResponse::class);
     }

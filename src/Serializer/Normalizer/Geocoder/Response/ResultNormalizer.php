@@ -14,12 +14,12 @@ class ResultNormalizer extends Normalizer
     {
         $result = new GeocoderResult();
 
-        $this->setIfPresent('place_id', $data, [$result, 'setPlaceId']);
-        $this->setIfPresent('formatted_address', $data, [$result, 'setFormattedAddress']);
-        $this->setIfPresent('postcode_localities', $data, [$result, 'setPostcodeLocalities']);
-        $this->setIfPresent('types', $data, [$result, 'setTypes']);
-        $this->setIfPresent('partial_match', $data, [$result, 'setPartialMatch']);
-        $this->setIfPresentDenormalize('geometry', $data, [$result, 'setGeometry'], Geometry::class, $format, $context);
+        $this->setIfPresent('place_id', $data, $result->setPlaceId(...));
+        $this->setIfPresent('formatted_address', $data, $result->setFormattedAddress(...));
+        $this->setIfPresent('postcode_localities', $data, $result->setPostcodeLocalities(...));
+        $this->setIfPresent('types', $data, $result->setTypes(...));
+        $this->setIfPresent('partial_match', $data, $result->setPartialMatch(...));
+        $this->setIfPresentDenormalize('geometry', $data, $result->setGeometry(...), Geometry::class, $format, $context);
 
         if (array_key_exists('address_components', $data)) {
             foreach ($data['address_components'] as $addressComponentData) {

@@ -21,10 +21,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class HelperBuilderTest extends TestCase
 {
-    /**
-     * @var AbstractHelperBuilder
-     */
-    private $helperBuilder;
+    private AbstractHelperBuilder|MockObject $helperBuilder;
 
     protected function setUp(): void
     {
@@ -91,18 +88,12 @@ class HelperBuilderTest extends TestCase
         $this->assertEmpty($this->helperBuilder->getSubscribers());
     }
 
-    /**
-     * @return MockObject|AbstractHelperBuilder
-     */
-    private function createAbstractHelperBuilder()
+    private function createAbstractHelperBuilder(): MockObject|AbstractHelperBuilder
     {
         return $this->getMockForAbstractClass(AbstractHelperBuilder::class);
     }
 
-    /**
-     * @return MockObject|EventSubscriberInterface
-     */
-    private function createEventSubscriberMock()
+    private function createEventSubscriberMock(): MockObject|EventSubscriberInterface
     {
         return $this->createMock(EventSubscriberInterface::class);
     }

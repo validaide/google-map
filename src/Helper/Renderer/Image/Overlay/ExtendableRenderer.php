@@ -21,20 +21,8 @@ use Ivory\GoogleMap\Overlay\Polyline;
  */
 class ExtendableRenderer
 {
-    private CoordinateRenderer $coordinateRenderer;
-
-    private MarkerLocationRenderer $markerLocationRenderer;
-
-    private PolylineLocationRenderer $polylineLocationRenderer;
-
-    public function __construct(
-        CoordinateRenderer $coordinateRenderer,
-        MarkerLocationRenderer $markerLocationRenderer,
-        PolylineLocationRenderer $polylineLocationRenderer
-    ) {
-        $this->coordinateRenderer = $coordinateRenderer;
-        $this->markerLocationRenderer = $markerLocationRenderer;
-        $this->polylineLocationRenderer = $polylineLocationRenderer;
+    public function __construct(private readonly CoordinateRenderer $coordinateRenderer, private readonly MarkerLocationRenderer $markerLocationRenderer, private readonly PolylineLocationRenderer $polylineLocationRenderer)
+    {
     }
 
     /**

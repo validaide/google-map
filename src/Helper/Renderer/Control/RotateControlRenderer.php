@@ -50,7 +50,7 @@ class RotateControlRenderer extends AbstractJsonRenderer implements ControlRende
             throw new InvalidArgumentException(sprintf(
                 'Expected a "%s", got "%s".',
                 RotateControl::class,
-                is_object($control) ? get_class($control) : gettype($control)
+                get_debug_type($control)
             ));
         }
 

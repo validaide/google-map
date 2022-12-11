@@ -77,10 +77,7 @@ class BoundRendererTest extends TestCase
         );
     }
 
-    /**
-     * @return MockObject|ExtendableInterface
-     */
-    private function createExtendableMock()
+    private function createExtendableMock(): MockObject|ExtendableInterface
     {
         return $this->createMock(ExtendableInterface::class);
     }

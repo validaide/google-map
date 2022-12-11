@@ -205,9 +205,8 @@ class Autocomplete implements VariableAwareInterface
 
     /**
      * @param string $type
-     * @param mixed  $value
      */
-    public function setComponent($type, $value): void
+    public function setComponent($type, mixed $value): void
     {
         $this->components[$type] = $value;
     }

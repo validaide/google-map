@@ -20,14 +20,8 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class KeySubscriber implements EventSubscriberInterface
 {
-    private ?string $key;
-
-    /**
-     * @param string|null $key
-     */
-    public function __construct($key = null)
+    public function __construct(private readonly ?string $key = null)
     {
-        $this->key = $key;
     }
 
     public function handleMap(StaticMapEvent $event): void

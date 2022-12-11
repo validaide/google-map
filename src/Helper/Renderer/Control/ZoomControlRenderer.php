@@ -64,7 +64,7 @@ class ZoomControlRenderer extends AbstractJsonRenderer implements ControlRendere
             throw new InvalidArgumentException(sprintf(
                 'Expected a "%s", got "%s".',
                 ZoomControl::class,
-                is_object($control) ? get_class($control) : gettype($control)
+                get_debug_type($control)
             ));
         }
 

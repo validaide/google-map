@@ -24,10 +24,7 @@ class PlaceAutocompleteEventTest extends TestCase
 {
     private PlaceAutocompleteEvent $placeAutocompleteEvent;
 
-    /**
-     * @var Autocomplete|MockObject
-     */
-    private $autocomplete;
+    private Autocomplete|MockObject $autocomplete;
 
     protected function setUp(): void
     {
@@ -45,10 +42,7 @@ class PlaceAutocompleteEventTest extends TestCase
         $this->assertSame($this->autocomplete, $this->placeAutocompleteEvent->getAutocomplete());
     }
 
-    /**
-     * @return MockObject|Autocomplete
-     */
-    private function createAutocompleteMock()
+    private function createAutocompleteMock(): MockObject|Autocomplete
     {
         return $this->createMock(Autocomplete::class);
     }

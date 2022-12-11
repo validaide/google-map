@@ -195,58 +195,37 @@ class ControlManagerTest extends TestCase
         $this->assertEmpty($this->controlManager->getCustomControls());
     }
 
-    /**
-     * @return MockObject|FullscreenControl
-     */
-    private function createFullscreenControlMock()
+    private function createFullscreenControlMock(): MockObject|FullscreenControl
     {
         return $this->createMock(FullscreenControl::class);
     }
 
-    /**
-     * @return MockObject|MapTypeControl
-     */
-    private function createMapTypeControlMock()
+    private function createMapTypeControlMock(): MockObject|MapTypeControl
     {
         return $this->createMock(MapTypeControl::class);
     }
 
-    /**
-     * @return MockObject|RotateControl
-     */
-    private function createRotateControlMock()
+    private function createRotateControlMock(): MockObject|RotateControl
     {
         return $this->createMock(RotateControl::class);
     }
 
-    /**
-     * @return MockObject|ScaleControl
-     */
-    private function createScaleControlMock()
+    private function createScaleControlMock(): MockObject|ScaleControl
     {
         return $this->createMock(ScaleControl::class);
     }
 
-    /**
-     * @return MockObject|StreetViewControl
-     */
-    private function createStreetViewControlMock()
+    private function createStreetViewControlMock(): MockObject|StreetViewControl
     {
         return $this->createMock(StreetViewControl::class);
     }
 
-    /**
-     * @return MockObject|ZoomControl
-     */
-    private function createZoomControlMock()
+    private function createZoomControlMock(): MockObject|ZoomControl
     {
         return $this->createMock(ZoomControl::class);
     }
 
-    /**
-     * @return MockObject|CustomControl
-     */
-    private function createCustomControlMock()
+    private function createCustomControlMock(): MockObject|CustomControl
     {
         return $this->createMock(CustomControl::class);
     }

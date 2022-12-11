@@ -12,9 +12,9 @@ class ResultNormalizer extends Normalizer
     {
         $result = new ElevationResult();
 
-        $this->setIfPresent('elevation', $data, [$result, 'setElevation']);
-        $this->setIfPresentFloat('resolution', $data, [$result, 'setResolution']);
-        $this->setIfPresentDenormalize('location', $data, [$result, 'setLocation'], Coordinate::class, $format, $context);
+        $this->setIfPresent('elevation', $data, $result->setElevation(...));
+        $this->setIfPresentFloat('resolution', $data, $result->setResolution(...));
+        $this->setIfPresentDenormalize('location', $data, $result->setLocation(...), Coordinate::class, $format, $context);
 
         return $result;
     }

@@ -83,18 +83,12 @@ class ElevationServiceUnitTest extends AbstractUnitServiceTest
         $this->assertSame($response, $this->service->process($request));
     }
 
-    /**
-     * @return MockObject|ElevationRequestInterface
-     */
-    private function createElevationRequestMock()
+    private function createElevationRequestMock(): MockObject|ElevationRequestInterface
     {
         return $this->createMock(ElevationRequestInterface::class);
     }
 
-    /**
-     * @return MockObject|ElevationResponse
-     */
-    private function createElevationResponseMock()
+    private function createElevationResponseMock(): MockObject|ElevationResponse
     {
         return $this->createMock(ElevationResponse::class);
     }

@@ -48,10 +48,10 @@ abstract class AbstractAutocompleteFunctionalTest extends AbstractApiFunctionalT
                     $this->assertObjectExists($autocomplete);
 
                     return true;
-                } catch (Exception $e) {
+                } catch (Exception) {
                 }
             }, 5000);
-        } catch (Exception $e) {
+        } catch (Exception) {
         }
 
         $this->assertSame([], $this->log('browser'));

@@ -16,28 +16,19 @@ namespace Ivory\GoogleMap\Utility;
  */
 trait VariableAwareTrait
 {
-    /**
-     * @var string
-     */
-    private $variable;
+    private ?string $variable = null;
 
-    /**
-     * @return string
-     */
-    public function getVariable()
+    public function getVariable(): string
     {
         if ($this->variable === null) {
-            $prefix = strtolower(substr(strrchr(get_class($this), '\\'), 1));
-            $this->variable = $prefix.substr_replace(uniqid(null, true), '', 14, 1);
+            $prefix = strtolower(substr(strrchr((string) $this::class, '\\'), 1));
+            $this->variable = $prefix.substr_replace(uniqid('', true), '', 14, 1);
         }
 
         return $this->variable;
     }
 
-    /**
-     * @param string $variable
-     */
-    public function setVariable($variable)
+    public function setVariable(string $variable): void
     {
         $this->variable = $variable;
     }

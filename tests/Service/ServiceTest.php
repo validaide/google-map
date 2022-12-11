@@ -79,10 +79,7 @@ class ServiceTest extends TestCase
         $this->assertNull($this->service->getBusinessAccount());
     }
 
-    /**
-     * @return MockObject|BusinessAccount
-     */
-    private function createBusinessAccountMock()
+    private function createBusinessAccountMock(): MockObject|BusinessAccount
     {
         return $this->createMock(BusinessAccount::class);
     }

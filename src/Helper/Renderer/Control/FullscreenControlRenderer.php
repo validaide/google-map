@@ -50,7 +50,7 @@ class FullscreenControlRenderer extends AbstractJsonRenderer implements ControlR
             throw new InvalidArgumentException(sprintf(
                 'Expected a "%s", got "%s".',
                 FullscreenControl::class,
-                is_object($control) ? get_class($control) : gettype($control)
+                get_debug_type($control)
             ));
         }
 

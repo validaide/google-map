@@ -142,18 +142,12 @@ class IconTest extends TestCase
         $this->assertNull($this->icon->getSize());
     }
 
-    /**
-     * @return MockObject|Point
-     */
-    private function createPointMock()
+    private function createPointMock(): MockObject|Point
     {
         return $this->createMock(Point::class);
     }
 
-    /**
-     * @return MockObject|Size
-     */
-    private function createSizeMock()
+    private function createSizeMock(): MockObject|Size
     {
         return $this->createMock(Size::class);
     }

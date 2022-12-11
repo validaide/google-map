@@ -26,9 +26,9 @@ class NearbyPlaceSearchRequestTest extends TestCase
     private NearbyPlaceSearchRequest $request;
 
     /**
-     * @var Coordinate|MockObject
+     * @var Coordinate|MockObject|null
      */
-    private $location;
+    private Coordinate|MockObject|null $location = null;
 
     private ?string $rankBy = null;
 
@@ -82,10 +82,7 @@ class NearbyPlaceSearchRequestTest extends TestCase
         ], $this->request->buildQuery());
     }
 
-    /**
-     * @return MockObject|Coordinate
-     */
-    private function createCoordinateMock()
+    private function createCoordinateMock(): MockObject|Coordinate
     {
         return $this->createMock(Coordinate::class);
     }

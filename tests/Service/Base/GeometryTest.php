@@ -110,18 +110,12 @@ class GeometryTest extends TestCase
         $this->assertNull($this->geometry->getBound());
     }
 
-    /**
-     * @return MockObject|Coordinate
-     */
-    private function createCoordinateMock()
+    private function createCoordinateMock(): MockObject|Coordinate
     {
         return $this->createMock(Coordinate::class);
     }
 
-    /**
-     * @return MockObject|Bound
-     */
-    private function createBoundMock()
+    private function createBoundMock(): MockObject|Bound
     {
         return $this->createMock(Bound::class);
     }

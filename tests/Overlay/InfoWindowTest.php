@@ -134,18 +134,12 @@ class InfoWindowTest extends TestCase
         $this->assertFalse($this->infoWindow->isAutoClose());
     }
 
-    /**
-     * @return MockObject|Coordinate
-     */
-    private function createCoordinateMock()
+    private function createCoordinateMock(): MockObject|Coordinate
     {
         return $this->createMock(Coordinate::class);
     }
 
-    /**
-     * @return MockObject|Size
-     */
-    private function createSizeMock()
+    private function createSizeMock(): MockObject|Size
     {
         return $this->createMock(Size::class);
     }

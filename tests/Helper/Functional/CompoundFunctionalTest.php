@@ -40,6 +40,9 @@ class CompoundFunctionalTest extends AbstractApiFunctionalTest
         $this->mapHelper = $this->createMapHelper();
     }
 
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testRender()
     {
         $autocomplete = new Autocomplete();
@@ -70,10 +73,10 @@ class CompoundFunctionalTest extends AbstractApiFunctionalTest
                     $this->assertObjectExists($map);
 
                     return true;
-                } catch (Exception $e) {
+                } catch (Exception) {
                 }
             }, 5000);
-        } catch (Exception $e) {
+        } catch (Exception) {
         }
 
         $this->assertSame([], $this->log('browser'));
