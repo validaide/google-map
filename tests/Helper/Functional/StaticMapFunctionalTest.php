@@ -342,7 +342,7 @@ class StaticMapFunctionalTest extends TestCase
             $this->markTestSkipped();
         }
 
-        $this->staticMapHelper = StaticMapHelperBuilder::create()
+        $this->staticMapHelper = (new StaticMapHelperBuilder())
             ->setKey($_SERVER['API_KEY'])
             ->setSecret($_SERVER['API_SECRET'])
             ->build();
@@ -352,7 +352,7 @@ class StaticMapFunctionalTest extends TestCase
 
     protected function createStaticMapHelper(): StaticMapHelper
     {
-        return StaticMapHelperBuilder::create()
+        return (new StaticMapHelperBuilder())
             ->setKey($_SERVER['API_KEY'])
             ->build();
     }

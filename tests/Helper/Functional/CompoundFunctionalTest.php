@@ -82,19 +82,13 @@ class CompoundFunctionalTest extends AbstractApiFunctionalTest
         $this->assertSame([], $this->log('browser'));
     }
 
-    /**
-     * @return PlaceAutocompleteHelper
-     */
-    protected function createPlaceAutocompleteHelper()
+    protected function createPlaceAutocompleteHelper(): PlaceAutocompleteHelper
     {
-        return PlaceAutocompleteHelperBuilder::create()->build();
+        return (new PlaceAutocompleteHelperBuilder())->build();
     }
 
-    /**
-     * @return MapHelper
-     */
-    protected function createMapHelper()
+    protected function createMapHelper(): MapHelper
     {
-        return MapHelperBuilder::create()->build();
+        return (new MapHelperBuilder())->build();
     }
 }

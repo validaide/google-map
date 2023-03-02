@@ -25,7 +25,7 @@ class PlaceAutocompleteHelperBuilderTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->placeAutocompleteHelperBuilder = PlaceAutocompleteHelperBuilder::create();
+        $this->placeAutocompleteHelperBuilder = new PlaceAutocompleteHelperBuilder();
     }
 
     public function testInheritance()

@@ -57,13 +57,7 @@ class StaticMapHelperBuilder extends AbstractHelperBuilder
 
     private ?string $channel = null;
 
-    /**
-     * @param string|null $key
-     * @param string|null $secret
-     * @param string|null $clientId
-     * @param string|null $channel
-     */
-    public function __construct($key = null, $secret = null, $clientId = null, $channel = null)
+    public function __construct(string|null $key = null, string|null $secret = null, string|null $clientId = null, string|null $channel = null)
     {
         $this->setKey($key);
         $this->setSecret($secret);
@@ -81,12 +75,7 @@ class StaticMapHelperBuilder extends AbstractHelperBuilder
         return $this->key;
     }
 
-    /**
-     * @param string|null $key
-     *
-     * @return $this
-     */
-    public function setKey($key): self
+    public function setKey(?string $key): self
     {
         $this->key = $key;
 
@@ -103,12 +92,7 @@ class StaticMapHelperBuilder extends AbstractHelperBuilder
         return $this->secret;
     }
 
-    /**
-     * @param string|null $secret
-     *
-     * @return $this
-     */
-    public function setSecret($secret): self
+    public function setSecret(?string $secret): self
     {
         $this->secret = $secret;
 
@@ -125,12 +109,7 @@ class StaticMapHelperBuilder extends AbstractHelperBuilder
         return $this->clientId;
     }
 
-    /**
-     * @param string|null $clientId
-     *
-     * @return $this
-     */
-    public function setClientId($clientId): self
+    public function setClientId(?string $clientId): self
     {
         $this->clientId = $clientId;
 
@@ -147,12 +126,7 @@ class StaticMapHelperBuilder extends AbstractHelperBuilder
         return $this->channel;
     }
 
-    /**
-     * @param string|null $channel
-     *
-     * @return $this
-     */
-    public function setChannel($channel): self
+    public function setChannel(?string $channel): self
     {
         $this->channel = $channel;
 

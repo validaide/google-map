@@ -31,10 +31,7 @@ abstract class AbstractAutocompleteFunctionalTest extends AbstractApiFunctionalT
         $this->placeAutocompleteHelper = $this->createPlaceAutocompleteHelper();
     }
 
-    /**
-     * @param string|null  $html
-     */
-    protected function renderAutocomplete(Autocomplete $autocomplete, $html = null)
+    protected function renderAutocomplete(Autocomplete $autocomplete, ?string $html = null)
     {
         $this->renderHtml(implode('', [
             $html,
@@ -91,18 +88,12 @@ abstract class AbstractAutocompleteFunctionalTest extends AbstractApiFunctionalT
         $this->assertSameContainerVariable($autocomplete, 'autocomplete');
     }
 
-    /**
-     * @return PlaceAutocompleteHelper
-     */
-    protected function createPlaceAutocompleteHelper()
+    protected function createPlaceAutocompleteHelper(): PlaceAutocompleteHelper
     {
-        return PlaceAutocompleteHelperBuilder::create()->build();
+        return (new PlaceAutocompleteHelperBuilder())->build();
     }
 
-    /**
-     * @return string[]
-     */
-    private function getContainerPropertyPaths()
+    private function getContainerPropertyPaths(): array
     {
         return [
             null,
