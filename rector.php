@@ -21,6 +21,7 @@ return static function (RectorConfig $rectorConfig): void {
 
     $rectorConfig->sets([
         DoctrineSetList::ANNOTATIONS_TO_ATTRIBUTES,
+        DoctrineSetList::GEDMO_ANNOTATIONS_TO_ATTRIBUTES,
         LevelSetList::UP_TO_PHP_81,
         PHPUnitLevelSetList::UP_TO_PHPUNIT_80,
     ]);
