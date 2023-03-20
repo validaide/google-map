@@ -18,11 +18,8 @@ use Ivory\GoogleMap\Place\Autocomplete;
  */
 class PlaceAutocompleteEvent extends AbstractEvent
 {
-    private Autocomplete $autocomplete;
-
-    public function __construct(Autocomplete $autocomplete)
+    public function __construct(private readonly Autocomplete $autocomplete)
     {
-        $this->autocomplete = $autocomplete;
     }
 
     public function getAutocomplete(): Autocomplete

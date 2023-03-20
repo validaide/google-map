@@ -72,18 +72,12 @@ class SymbolCollectorTest extends TestCase
         $this->assertSame([$markerSymbol, $polylineSymbol], $this->symbolCollector->collect($map));
     }
 
-    /**
-     * @return MockObject|MarkerCollector
-     */
-    private function createMarkerCollectorMock()
+    private function createMarkerCollectorMock(): MockObject|MarkerCollector
     {
         return $this->createMock(MarkerCollector::class);
     }
 
-    /**
-     * @return MockObject|IconSequenceCollector
-     */
-    private function createIconSequenceCollectorMock()
+    private function createIconSequenceCollectorMock(): MockObject|IconSequenceCollector
     {
         return $this->createMock(IconSequenceCollector::class);
     }

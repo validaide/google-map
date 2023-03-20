@@ -22,14 +22,8 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class PolylineSubscriber implements EventSubscriberInterface
 {
-    private PolylineCollector $polylineCollector;
-
-    private PolylineRenderer $polylineRenderer;
-
-    public function __construct(PolylineCollector $polylineCollector, PolylineRenderer $polylineRenderer)
+    public function __construct(private readonly PolylineCollector $polylineCollector, private readonly PolylineRenderer $polylineRenderer)
     {
-        $this->polylineCollector = $polylineCollector;
-        $this->polylineRenderer = $polylineRenderer;
     }
 
     public function handleMap(StaticMapEvent $event): void

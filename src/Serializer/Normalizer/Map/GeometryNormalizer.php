@@ -13,10 +13,10 @@ class GeometryNormalizer extends Normalizer
     {
         $place = new Geometry();
 
-        $this->setIfPresent('location_type', $data, [$place, 'setLocationType']);
-        $this->setIfPresentDenormalize('location', $data, [$place, 'setLocation'], Coordinate::class, $format, $context);
-        $this->setIfPresentDenormalize('viewport', $data, [$place, 'setViewport'], Bound::class, $format, $context);
-        $this->setIfPresentDenormalize('bounds', $data, [$place, 'setBound'], Bound::class, $format, $context);
+        $this->setIfPresent('location_type', $data, $place->setLocationType(...));
+        $this->setIfPresentDenormalize('location', $data, $place->setLocation(...), Coordinate::class, $format, $context);
+        $this->setIfPresentDenormalize('viewport', $data, $place->setViewport(...), Bound::class, $format, $context);
+        $this->setIfPresentDenormalize('bounds', $data, $place->setBound(...), Bound::class, $format, $context);
 
         return $place;
     }

@@ -58,7 +58,7 @@ class ExtendableRendererTest extends TestCase
         $this->extendableRenderer->addRenderers($secondRenderers);
 
         $this->assertTrue($this->extendableRenderer->hasRenderers());
-        $this->assertSame(array_merge($firstRenderers, $secondRenderers), $this->extendableRenderer->getRenderers());
+        $this->assertSame([...$firstRenderers, ...$secondRenderers], $this->extendableRenderer->getRenderers());
     }
 
     public function testSetRenderer()
@@ -94,7 +94,7 @@ class ExtendableRendererTest extends TestCase
             )
             ->will($this->returnValue($result = 'result'));
 
-        $this->extendableRenderer->setRenderer(get_class($extendable), $extendableRenderer);
+        $this->extendableRenderer->setRenderer($extendable::class, $extendableRenderer);
 
         $this->assertSame($result, $this->extendableRenderer->render($extendable, $bound));
     }
@@ -106,26 +106,17 @@ class ExtendableRendererTest extends TestCase
         $this->extendableRenderer->render($this->createExtendableMock(), $this->createBoundMock());
     }
 
-    /**
-     * @return MockObject|ExtendableRendererInterface
-     */
-    private function createExtendableRendererMock()
+    private function createExtendableRendererMock(): MockObject|ExtendableRendererInterface
     {
         return $this->createMock(ExtendableRendererInterface::class);
     }
 
-    /**
-     * @return MockObject|ExtendableInterface
-     */
-    private function createExtendableMock()
+    private function createExtendableMock(): MockObject|ExtendableInterface
     {
         return $this->createMock(ExtendableInterface::class);
     }
 
-    /**
-     * @return MockObject|Bound
-     */
-    private function createBoundMock()
+    private function createBoundMock(): MockObject|Bound
     {
         return $this->createMock(Bound::class);
     }

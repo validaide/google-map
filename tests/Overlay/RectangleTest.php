@@ -27,9 +27,9 @@ class RectangleTest extends TestCase
     private Rectangle $rectangle;
 
     /**
-     * @var Bound
+     * @var Bound|MockObject|null
      */
-    private $bound;
+    private Bound|MockObject|null $bound = null;
 
     protected function setUp(): void
     {
@@ -66,10 +66,7 @@ class RectangleTest extends TestCase
         $this->assertSame($bound, $this->rectangle->getBound());
     }
 
-    /**
-     * @return MockObject|Bound
-     */
-    private function createBoundMock()
+    private function createBoundMock(): MockObject|Bound
     {
         return $this->createMock(Bound::class);
     }

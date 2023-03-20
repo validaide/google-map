@@ -72,23 +72,17 @@ class ScaleControlRendererTest extends TestCase
 
     public function testRenderWithInvalidControl()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Expected a "Ivory\GoogleMap\Control\ScaleControl", got "string".');
         $this->scaleControlRenderer->render('foo');
     }
 
-    /**
-     * @return MockObject|ControlPositionRenderer
-     */
-    private function createControlPositionRendererMock()
+    private function createControlPositionRendererMock(): MockObject|ControlPositionRenderer
     {
         return $this->createMock(ControlPositionRenderer::class);
     }
 
-    /**
-     * @return MockObject|ScaleControlStyleRenderer
-     */
-    private function createScaleControlStyleRendererMock()
+    private function createScaleControlStyleRendererMock(): MockObject|ScaleControlStyleRenderer
     {
         return $this->createMock(ScaleControlStyleRenderer::class);
     }

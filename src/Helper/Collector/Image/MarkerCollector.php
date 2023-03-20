@@ -21,11 +21,8 @@ use Ivory\GoogleMap\Overlay\Marker;
  */
 class MarkerCollector extends AbstractCollector
 {
-    private MarkerStyleRenderer $markerStyleRenderer;
-
-    public function __construct(MarkerStyleRenderer $markerStyleRenderer)
+    public function __construct(private readonly MarkerStyleRenderer $markerStyleRenderer)
     {
-        $this->markerStyleRenderer = $markerStyleRenderer;
     }
 
     /**
@@ -37,7 +34,7 @@ class MarkerCollector extends AbstractCollector
         $result = [];
 
         foreach (array_merge($markers, $map->getOverlayManager()->getMarkers()) as $marker) {
-            $hash = md5($this->markerStyleRenderer->render($marker));
+            $hash = md5($this->markerStyleRenderer->render($marker) ?: 'null');
             $result[$hash] = $this->collectValue($marker, $result[$hash] ?? []);
         }
 

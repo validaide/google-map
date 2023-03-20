@@ -196,7 +196,7 @@ class MapTest extends TestCase
 
         $this->assertTrue($this->map->hasMapOptions());
         $this->assertSame(
-            array_merge($firstMapOptions, $secondMapOptions),
+            [...$firstMapOptions, ...$secondMapOptions],
             $this->map->getMapOptions()
         );
     }
@@ -241,7 +241,7 @@ class MapTest extends TestCase
 
         $this->assertTrue($this->map->hasStylesheetOptions());
         $this->assertSame(
-            array_merge($firstStylesheetOptions, $secondStylesheetOptions),
+            [...$firstStylesheetOptions, ...$secondStylesheetOptions],
             $this->map->getStylesheetOptions()
         );
     }
@@ -286,7 +286,7 @@ class MapTest extends TestCase
 
         $this->assertTrue($this->map->hasHtmlAttributes());
         $this->assertSame(
-            array_merge($firstHtmlAttributes, $secondHtmlAttributes),
+            [...$firstHtmlAttributes, ...$secondHtmlAttributes],
             $this->map->getHtmlAttributes()
         );
     }
@@ -312,50 +312,32 @@ class MapTest extends TestCase
         $this->assertNull($this->map->getHtmlAttribute($htmlAttribute));
     }
 
-    /**
-     * @return MockObject|Coordinate
-     */
-    private function createCoordinateMock()
+    private function createCoordinateMock(): MockObject|Coordinate
     {
         return $this->createMock(Coordinate::class);
     }
 
-    /**
-     * @return MockObject|Bound
-     */
-    private function createBoundMock()
+    private function createBoundMock(): MockObject|Bound
     {
         return $this->createMock(Bound::class);
     }
 
-    /**
-     * @return MockObject|ControlManager
-     */
-    private function createControlManagerMock()
+    private function createControlManagerMock(): MockObject|ControlManager
     {
         return $this->createMock(ControlManager::class);
     }
 
-    /**
-     * @return MockObject|EventManager
-     */
-    private function createEventManagerMock()
+    private function createEventManagerMock(): MockObject|EventManager
     {
         return $this->createMock(EventManager::class);
     }
 
-    /**
-     * @return MockObject|LayerManager
-     */
-    private function createLayerManagerMock()
+    private function createLayerManagerMock(): MockObject|LayerManager
     {
         return $this->createMock(LayerManager::class);
     }
 
-    /**
-     * @return MockObject|OverlayManager
-     */
-    private function createOverlayManagerMock()
+    private function createOverlayManagerMock(): MockObject|OverlayManager
     {
         return $this->createMock(OverlayManager::class);
     }

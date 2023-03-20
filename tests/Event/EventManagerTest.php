@@ -198,10 +198,7 @@ class EventManagerTest extends TestCase
         $this->assertEmpty($this->eventManager->getEventsOnce());
     }
 
-    /**
-     * @return MockObject|Event
-     */
-    private function createEventMock()
+    private function createEventMock(): MockObject|Event
     {
         return $this->createMock(Event::class);
     }

@@ -28,10 +28,7 @@ use PHPUnit\Framework\TestCase;
  */
 class InfoWindowRendererTest extends TestCase
 {
-    /**
-     * @var AbstractInfoWindowRenderer|MockObject
-     */
-    private $infoWindowRenderer;
+    private AbstractInfoWindowRenderer|MockObject $infoWindowRenderer;
 
     protected function setUp(): void
     {
@@ -74,10 +71,7 @@ class InfoWindowRendererTest extends TestCase
         );
     }
 
-    /**
-     * @return MockObject|AbstractInfoWindowRenderer
-     */
-    private function createAbstractInfoWindowRendererMock()
+    private function createAbstractInfoWindowRendererMock(): MockObject|AbstractInfoWindowRenderer
     {
         $infoWindowRenderer = $this->getMockBuilder(AbstractInfoWindowRenderer::class)
             ->setConstructorArgs([new Formatter(), new JsonBuilder()])

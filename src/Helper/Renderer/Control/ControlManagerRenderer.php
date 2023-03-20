@@ -77,7 +77,7 @@ class ControlManagerRenderer
     public function render(ControlManager $controlManager, JsonBuilder $jsonBuilder): void
     {
         foreach ($this->renderers as $renderer) {
-            $control = get_class($renderer);
+            $control = $renderer::class;
 
             if (($position = strrpos($control, '\\')) !== false) {
                 $control = substr($control, ++$position, -8);

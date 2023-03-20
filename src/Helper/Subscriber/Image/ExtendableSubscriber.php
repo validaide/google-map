@@ -22,14 +22,8 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class ExtendableSubscriber implements EventSubscriberInterface
 {
-    private ExtendableCollector $extendableCollector;
-
-    private ExtendableRenderer $extendableRenderer;
-
-    public function __construct(ExtendableCollector $extendableCollector, ExtendableRenderer $extendableRenderer)
+    public function __construct(private readonly ExtendableCollector $extendableCollector, private readonly ExtendableRenderer $extendableRenderer)
     {
-        $this->extendableCollector = $extendableCollector;
-        $this->extendableRenderer = $extendableRenderer;
     }
 
     public function handleMap(StaticMapEvent $event): void

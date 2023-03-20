@@ -93,10 +93,7 @@ class StylesheetTagRendererTest extends TestCase
         ];
     }
 
-    /**
-     * @return MockObject|StylesheetRenderer
-     */
-    private function createStylesheetRendererMock()
+    private function createStylesheetRendererMock(): MockObject|StylesheetRenderer
     {
         return $this->createMock(StylesheetRenderer::class);
     }

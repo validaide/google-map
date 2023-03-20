@@ -107,18 +107,12 @@ class PlaceDetailResponseTest extends TestCase
         $this->assertEmpty($this->response->getHtmlAttributions());
     }
 
-    /**
-     * @return MockObject|PlaceDetailRequestInterface
-     */
-    private function createRequestMock()
+    private function createRequestMock(): MockObject|PlaceDetailRequestInterface
     {
         return $this->createMock(PlaceDetailRequestInterface::class);
     }
 
-    /**
-     * @return MockObject|Place
-     */
-    private function createPlaceMock()
+    private function createPlaceMock(): MockObject|Place
     {
         return $this->createMock(Place::class);
     }

@@ -21,10 +21,7 @@ use PHPUnit\Framework\TestCase;
  */
 class TextualPlaceSearchRequestTest extends TestCase
 {
-    /**
-     * @var AbstractTextualPlaceSearchRequest|MockObject
-     */
-    private $request;
+    private AbstractTextualPlaceSearchRequest|MockObject $request;
 
     protected function setUp(): void
     {
@@ -62,10 +59,7 @@ class TextualPlaceSearchRequestTest extends TestCase
         $this->assertSame(['keyword' => $keyword], $this->request->buildQuery());
     }
 
-    /**
-     * @return MockObject|AbstractTextualPlaceSearchRequest
-     */
-    private function createRequestMock()
+    private function createRequestMock(): MockObject|AbstractTextualPlaceSearchRequest
     {
         return $this->getMockForAbstractClass(AbstractTextualPlaceSearchRequest::class);
     }

@@ -22,10 +22,7 @@ use PHPUnit\Framework\TestCase;
  */
 class GeocoderRequestTest extends TestCase
 {
-    /**
-     * @var AbstractGeocoderRequest|MockObject
-     */
-    private $request;
+    private AbstractGeocoderRequest|MockObject $request;
 
     protected function setUp(): void
     {
@@ -73,10 +70,7 @@ class GeocoderRequestTest extends TestCase
         $this->assertSame(['language' => $language], $this->request->buildQuery());
     }
 
-    /**
-     * @return MockObject|AbstractGeocoderRequest
-     */
-    private function createAbstractRequestMock()
+    private function createAbstractRequestMock(): MockObject|AbstractGeocoderRequest
     {
         return $this->getMockForAbstractClass(AbstractGeocoderRequest::class);
     }

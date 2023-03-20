@@ -29,20 +29,11 @@ class MarkerClusterTest extends TestCase
 {
     private MarkerCluster $markerCluster;
 
-    /**
-     * @var MockObject|OverlayManager
-     */
-    private $overlayManager;
+    private OverlayManager|MockObject $overlayManager;
 
-    /**
-     * @var MockObject|Map
-     */
-    private $map;
+    private Map|MockObject $map;
 
-    /**
-     * @var MockObject|Bound
-     */
-    private $bound;
+    private Bound|MockObject $bound;
 
     protected function setUp(): void
     {
@@ -231,10 +222,8 @@ class MarkerClusterTest extends TestCase
 
     /**
      * @param Map|null $map
-     *
-     * @return MockObject|OverlayManager
      */
-    private function createOverlayManagerMock(Map $map = null)
+    private function createOverlayManagerMock(Map $map = null): MockObject|OverlayManager
     {
         $overlayManager = $this->createMock(OverlayManager::class);
         $overlayManager
@@ -252,10 +241,8 @@ class MarkerClusterTest extends TestCase
 
     /**
      * @param Bound|null $bound
-     *
-     * @return MockObject|Map
      */
-    private function createMapMock(Bound $bound = null)
+    private function createMapMock(Bound $bound = null): MockObject|Map
     {
         $map = $this->createMock(Map::class);
         $map
@@ -266,18 +253,12 @@ class MarkerClusterTest extends TestCase
         return $map;
     }
 
-    /**
-     * @return MockObject|Bound
-     */
-    private function createBoundMock()
+    private function createBoundMock(): MockObject|Bound
     {
         return $this->createMock(Bound::class);
     }
 
-    /**
-     * @return MockObject|Marker
-     */
-    private function createMarkerMock()
+    private function createMarkerMock(): MockObject|Marker
     {
         return $this->createMock(Marker::class);
     }

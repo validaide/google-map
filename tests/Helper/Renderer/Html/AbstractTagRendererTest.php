@@ -23,15 +23,9 @@ use PHPUnit\Framework\TestCase;
  */
 class AbstractTagRendererTest extends TestCase
 {
-    /**
-     * @var AbstractTagRenderer|MockObject
-     */
-    private $tagRenderer;
+    private AbstractTagRenderer|MockObject $tagRenderer;
 
-    /**
-     * @var TagRenderer|MockObject
-     */
-    private $innerTagRenderer;
+    private TagRenderer|MockObject $innerTagRenderer;
 
     protected function setUp(): void
     {
@@ -58,28 +52,20 @@ class AbstractTagRendererTest extends TestCase
 
     /**
      * @param TagRenderer|null $tagRenderer
-     *
-     * @return MockObject|AbstractTagRenderer
      */
-    private function createAbstractTagRendererMock(TagRenderer $tagRenderer = null)
+    private function createAbstractTagRendererMock(TagRenderer $tagRenderer = null): MockObject|AbstractTagRenderer
     {
         return $this->getMockBuilder(AbstractTagRenderer::class)
             ->setConstructorArgs([$this->createFormatterMock(), $tagRenderer ?: $this->createTagRendererMock()])
             ->getMockForAbstractClass();
     }
 
-    /**
-     * @return MockObject|Formatter
-     */
-    private function createFormatterMock()
+    private function createFormatterMock(): MockObject|Formatter
     {
         return $this->createMock(Formatter::class);
     }
 
-    /**
-     * @return MockObject|TagRenderer
-     */
-    private function createTagRendererMock()
+    private function createTagRendererMock(): MockObject|TagRenderer
     {
         return $this->createMock(TagRenderer::class);
     }

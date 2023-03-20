@@ -151,10 +151,7 @@ class AbstractPlaceAutocompleteRequestTest extends TestCase
         ], $this->request->buildQuery());
     }
 
-    /**
-     * @return MockObject|Coordinate
-     */
-    private function createCoordinateMock()
+    private function createCoordinateMock(): MockObject|Coordinate
     {
         return $this->createMock(Coordinate::class);
     }

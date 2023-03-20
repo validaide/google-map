@@ -19,11 +19,8 @@ use Ivory\GoogleMap\Overlay\Marker;
  */
 class MarkerLocationRenderer
 {
-    private CoordinateRenderer $coordinateRenderer;
-
-    public function __construct(CoordinateRenderer $coordinateRenderer)
+    public function __construct(private readonly CoordinateRenderer $coordinateRenderer)
     {
-        $this->coordinateRenderer = $coordinateRenderer;
     }
 
     public function render(Marker $marker): string

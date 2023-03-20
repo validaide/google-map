@@ -83,18 +83,12 @@ class GeocoderServiceUnitTest extends AbstractUnitServiceTest
         $this->assertSame($response, $this->service->geocode($request));
     }
 
-    /**
-     * @return MockObject|AbstractGeocoderRequest
-     */
-    private function createGeocoderRequestMock()
+    private function createGeocoderRequestMock(): MockObject|AbstractGeocoderRequest
     {
         return $this->createMock(AbstractGeocoderRequest::class);
     }
 
-    /**
-     * @return MockObject|AbstractGeocoderRequest
-     */
-    private function createGeocoderResponseMock()
+    private function createGeocoderResponseMock(): MockObject|AbstractGeocoderRequest
     {
         return $this->createMock(GeocoderResponse::class);
     }

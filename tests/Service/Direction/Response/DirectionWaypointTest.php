@@ -64,10 +64,7 @@ class DirectionWaypointTest extends TestCase
         $this->assertSame($stepInterpolation, $this->waypoint->getStepInterpolation());
     }
 
-    /**
-     * @return MockObject|Coordinate
-     */
-    private function createCoordinateMock()
+    private function createCoordinateMock(): MockObject|Coordinate
     {
         return $this->createMock(Coordinate::class);
     }

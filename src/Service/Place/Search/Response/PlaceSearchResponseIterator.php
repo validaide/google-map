@@ -20,22 +20,22 @@ use Ivory\GoogleMap\Service\Place\Search\Request\PageTokenPlaceSearchRequest;
  */
 class PlaceSearchResponseIterator implements Iterator
 {
-    private PlaceSearchService $service;
     /** @var PlaceSearchResponse[] */
     private array $responses = [];
     private int $position = 0;
 
-    public function __construct(PlaceSearchService $service, PlaceSearchResponse $response)
+    public function __construct(private readonly PlaceSearchService $service, PlaceSearchResponse $response)
     {
-        $this->service     = $service;
         $this->responses[] = $response;
     }
 
-    public function current()
+    public function current(): mixed
     {
         if ($this->valid()) {
             return $this->responses[$this->position];
         }
+
+        return null;
     }
 
     public function next(): void

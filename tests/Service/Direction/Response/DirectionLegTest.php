@@ -288,50 +288,32 @@ class DirectionLegTest extends TestCase
         $this->assertEmpty($this->leg->getViaWaypoints());
     }
 
-    /**
-     * @return MockObject|Duration
-     */
-    private function createDurationMock()
+    private function createDurationMock(): MockObject|Duration
     {
         return $this->createMock(Duration::class);
     }
 
-    /**
-     * @return MockObject|Distance
-     */
-    private function createDistanceMock()
+    private function createDistanceMock(): MockObject|Distance
     {
         return $this->createMock(Distance::class);
     }
 
-    /**
-     * @return MockObject|Coordinate
-     */
-    private function createCoordinateMock()
+    private function createCoordinateMock(): MockObject|Coordinate
     {
         return $this->createMock(Coordinate::class);
     }
 
-    /**
-     * @return MockObject|Time
-     */
-    private function createTimeMock()
+    private function createTimeMock(): MockObject|Time
     {
         return $this->createMock(Time::class);
     }
 
-    /**
-     * @return MockObject|DirectionStep
-     */
-    private function createStepMock()
+    private function createStepMock(): MockObject|DirectionStep
     {
         return $this->createMock(DirectionStep::class);
     }
 
-    /**
-     * @return MockObject|DirectionWaypoint
-     */
-    private function createWaypointMock()
+    private function createWaypointMock(): MockObject|DirectionWaypoint
     {
         return $this->createMock(DirectionWaypoint::class);
     }

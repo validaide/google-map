@@ -63,10 +63,7 @@ class EncodedPolylineRendererTest extends TestCase
         );
     }
 
-    /**
-     * @return MockObject|EncodingRenderer
-     */
-    private function createEncodingRendererMock()
+    private function createEncodingRendererMock(): MockObject|EncodingRenderer
     {
         return $this->createMock(EncodingRenderer::class);
     }

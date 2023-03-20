@@ -145,7 +145,7 @@ class AutocompleteTest extends TestCase
 
         $this->assertTrue($this->autocomplete->hasComponents());
         $this->assertSame(
-            array_merge($firstComponents, $secondComponents),
+            [...$firstComponents, ...$secondComponents],
             $this->autocomplete->getComponents()
         );
     }
@@ -189,7 +189,7 @@ class AutocompleteTest extends TestCase
 
         $this->assertTrue($this->autocomplete->hasInputAttributes());
         $this->assertSame(
-            array_merge($firstInputAttributes, $secondInputAttributes),
+            [...$firstInputAttributes, ...$secondInputAttributes],
             $this->autocomplete->getInputAttributes()
         );
     }
@@ -253,18 +253,12 @@ class AutocompleteTest extends TestCase
         $this->assertEmpty($this->autocomplete->getLibraries());
     }
 
-    /**
-     * @return MockObject|EventManager
-     */
-    private function createEventManagerMock()
+    private function createEventManagerMock(): MockObject|EventManager
     {
         return $this->createMock(EventManager::class);
     }
 
-    /**
-     * @return MockObject|Bound
-     */
-    private function createBoundMock()
+    private function createBoundMock(): MockObject|Bound
     {
         return $this->createMock(Bound::class);
     }

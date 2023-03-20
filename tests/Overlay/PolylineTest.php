@@ -143,18 +143,12 @@ class PolylineTest extends TestCase
         $this->assertEmpty($this->polyline->getIconSequences());
     }
 
-    /**
-     * @return MockObject|Coordinate
-     */
-    private function createCoordinateMock()
+    private function createCoordinateMock(): MockObject|Coordinate
     {
         return $this->createMock(Coordinate::class);
     }
 
-    /**
-     * @return MockObject|IconSequence
-     */
-    private function createIconSequenceMock()
+    private function createIconSequenceMock(): MockObject|IconSequence
     {
         return $this->createMock(IconSequence::class);
     }

@@ -90,26 +90,17 @@ class MapTypeControlRendererTest extends TestCase
         $this->mapTypeControlRenderer->render('foo');
     }
 
-    /**
-     * @return MockObject|MapTypeIdRenderer
-     */
-    private function createMapTypeIdRendererMock()
+    private function createMapTypeIdRendererMock(): MockObject|MapTypeIdRenderer
     {
         return $this->createMock(MapTypeIdRenderer::class);
     }
 
-    /**
-     * @return MockObject|ControlPositionRenderer
-     */
-    private function createControlPositionRendererMock()
+    private function createControlPositionRendererMock(): MockObject|ControlPositionRenderer
     {
         return $this->createMock(ControlPositionRenderer::class);
     }
 
-    /**
-     * @return MockObject|MapTypeControlStyleRenderer
-     */
-    private function createMapTypeControlStyleRendererMock()
+    private function createMapTypeControlStyleRendererMock(): MockObject|MapTypeControlStyleRenderer
     {
         return $this->createMock(MapTypeControlStyleRenderer::class);
     }

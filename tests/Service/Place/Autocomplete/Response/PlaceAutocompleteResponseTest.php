@@ -94,18 +94,12 @@ class PlaceAutocompleteResponseTest extends TestCase
         $this->assertEmpty($this->response->getPredictions());
     }
 
-    /**
-     * @return MockObject|PlaceAutocompleteRequestInterface
-     */
-    private function createRequestMock()
+    private function createRequestMock(): MockObject|PlaceAutocompleteRequestInterface
     {
         return $this->createMock(PlaceAutocompleteRequestInterface::class);
     }
 
-    /**
-     * @return MockObject|PlaceAutocompletePrediction
-     */
-    private function createPredictionMock()
+    private function createPredictionMock(): MockObject|PlaceAutocompletePrediction
     {
         return $this->createMock(PlaceAutocompletePrediction::class);
     }

@@ -26,14 +26,14 @@ class PlaceSearchResponseIteratorTest extends TestCase
     private PlaceSearchResponseIterator $iterator;
 
     /**
-     * @var PlaceSearchService|MockObject
+     * @var PlaceSearchService|MockObject|null
      */
-    private $service;
+    private PlaceSearchService|MockObject|null $service = null;
 
     /**
-     * @var PlaceSearchResponse|MockObject
+     * @var PlaceSearchResponse|MockObject|null
      */
-    private $response;
+    private PlaceSearchResponse|MockObject|null $response = null;
 
     protected function setUp(): void
     {
@@ -102,18 +102,12 @@ class PlaceSearchResponseIteratorTest extends TestCase
         $this->assertNull($this->iterator->current());
     }
 
-    /**
-     * @return MockObject|PlaceSearchService
-     */
-    private function createServiceMock()
+    private function createServiceMock(): MockObject|PlaceSearchService
     {
         return $this->createMock(PlaceSearchService::class);
     }
 
-    /**
-     * @return MockObject|PlaceSearchResponse
-     */
-    private function createResponseMock()
+    private function createResponseMock(): MockObject|PlaceSearchResponse
     {
         return $this->createMock(PlaceSearchResponse::class);
     }

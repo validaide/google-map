@@ -71,10 +71,7 @@ class PointCollectorTest extends TestCase
         return $icon;
     }
 
-    /**
-     * @return MockObject|MarkerCollector
-     */
-    private function createMarkerCollectorMock()
+    private function createMarkerCollectorMock(): MockObject|MarkerCollector
     {
         return $this->createMock(MarkerCollector::class);
     }

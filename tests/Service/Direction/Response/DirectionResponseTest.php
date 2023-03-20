@@ -186,26 +186,17 @@ class DirectionResponseTest extends TestCase
         $this->assertEmpty($this->response->getAvailableTravelModes());
     }
 
-    /**
-     * @return MockObject|DirectionRequestInterface
-     */
-    private function createRequestMock()
+    private function createRequestMock(): MockObject|DirectionRequestInterface
     {
         return $this->createMock(DirectionRequestInterface::class);
     }
 
-    /**
-     * @return MockObject|DirectionRoute
-     */
-    private function createRouteMock()
+    private function createRouteMock(): MockObject|DirectionRoute
     {
         return $this->createMock(DirectionRoute::class);
     }
 
-    /**
-     * @return MockObject|DirectionGeocoded
-     */
-    private function createGeocodedWaypointMock()
+    private function createGeocodedWaypointMock(): MockObject|DirectionGeocoded
     {
         return $this->createMock(DirectionGeocoded::class);
     }

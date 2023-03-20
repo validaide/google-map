@@ -111,7 +111,7 @@ class PlaceAutocompleteRequestTest extends TestCase
 
         $this->assertTrue($this->request->hasComponents());
         $this->assertSame(
-            array_merge($firstComponents, $secondComponents),
+            [...$firstComponents, ...$secondComponents],
             $this->request->getComponents()
         );
     }

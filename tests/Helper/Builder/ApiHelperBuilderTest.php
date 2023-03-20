@@ -25,7 +25,7 @@ class ApiHelperBuilderTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->apiHelperBuilder = ApiHelperBuilder::create();
+        $this->apiHelperBuilder = new ApiHelperBuilder();
     }
 
     public function testInheritance()
