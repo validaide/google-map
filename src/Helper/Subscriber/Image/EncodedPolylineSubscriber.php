@@ -22,16 +22,8 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class EncodedPolylineSubscriber implements EventSubscriberInterface
 {
-    private EncodedPolylineCollector $encodedPolylineCollector;
-
-    private EncodedPolylineRenderer $encodedPolylineRenderer;
-
-    public function __construct(
-        EncodedPolylineCollector $encodedPolylineCollector,
-        EncodedPolylineRenderer $encodedPolylineRenderer
-    ) {
-        $this->encodedPolylineCollector = $encodedPolylineCollector;
-        $this->encodedPolylineRenderer = $encodedPolylineRenderer;
+    public function __construct(private readonly EncodedPolylineCollector $encodedPolylineCollector, private readonly EncodedPolylineRenderer $encodedPolylineRenderer)
+    {
     }
 
     public function handleMap(StaticMapEvent $event): void

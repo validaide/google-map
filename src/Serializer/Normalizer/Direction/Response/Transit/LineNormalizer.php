@@ -15,13 +15,13 @@ class LineNormalizer extends Normalizer
     {
         $details = new DirectionTransitLine();
 
-        $this->setIfPresent('name', $data, [$details, 'setName']);
-        $this->setIfPresent('short_name', $data, [$details, 'setShortName']);
-        $this->setIfPresent('color', $data, [$details, 'setColor']);
-        $this->setIfPresent('url', $data, [$details, 'setUrl']);
-        $this->setIfPresent('icon', $data, [$details, 'setIcon']);
-        $this->setIfPresent('text_color', $data, [$details, 'setTextColor']);
-        $this->setIfPresentDenormalize('vehicle', $data, [$details, 'setVehicle'], DirectionTransitVehicle::class, $format, $context);
+        $this->setIfPresent('name', $data, $details->setName(...));
+        $this->setIfPresent('short_name', $data, $details->setShortName(...));
+        $this->setIfPresent('color', $data, $details->setColor(...));
+        $this->setIfPresent('url', $data, $details->setUrl(...));
+        $this->setIfPresent('icon', $data, $details->setIcon(...));
+        $this->setIfPresent('text_color', $data, $details->setTextColor(...));
+        $this->setIfPresentDenormalize('vehicle', $data, $details->setVehicle(...), DirectionTransitVehicle::class, $format, $context);
 
         foreach ($data['agencies'] as $agencyDatum) {
             $details->addAgency($this->denormalizer->denormalize($agencyDatum, DirectionTransitAgency::class, $format, $context));

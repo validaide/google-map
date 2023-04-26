@@ -11,9 +11,9 @@ class AgencyNormalizer extends Normalizer
     {
         $details = new DirectionTransitAgency();
 
-        $this->setIfPresent('name', $data, [$details, 'setName']);
-        $this->setIfPresent('phone', $data, [$details, 'setPhone']);
-        $this->setIfPresent('url', $data, [$details, 'setUrl']);
+        $this->setIfPresent('name', $data, $details->setName(...));
+        $this->setIfPresent('phone', $data, $details->setPhone(...));
+        $this->setIfPresent('url', $data, $details->setUrl(...));
 
         return $details;
     }

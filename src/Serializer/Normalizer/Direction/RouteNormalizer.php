@@ -14,11 +14,11 @@ class RouteNormalizer extends Normalizer
     {
         $route = new DirectionRoute();
 
-        $this->setIfPresent('summary',$data, [$route, 'setSummary']);
-        $this->setIfPresent('copyrights',$data, [$route, 'setCopyrights']);
-        $this->setIfPresent('warnings',$data, [$route, 'setWarnings']);
-        $this->setIfPresentDenormalize('bounds', $data, [$route, 'setBound'], Bound::class, $format, $context);
-        $this->setIfPresentDenormalize('overview_polyline', $data, [$route, 'setOverviewPolyline'], EncodedPolyline::class, $format, $context);
+        $this->setIfPresent('summary',$data, $route->setSummary(...));
+        $this->setIfPresent('copyrights',$data, $route->setCopyrights(...));
+        $this->setIfPresent('warnings',$data, $route->setWarnings(...));
+        $this->setIfPresentDenormalize('bounds', $data, $route->setBound(...), Bound::class, $format, $context);
+        $this->setIfPresentDenormalize('overview_polyline', $data, $route->setOverviewPolyline(...), EncodedPolyline::class, $format, $context);
 
         foreach ($data['legs'] as $legDatum) {
             $route->addLeg($this->denormalizer->denormalize($legDatum, DirectionLeg::class, $format, $context));

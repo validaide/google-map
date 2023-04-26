@@ -78,9 +78,8 @@ trait StaticOptionsAwareTrait
 
     /**
      * @param string $option
-     * @param mixed  $value
      */
-    public function setStaticOption($option, $value)
+    public function setStaticOption($option, mixed $value)
     {
         $this->staticOptions[$option] = $value;
     }

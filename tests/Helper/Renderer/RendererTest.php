@@ -21,15 +21,9 @@ use PHPUnit\Framework\TestCase;
  */
 class RendererTest extends TestCase
 {
-    /**
-     * @var AbstractRenderer
-     */
-    private $renderer;
+    private AbstractRenderer|MockObject $renderer;
 
-    /**
-     * @var Formatter
-     */
-    private $formatter;
+    private Formatter|MockObject $formatter;
 
     protected function setUp(): void
     {
@@ -51,20 +45,15 @@ class RendererTest extends TestCase
 
     /**
      * @param Formatter|null $formatter
-     *
-     * @return MockObject|AbstractRenderer
      */
-    private function createAbstractRendererMock(Formatter $formatter = null)
+    private function createAbstractRendererMock(Formatter $formatter = null): MockObject|AbstractRenderer
     {
         return $this->getMockBuilder(AbstractRenderer::class)
             ->setConstructorArgs([$formatter ?: $this->createFormatterMock()])
             ->getMockForAbstractClass();
     }
 
-    /**
-     * @return MockObject|Formatter
-     */
-    private function createFormatterMock()
+    private function createFormatterMock(): MockObject|Formatter
     {
         return $this->createMock(Formatter::class);
     }

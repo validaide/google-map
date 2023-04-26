@@ -94,10 +94,7 @@ class InfoBoxRendererTest extends TestCase
         $this->assertSame('typeof InfoBox!==typeof undefined', $this->infoBoxRenderer->renderRequirement());
     }
 
-    /**
-     * @return MockObject|RequirementRenderer
-     */
-    private function createRequirementRendererMock()
+    private function createRequirementRendererMock(): MockObject|RequirementRenderer
     {
         return $this->createMock(RequirementRenderer::class);
     }

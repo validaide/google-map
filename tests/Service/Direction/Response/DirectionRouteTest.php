@@ -231,34 +231,22 @@ class DirectionRouteTest extends TestCase
         $this->assertSame([$waypointOrder], $this->route->getWaypointOrders());
     }
 
-    /**
-     * @return MockObject|Bound
-     */
-    private function createBoundMock()
+    private function createBoundMock(): MockObject|Bound
     {
         return $this->createMock(Bound::class);
     }
 
-    /**
-     * @return MockObject|DirectionLeg
-     */
-    private function createLegMock()
+    private function createLegMock(): MockObject|DirectionLeg
     {
         return $this->createMock(DirectionLeg::class);
     }
 
-    /**
-     * @return MockObject|Fare
-     */
-    private function createFareMock()
+    private function createFareMock(): MockObject|Fare
     {
         return $this->createMock(Fare::class);
     }
 
-    /**
-     * @return MockObject|EncodedPolyline
-     */
-    private function createEncodedPolylineMock()
+    private function createEncodedPolylineMock(): MockObject|EncodedPolyline
     {
         return $this->createMock(EncodedPolyline::class);
     }

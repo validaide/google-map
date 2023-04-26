@@ -84,18 +84,12 @@ class SizeCollectorTest extends TestCase
         $this->assertSame([$size, $scaledSize], $this->sizeCollector->collect($map));
     }
 
-    /**
-     * @return MockObject|InfoWindowCollector
-     */
-    private function createInfoWindowCollectorMock()
+    private function createInfoWindowCollectorMock(): MockObject|InfoWindowCollector
     {
         return $this->createMock(InfoWindowCollector::class);
     }
 
-    /**
-     * @return MockObject|IconCollector
-     */
-    private function createIconCollectorMock()
+    private function createIconCollectorMock(): MockObject|IconCollector
     {
         return $this->createMock(IconCollector::class);
     }

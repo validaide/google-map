@@ -130,26 +130,17 @@ class DistanceMatrixElementTest extends TestCase
         $this->assertNull($this->element->getFare());
     }
 
-    /**
-     * @return MockObject|Distance
-     */
-    private function createDistanceMock()
+    private function createDistanceMock(): MockObject|Distance
     {
         return $this->createMock(Distance::class);
     }
 
-    /**
-     * @return MockObject|Duration
-     */
-    private function createDurationMock()
+    private function createDurationMock(): MockObject|Duration
     {
         return $this->createMock(Duration::class);
     }
 
-    /**
-     * @return MockObject|Fare
-     */
-    private function createFareMock()
+    private function createFareMock(): MockObject|Fare
     {
         return $this->createMock(Fare::class);
     }

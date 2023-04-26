@@ -26,7 +26,7 @@ class AbstractEventRendererTest extends TestCase
     /**
      * @var AbstractEventRenderer|\\PHPUnit_Framework_MockObject_MockObject
      */
-    private $eventRenderer;
+    private AbstractEventRenderer|MockObject $eventRenderer;
 
     protected function setUp(): void
     {
@@ -49,10 +49,7 @@ class AbstractEventRendererTest extends TestCase
         );
     }
 
-    /**
-     * @return MockObject|AbstractEventRenderer
-     */
-    private function createAbstractEventRendererMock()
+    private function createAbstractEventRendererMock(): MockObject|AbstractEventRenderer
     {
         $eventRenderer = $this->getMockBuilder(AbstractEventRenderer::class)
             ->setConstructorArgs([new Formatter()])

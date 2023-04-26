@@ -34,14 +34,14 @@ class DirectionRequestTest extends TestCase
     private DirectionRequest $request;
 
     /**
-     * @var LocationInterface|MockObject
+     * @var LocationInterface|MockObject|null
      */
-    private $origin;
+    private LocationInterface|MockObject|null $origin = null;
 
     /**
-     * @var LocationInterface|MockObject
+     * @var LocationInterface|MockObject|null
      */
-    private $destination;
+    private LocationInterface|MockObject|null $destination = null;
 
     protected function setUp(): void
     {
@@ -513,10 +513,8 @@ class DirectionRequestTest extends TestCase
 
     /**
      * @param string $value
-     *
-     * @return MockObject|LocationInterface
      */
-    private function createLocationMock($value = 'value')
+    private function createLocationMock($value = 'value'): MockObject|LocationInterface
     {
         $location = $this->createMock(LocationInterface::class);
         $location
@@ -527,10 +525,7 @@ class DirectionRequestTest extends TestCase
         return $location;
     }
 
-    /**
-     * @return MockObject|DirectionWaypoint
-     */
-    private function createWaypointMock()
+    private function createWaypointMock(): MockObject|DirectionWaypoint
     {
         return $this->createMock(DirectionWaypoint::class);
     }

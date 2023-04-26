@@ -184,58 +184,37 @@ class CoordinateCollectorTest extends TestCase
         $this->assertSame([...[$map->getCenter()], ...$coordinates], $this->coordinateCollector->collect($map));
     }
 
-    /**
-     * @return MockObject|BoundCollector
-     */
-    private function createBoundCollectorMock()
+    private function createBoundCollectorMock(): MockObject|BoundCollector
     {
         return $this->createMock(BoundCollector::class);
     }
 
-    /**
-     * @return MockObject|CircleCollector
-     */
-    private function createCircleCollectorMock()
+    private function createCircleCollectorMock(): MockObject|CircleCollector
     {
         return $this->createMock(CircleCollector::class);
     }
 
-    /**
-     * @return MockObject|InfoWindowCollector
-     */
-    private function createInfoWindowCollectorMock()
+    private function createInfoWindowCollectorMock(): MockObject|InfoWindowCollector
     {
         return $this->createMock(InfoWindowCollector::class);
     }
 
-    /**
-     * @return MockObject|MarkerCollector
-     */
-    private function createMarkerCollectorMock()
+    private function createMarkerCollectorMock(): MockObject|MarkerCollector
     {
         return $this->createMock(MarkerCollector::class);
     }
 
-    /**
-     * @return MockObject|PolygonCollector
-     */
-    private function createPolygonCollectorMock()
+    private function createPolygonCollectorMock(): MockObject|PolygonCollector
     {
         return $this->createMock(PolygonCollector::class);
     }
 
-    /**
-     * @return MockObject|PolylineCollector
-     */
-    private function createPolylineCollectorMock()
+    private function createPolylineCollectorMock(): MockObject|PolylineCollector
     {
         return $this->createMock(PolylineCollector::class);
     }
 
-    /**
-     * @return MockObject|HeatmapLayerCollector
-     */
-    private function createHeatmapLayerCollector()
+    private function createHeatmapLayerCollector(): MockObject|HeatmapLayerCollector
     {
         return $this->createMock(HeatmapLayerCollector::class);
     }

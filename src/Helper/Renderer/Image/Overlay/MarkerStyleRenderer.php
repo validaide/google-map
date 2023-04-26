@@ -21,11 +21,8 @@ use Ivory\GoogleMap\Overlay\Marker;
  */
 class MarkerStyleRenderer extends AbstractStyleRenderer
 {
-    private PointRenderer $pointRenderer;
-
-    public function __construct(PointRenderer $pointRenderer)
+    public function __construct(private readonly PointRenderer $pointRenderer)
     {
-        $this->pointRenderer = $pointRenderer;
     }
 
     public function render(Marker $marker): ?string

@@ -125,10 +125,7 @@ class OpeningHoursTest extends TestCase
         $this->assertEmpty($this->openingHours->getWeekdayTexts());
     }
 
-    /**
-     * @return MockObject|Period
-     */
-    private function createPeriodMock()
+    private function createPeriodMock(): MockObject|Period
     {
         return $this->createMock(Period::class);
     }

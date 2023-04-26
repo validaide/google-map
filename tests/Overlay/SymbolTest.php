@@ -105,10 +105,7 @@ class SymbolTest extends TestCase
         $this->assertNull($this->symbol->getLabelOrigin());
     }
 
-    /**
-     * @return MockObject|Point
-     */
-    private function createPointMock()
+    private function createPointMock(): MockObject|Point
     {
         return $this->createMock(Point::class);
     }

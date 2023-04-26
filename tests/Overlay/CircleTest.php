@@ -27,9 +27,9 @@ class CircleTest extends TestCase
     private Circle $circle;
 
     /**
-     * @var Coordinate|MockObject
+     * @var Coordinate|MockObject|null
      */
-    private $center;
+    private Coordinate|MockObject|null $center = null;
 
     protected function setUp(): void
     {
@@ -75,10 +75,7 @@ class CircleTest extends TestCase
         $this->assertSame($radius, $this->circle->getRadius());
     }
 
-    /**
-     * @return MockObject|Coordinate
-     */
-    private function createCoordinateMock()
+    private function createCoordinateMock(): MockObject|Coordinate
     {
         return $this->createMock(Coordinate::class);
     }

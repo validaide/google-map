@@ -27,15 +27,9 @@ class LayerManagerTest extends TestCase
 {
     private LayerManager $layerManager;
 
-    /**
-     * @var MockObject|Map
-     */
-    private $map;
+    private Map|MockObject $map;
 
-    /**
-     * @var MockObject|Bound
-     */
-    private $bound;
+    private Bound|MockObject $bound;
 
     protected function setUp(): void
     {
@@ -386,10 +380,8 @@ class LayerManagerTest extends TestCase
 
     /**
      * @param Bound|null $bound
-     *
-     * @return MockObject|Map
      */
-    private function createMapMock(Bound $bound = null)
+    private function createMapMock(Bound $bound = null): MockObject|Map
     {
         $map = $this->createMock(Map::class);
         $map
@@ -400,34 +392,22 @@ class LayerManagerTest extends TestCase
         return $map;
     }
 
-    /**
-     * @return MockObject|Bound
-     */
-    private function createBoundMock()
+    private function createBoundMock(): MockObject|Bound
     {
         return $this->createMock(Bound::class);
     }
 
-    /**
-     * @return MockObject|GeoJsonLayer
-     */
-    private function createGeoJsonLayerMock()
+    private function createGeoJsonLayerMock(): MockObject|GeoJsonLayer
     {
         return $this->createMock(GeoJsonLayer::class);
     }
 
-    /**
-     * @return MockObject|HeatmapLayer
-     */
-    private function createHeatmapLayerMock()
+    private function createHeatmapLayerMock(): MockObject|HeatmapLayer
     {
         return $this->createMock(HeatmapLayer::class);
     }
 
-    /**
-     * @return MockObject|KmlLayer
-     */
-    private function createKmlLayerMock()
+    private function createKmlLayerMock(): MockObject|KmlLayer
     {
         return $this->createMock(KmlLayer::class);
     }

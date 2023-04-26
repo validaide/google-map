@@ -22,11 +22,8 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class CenterSubscriber implements EventSubscriberInterface
 {
-    private CoordinateRenderer $coordinateRenderer;
-
-    public function __construct(CoordinateRenderer $coordinateRenderer)
+    public function __construct(private readonly CoordinateRenderer $coordinateRenderer)
     {
-        $this->coordinateRenderer = $coordinateRenderer;
     }
 
     public function handleMap(StaticMapEvent $event): void

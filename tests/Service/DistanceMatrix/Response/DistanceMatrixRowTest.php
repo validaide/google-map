@@ -72,10 +72,7 @@ class DistanceMatrixRowTest extends TestCase
         $this->assertEmpty($this->row->getElements());
     }
 
-    /**
-     * @return MockObject|DistanceMatrixElement
-     */
-    private function createElementMock()
+    private function createElementMock(): MockObject|DistanceMatrixElement
     {
         return $this->createMock(DistanceMatrixElement::class);
     }

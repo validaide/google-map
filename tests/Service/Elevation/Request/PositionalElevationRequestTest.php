@@ -94,10 +94,8 @@ class PositionalElevationRequestTest extends TestCase
 
     /**
      * @param string $value
-     *
-     * @return MockObject|LocationInterface
      */
-    private function createLocationMock($value = 'value')
+    private function createLocationMock($value = 'value'): MockObject|LocationInterface
     {
         $location = $this->createMock(LocationInterface::class);
         $location

@@ -26,9 +26,9 @@ class IconSequenceTest extends TestCase
     private IconSequence $iconSequence;
 
     /**
-     * @var Symbol|MockObject
+     * @var Symbol|MockObject|null
      */
-    private $symbol;
+    private Symbol|MockObject|null $symbol = null;
 
     protected function setUp(): void
     {
@@ -64,10 +64,7 @@ class IconSequenceTest extends TestCase
         $this->assertSame($symbol, $this->iconSequence->getSymbol());
     }
 
-    /**
-     * @return MockObject|Symbol
-     */
-    private function createSymbolMock()
+    private function createSymbolMock(): MockObject|Symbol
     {
         return $this->createMock(Symbol::class);
     }

@@ -83,18 +83,12 @@ class PlaceDetailServiceUnitTest extends AbstractUnitServiceTest
         $this->assertSame($response, $this->service->process($request));
     }
 
-    /**
-     * @return MockObject|PlaceDetailRequestInterface
-     */
-    private function createPlaceDetailRequestMock()
+    private function createPlaceDetailRequestMock(): MockObject|PlaceDetailRequestInterface
     {
         return $this->createMock(PlaceDetailRequestInterface::class);
     }
 
-    /**
-     * @return MockObject|PlaceDetailResponse
-     */
-    private function createPlaceDetailResponseMock()
+    private function createPlaceDetailResponseMock(): MockObject|PlaceDetailResponse
     {
         return $this->createMock(PlaceDetailResponse::class);
     }

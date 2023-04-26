@@ -148,18 +148,12 @@ class BoundTest extends TestCase
         $this->assertFalse($this->bound->hasExtendable($extendable));
     }
 
-    /**
-     * @return MockObject|Coordinate
-     */
-    private function createCoordinateMock()
+    private function createCoordinateMock(): MockObject|Coordinate
     {
         return $this->createMock(Coordinate::class);
     }
 
-    /**
-     * @return MockObject|ExtendableInterface
-     */
-    private function createExtendableMock()
+    private function createExtendableMock(): MockObject|ExtendableInterface
     {
         return $this->createMock(ExtendableInterface::class);
     }

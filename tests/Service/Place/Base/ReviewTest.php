@@ -133,10 +133,7 @@ class ReviewTest extends TestCase
         $this->assertEmpty($this->review->getAspects());
     }
 
-    /**
-     * @return MockObject|AspectRating
-     */
-    private function createAspectRatingMock()
+    private function createAspectRatingMock(): MockObject|AspectRating
     {
         return $this->createMock(AspectRating::class);
     }

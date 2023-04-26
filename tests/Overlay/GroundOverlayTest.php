@@ -29,9 +29,9 @@ class GroundOverlayTest extends TestCase
     private ?string $url = null;
 
     /**
-     * @var Bound
+     * @var Bound|MockObject|null
      */
-    private $bound;
+    private Bound|MockObject|null $bound = null;
 
     protected function setUp(): void
     {
@@ -77,10 +77,7 @@ class GroundOverlayTest extends TestCase
         $this->assertSame($bound, $this->groundOverlay->getBound());
     }
 
-    /**
-     * @return MockObject|Bound
-     */
-    private function createBoundMock()
+    private function createBoundMock(): MockObject|Bound
     {
         return $this->createMock(Bound::class);
     }

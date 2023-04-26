@@ -22,12 +22,6 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  */
 class StaticMapHelper extends AbstractHelper
 {
-    private ?string $secret;
-
-    private ?string $clientId;
-
-    private ?string $channel;
-
     /**
      * @param string|null $secret
      * @param string|null $clientId
@@ -35,16 +29,12 @@ class StaticMapHelper extends AbstractHelper
      */
     public function __construct(
         EventDispatcherInterface $eventDispatcher,
-        $secret = null,
-        $clientId = null,
-        $channel = null
+        private ?string $secret = null,
+        private ?string $clientId = null,
+        private ?string $channel = null
     )
     {
         parent::__construct($eventDispatcher);
-
-        $this->secret   = $secret;
-        $this->clientId = $clientId;
-        $this->channel  = $channel;
     }
 
     public function hasSecret(): bool

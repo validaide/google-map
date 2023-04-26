@@ -18,11 +18,6 @@ use SplObjectStorage;
 class ApiEvent extends AbstractEvent
 {
     /**
-     * @var object[]
-     */
-    private array $objects;
-
-    /**
      * @var string[]
      */
     private array $sources = [];
@@ -32,22 +27,18 @@ class ApiEvent extends AbstractEvent
      */
     private array $libraries = [];
 
-    /**
-     * @var SplObjectStorage
-     */
-    private $callbacks;
+    private SplObjectStorage $callbacks;
 
     /**
-     * @var SplObjectStorage
+     * @var SplObjectStorage|mixed[][]
      */
-    private $requirements;
+    private SplObjectStorage|array $requirements;
 
     /**
      * @param object[] $objects
      */
-    public function __construct(array $objects)
+    public function __construct(private readonly array $objects)
     {
-        $this->objects = $objects;
         $this->callbacks = new SplObjectStorage();
         $this->requirements = new SplObjectStorage();
     }

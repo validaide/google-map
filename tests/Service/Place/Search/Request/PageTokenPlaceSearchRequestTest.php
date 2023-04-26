@@ -27,9 +27,9 @@ class PageTokenPlaceSearchRequestTest extends TestCase
     private PageTokenPlaceSearchRequest $request;
 
     /**
-     * @var PlaceSearchResponse|MockObject
+     * @var PlaceSearchResponse|MockObject|null
      */
-    private $response;
+    private PlaceSearchResponse|MockObject|null $response = null;
 
     protected function setUp(): void
     {
@@ -80,18 +80,12 @@ class PageTokenPlaceSearchRequestTest extends TestCase
         $this->assertSame(['pagetoken' => $pageToken], $this->request->buildQuery());
     }
 
-    /**
-     * @return MockObject|PlaceSearchResponse
-     */
-    private function createResponseMock()
+    private function createResponseMock(): MockObject|PlaceSearchResponse
     {
         return $this->createMock(PlaceSearchResponse::class);
     }
 
-    /**
-     * @return MockObject|PlaceSearchRequestInterface
-     */
-    private function createRequestMock()
+    private function createRequestMock(): MockObject|PlaceSearchRequestInterface
     {
         return $this->createMock(PlaceSearchRequestInterface::class);
     }

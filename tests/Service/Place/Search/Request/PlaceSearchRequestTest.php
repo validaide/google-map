@@ -26,10 +26,7 @@ use PHPUnit\Framework\TestCase;
  */
 class PlaceSearchRequestTest extends TestCase
 {
-    /**
-     * @var AbstractPlaceSearchRequest|MockObject
-     */
-    private $request;
+    private AbstractPlaceSearchRequest|MockObject $request;
 
     protected function setUp(): void
     {
@@ -175,18 +172,12 @@ class PlaceSearchRequestTest extends TestCase
         $this->assertSame(['language' => $language], $this->request->buildQuery());
     }
 
-    /**
-     * @return MockObject|AbstractPlaceSearchRequest
-     */
-    private function createRequestMock()
+    private function createRequestMock(): MockObject|AbstractPlaceSearchRequest
     {
         return $this->getMockForAbstractClass(AbstractPlaceSearchRequest::class);
     }
 
-    /**
-     * @return MockObject|Coordinate
-     */
-    private function createCoordinateMock()
+    private function createCoordinateMock(): MockObject|Coordinate
     {
         return $this->createMock(Coordinate::class);
     }

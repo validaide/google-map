@@ -283,9 +283,8 @@ class Map implements VariableAwareInterface, StaticOptionsAwareInterface
 
     /**
      * @param string $mapOption
-     * @param mixed  $value
      */
-    public function setMapOption($mapOption, $value): void
+    public function setMapOption($mapOption, mixed $value): void
     {
         $this->mapOptions[$mapOption] = $value;
     }

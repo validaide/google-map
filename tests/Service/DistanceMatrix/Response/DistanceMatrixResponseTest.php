@@ -183,18 +183,12 @@ class DistanceMatrixResponseTest extends TestCase
         $this->assertEmpty($this->response->getRows());
     }
 
-    /**
-     * @return MockObject|DistanceMatrixRequestInterface
-     */
-    private function createRequestMock()
+    private function createRequestMock(): MockObject|DistanceMatrixRequestInterface
     {
         return $this->createMock(DistanceMatrixRequestInterface::class);
     }
 
-    /**
-     * @return MockObject|DistanceMatrixRow
-     */
-    private function createRowMock()
+    private function createRowMock(): MockObject|DistanceMatrixRow
     {
         return $this->createMock(DistanceMatrixRow::class);
     }

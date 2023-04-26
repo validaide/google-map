@@ -18,16 +18,8 @@ use Ivory\GoogleMap\Overlay\Marker;
  */
 class MarkerRenderer
 {
-    private MarkerStyleRenderer $markerStyleRenderer;
-
-    private MarkerLocationRenderer $markerLocationRenderer;
-
-    public function __construct(
-        MarkerStyleRenderer $markerStyleRenderer,
-        MarkerLocationRenderer $markerLocationRenderer
-    ) {
-        $this->markerStyleRenderer = $markerStyleRenderer;
-        $this->markerLocationRenderer = $markerLocationRenderer;
+    public function __construct(private readonly MarkerStyleRenderer $markerStyleRenderer, private readonly MarkerLocationRenderer $markerLocationRenderer)
+    {
     }
 
     /**

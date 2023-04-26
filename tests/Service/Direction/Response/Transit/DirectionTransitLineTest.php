@@ -143,18 +143,12 @@ class DirectionTransitLineTest extends TestCase
         $this->assertEmpty($this->transitLine->getAgencies());
     }
 
-    /**
-     * @return MockObject|DirectionTransitAgency
-     */
-    private function createTransitAgencyMock()
+    private function createTransitAgencyMock(): MockObject|DirectionTransitAgency
     {
         return $this->createMock(DirectionTransitAgency::class);
     }
 
-    /**
-     * @return MockObject|DirectionTransitVehicle
-     */
-    private function createTransitVehicleMock()
+    private function createTransitVehicleMock(): MockObject|DirectionTransitVehicle
     {
         return $this->createMock(DirectionTransitVehicle::class);
     }

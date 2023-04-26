@@ -16,13 +16,7 @@ namespace Ivory\GoogleMap\Utility;
  */
 interface VariableAwareInterface
 {
-    /**
-     * @return string
-     */
-    public function getVariable();
+    public function getVariable(): string;
 
-    /**
-     * @param string $variable
-     */
-    public function setVariable($variable);
+    public function setVariable(string $variable): void;
 }

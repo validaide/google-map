@@ -14,14 +14,14 @@ class DetailsNormalizer extends Normalizer
     {
         $details = new DirectionTransitDetails();
 
-        $this->setIfPresent('headsign', $data, [$details, 'setHeadSign']);
-        $this->setIfPresent('headway', $data, [$details, 'setHeadWay']);
-        $this->setIfPresent('num_stops', $data, [$details, 'setNumStops']);
-        $this->setIfPresentDenormalize('departure_stop', $data, [$details, 'setDepartureStop'], DirectionTransitStop::class, $format, $context);
-        $this->setIfPresentDenormalize('arrival_stop', $data, [$details, 'setArrivalStop'], DirectionTransitStop::class, $format, $context);
-        $this->setIfPresentDenormalize('departure_time', $data, [$details, 'setDepartureTime'], Time::class, $format, $context);
-        $this->setIfPresentDenormalize('arrival_time', $data, [$details, 'setArrivalTime'], Time::class, $format, $context);
-        $this->setIfPresentDenormalize('line', $data, [$details, 'setLine'], DirectionTransitLine::class, $format, $context);
+        $this->setIfPresent('headsign', $data, $details->setHeadSign(...));
+        $this->setIfPresent('headway', $data, $details->setHeadWay(...));
+        $this->setIfPresent('num_stops', $data, $details->setNumStops(...));
+        $this->setIfPresentDenormalize('departure_stop', $data, $details->setDepartureStop(...), DirectionTransitStop::class, $format, $context);
+        $this->setIfPresentDenormalize('arrival_stop', $data, $details->setArrivalStop(...), DirectionTransitStop::class, $format, $context);
+        $this->setIfPresentDenormalize('departure_time', $data, $details->setDepartureTime(...), Time::class, $format, $context);
+        $this->setIfPresentDenormalize('arrival_time', $data, $details->setArrivalTime(...), Time::class, $format, $context);
+        $this->setIfPresentDenormalize('line', $data, $details->setLine(...), DirectionTransitLine::class, $format, $context);
 
         return $details;
     }

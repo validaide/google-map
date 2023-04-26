@@ -25,9 +25,9 @@ class GeocoderCoordinateRequestTest extends TestCase
     private GeocoderCoordinateRequest $request;
 
     /**
-     * @var Coordinate|MockObject
+     * @var Coordinate|MockObject|null
      */
-    private $coordinate;
+    private Coordinate|MockObject|null $coordinate = null;
 
     protected function setUp(): void
     {
@@ -66,10 +66,7 @@ class GeocoderCoordinateRequestTest extends TestCase
         $this->assertSame(['latlng' => implode(',', [$latitude, $longitude])], $this->request->buildQuery());
     }
 
-    /**
-     * @return MockObject|Coordinate
-     */
-    private function createCoordinateMock()
+    private function createCoordinateMock(): MockObject|Coordinate
     {
         return $this->createMock(Coordinate::class);
     }

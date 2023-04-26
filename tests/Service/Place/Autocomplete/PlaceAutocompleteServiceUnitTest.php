@@ -88,18 +88,12 @@ class PlaceAutocompleteServiceUnitTest extends AbstractUnitServiceTest
         $this->assertSame($response, $this->service->process($request));
     }
 
-    /**
-     * @return MockObject|PlaceAutocompleteRequestInterface
-     */
-    private function createPlaceAutocompleteRequestMock()
+    private function createPlaceAutocompleteRequestMock(): MockObject|PlaceAutocompleteRequestInterface
     {
         return $this->createMock(PlaceAutocompleteRequestInterface::class);
     }
 
-    /**
-     * @return MockObject|PlaceAutocompleteResponse
-     */
-    private function createPlaceAutocompleteResponseMock()
+    private function createPlaceAutocompleteResponseMock(): MockObject|PlaceAutocompleteResponse
     {
         return $this->createMock(PlaceAutocompleteResponse::class);
     }

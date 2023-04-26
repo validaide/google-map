@@ -748,10 +748,8 @@ class FormatterTest extends TestCase
 
     /**
      * @param string $variable
-     *
-     * @return MockObject|VariableAwareInterface
      */
-    private function createVariableAwareMock($variable = 'variable')
+    private function createVariableAwareMock($variable = 'variable'): MockObject|VariableAwareInterface
     {
         $variableAware = $this->createMock(VariableAwareInterface::class);
         $variableAware

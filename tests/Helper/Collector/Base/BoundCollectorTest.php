@@ -78,18 +78,12 @@ class BoundCollectorTest extends TestCase
         $this->assertSame([$bound], $this->boundCollector->collect($map));
     }
 
-    /**
-     * @return MockObject|GroundOverlayCollector
-     */
-    private function createGroundOverlayCollectorMock()
+    private function createGroundOverlayCollectorMock(): MockObject|GroundOverlayCollector
     {
         return $this->createMock(GroundOverlayCollector::class);
     }
 
-    /**
-     * @return MockObject|RectangleCollector
-     */
-    private function createRectangleCollectorMock()
+    private function createRectangleCollectorMock(): MockObject|RectangleCollector
     {
         return $this->createMock(RectangleCollector::class);
     }

@@ -50,10 +50,7 @@ class IconCollectorTest extends TestCase
         $this->assertSame([$icon], $this->iconCollector->collect($map));
     }
 
-    /**
-     * @return MockObject|MarkerCollector
-     */
-    private function createMarkerCollectorMock()
+    private function createMarkerCollectorMock(): MockObject|MarkerCollector
     {
         return $this->createMock(MarkerCollector::class);
     }

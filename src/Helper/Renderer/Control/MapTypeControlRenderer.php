@@ -79,7 +79,7 @@ class MapTypeControlRenderer extends AbstractJsonRenderer implements ControlRend
             throw new InvalidArgumentException(sprintf(
                 'Expected a "%s", got "%s".',
                 MapTypeControl::class,
-                is_object($control) ? get_class($control) : gettype($control)
+                get_debug_type($control)
             ));
         }
 

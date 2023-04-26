@@ -24,10 +24,7 @@ class MapEventTest extends TestCase
 {
     private MapEvent $mapEvent;
 
-    /**
-     * @var Map|MockObject
-     */
-    private $map;
+    private Map|MockObject $map;
 
     protected function setUp(): void
     {
@@ -45,10 +42,7 @@ class MapEventTest extends TestCase
         $this->assertSame($this->map, $this->mapEvent->getMap());
     }
 
-    /**
-     * @return MockObject|Map
-     */
-    private function createMapMock()
+    private function createMapMock(): MockObject|Map
     {
         return $this->createMock(Map::class);
     }
