@@ -21,14 +21,14 @@ class StepNormalizer extends Normalizer
     {
         $step = new DirectionStep();
 
-        $this->setIfPresent('html_instructions',$data, [$step, 'setInstructions']);
-        $this->setIfPresent('travel_mode',$data, [$step, 'setTravelMode']);
-        $this->setIfPresentDenormalize('start_location', $data, [$step, 'setStartLocation'], Coordinate::class, $format, $context);
-        $this->setIfPresentDenormalize('end_location', $data, [$step, 'setEndLocation'], Coordinate::class, $format, $context);
-        $this->setIfPresentDenormalize('distance', $data, [$step, 'setDistance'], Distance::class, $format, $context);
-        $this->setIfPresentDenormalize('duration', $data, [$step, 'setDuration'], Duration::class, $format, $context);
-        $this->setIfPresentDenormalize('polyline', $data, [$step, 'setEncodedPolyline'], EncodedPolyline::class, $format, $context);
-        $this->setIfPresentDenormalize('transit_details', $data, [$step, 'setTransitDetails'], DirectionTransitDetails::class, $format, $context);
+        $this->setIfPresent('html_instructions',$data, $step->setInstructions(...));
+        $this->setIfPresent('travel_mode',$data, $step->setTravelMode(...));
+        $this->setIfPresentDenormalize('start_location', $data, $step->setStartLocation(...), Coordinate::class, $format, $context);
+        $this->setIfPresentDenormalize('end_location', $data, $step->setEndLocation(...), Coordinate::class, $format, $context);
+        $this->setIfPresentDenormalize('distance', $data, $step->setDistance(...), Distance::class, $format, $context);
+        $this->setIfPresentDenormalize('duration', $data, $step->setDuration(...), Duration::class, $format, $context);
+        $this->setIfPresentDenormalize('polyline', $data, $step->setEncodedPolyline(...), EncodedPolyline::class, $format, $context);
+        $this->setIfPresentDenormalize('transit_details', $data, $step->setTransitDetails(...), DirectionTransitDetails::class, $format, $context);
 
         return $step;
     }

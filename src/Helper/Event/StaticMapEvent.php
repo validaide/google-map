@@ -19,8 +19,6 @@ use Ivory\GoogleMap\Map;
  */
 class StaticMapEvent extends Event
 {
-    private Map $map;
-
     /**
      * @var mixed[]
      */
@@ -29,9 +27,8 @@ class StaticMapEvent extends Event
     /**
      * @param mixed[] $parameters
      */
-    public function __construct(Map $map, array $parameters = [])
+    public function __construct(private readonly Map $map, array $parameters = [])
     {
-        $this->map = $map;
         $this->setParameters($parameters);
     }
 
@@ -92,9 +89,8 @@ class StaticMapEvent extends Event
 
     /**
      * @param string $parameter
-     * @param mixed  $value
      */
-    public function setParameter($parameter, $value): void
+    public function setParameter($parameter, mixed $value): void
     {
         $this->parameters[$parameter] = $value;
     }

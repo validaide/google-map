@@ -25,7 +25,7 @@ class StaticMapHelperBuilderTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->staticMapHelperBuilder = StaticMapHelperBuilder::create();
+        $this->staticMapHelperBuilder = new StaticMapHelperBuilder();
     }
 
     public function testInheritance()

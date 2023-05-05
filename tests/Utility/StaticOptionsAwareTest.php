@@ -50,7 +50,7 @@ class StaticOptionsAwareTest extends TestCase
 
         $this->assertTrue($this->staticOptionsAware->hasStaticOptions());
         $this->assertSame(
-            array_merge($firstOptions, $secondOptions),
+            [...$firstOptions, ...$secondOptions],
             $this->staticOptionsAware->getStaticOptions()
         );
     }

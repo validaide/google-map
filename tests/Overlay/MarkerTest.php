@@ -33,9 +33,9 @@ class MarkerTest extends TestCase
     private Marker $marker;
 
     /**
-     * @var Coordinate|MockObject
+     * @var Coordinate|MockObject|null
      */
-    private $position;
+    private Coordinate|MockObject|null $position = null;
 
     protected function setUp(): void
     {
@@ -233,42 +233,27 @@ class MarkerTest extends TestCase
         $this->assertNull($this->marker->getInfoWindow());
     }
 
-    /**
-     * @return MockObject|Coordinate
-     */
-    private function createCoordinateMock()
+    private function createCoordinateMock(): MockObject|Coordinate
     {
         return $this->createMock(Coordinate::class);
     }
 
-    /**
-     * @return MockObject|Icon
-     */
-    private function createIconMock()
+    private function createIconMock(): MockObject|Icon
     {
         return $this->createMock(Icon::class);
     }
 
-    /**
-     * @return MockObject|MarkerShape
-     */
-    private function createMarkerShapeMock()
+    private function createMarkerShapeMock(): MockObject|MarkerShape
     {
         return $this->createMock(MarkerShape::class);
     }
 
-    /**
-     * @return MockObject|InfoWindow
-     */
-    private function createInfoWindowMock()
+    private function createInfoWindowMock(): MockObject|InfoWindow
     {
         return $this->createMock(InfoWindow::class);
     }
 
-    /**
-     * @return MockObject|Symbol
-     */
-    private function createSymbolMock()
+    private function createSymbolMock(): MockObject|Symbol
     {
         return $this->createMock(Symbol::class);
     }

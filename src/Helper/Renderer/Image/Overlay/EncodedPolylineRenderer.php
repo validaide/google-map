@@ -18,16 +18,8 @@ use Ivory\GoogleMap\Overlay\EncodedPolyline;
  */
 class EncodedPolylineRenderer
 {
-    private EncodedPolylineStyleRenderer $encodedPolylineStyleRenderer;
-
-    private EncodedPolylineValueRenderer $encodedPolylineValueRenderer;
-
-    public function __construct(
-        EncodedPolylineStyleRenderer $encodedPolylineStyleRenderer,
-        EncodedPolylineValueRenderer $encodedPolylineValueRenderer
-    ) {
-        $this->encodedPolylineStyleRenderer = $encodedPolylineStyleRenderer;
-        $this->encodedPolylineValueRenderer = $encodedPolylineValueRenderer;
+    public function __construct(private readonly EncodedPolylineStyleRenderer $encodedPolylineStyleRenderer, private readonly EncodedPolylineValueRenderer $encodedPolylineValueRenderer)
+    {
     }
 
     public function render(EncodedPolyline $encodedPolyline): string

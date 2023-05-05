@@ -13,10 +13,10 @@ class VehicleNormalizer extends Normalizer
     {
         $vehicle = new DirectionTransitVehicle();
 
-        $this->setIfPresent('name', $data, [$vehicle, 'setName']);
-        $this->setIfPresent('icon', $data, [$vehicle, 'setIcon']);
-        $this->setIfPresent('type', $data, [$vehicle, 'setType']);
-        $this->setIfPresent('localIcon', $data, [$vehicle, 'setLocalIcon']);
+        $this->setIfPresent('name', $data, $vehicle->setName(...));
+        $this->setIfPresent('icon', $data, $vehicle->setIcon(...));
+        $this->setIfPresent('type', $data, $vehicle->setType(...));
+        $this->setIfPresent('localIcon', $data, $vehicle->setLocalIcon(...));
 
         return $vehicle;
     }

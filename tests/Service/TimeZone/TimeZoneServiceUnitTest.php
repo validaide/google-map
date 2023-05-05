@@ -83,18 +83,12 @@ class TimeZoneServiceUnitTest extends AbstractUnitServiceTest
         $this->assertSame($response, $this->service->process($request));
     }
 
-    /**
-     * @return MockObject|TimeZoneRequest
-     */
-    private function createTimeZoneRequestMock()
+    private function createTimeZoneRequestMock(): MockObject|TimeZoneRequest
     {
         return $this->createMock(TimeZoneRequest::class);
     }
 
-    /**
-     * @return MockObject|TimeZoneResponse
-     */
-    private function createTimeZoneResponseMock()
+    private function createTimeZoneResponseMock(): MockObject|TimeZoneResponse
     {
         return $this->createMock(TimeZoneResponse::class);
     }

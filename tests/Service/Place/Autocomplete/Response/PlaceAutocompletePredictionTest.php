@@ -174,18 +174,12 @@ class PlaceAutocompletePredictionTest extends TestCase
         $this->assertEmpty($this->prediction->getMatches());
     }
 
-    /**
-     * @return MockObject|PlaceAutocompleteTerm
-     */
-    private function createTermMock()
+    private function createTermMock(): MockObject|PlaceAutocompleteTerm
     {
         return $this->createMock(PlaceAutocompleteTerm::class);
     }
 
-    /**
-     * @return MockObject|PlaceAutocompleteMatch
-     */
-    private function createMatchMock()
+    private function createMatchMock(): MockObject|PlaceAutocompleteMatch
     {
         return $this->createMock(PlaceAutocompleteMatch::class);
     }

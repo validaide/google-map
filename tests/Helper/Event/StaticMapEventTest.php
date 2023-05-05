@@ -24,10 +24,7 @@ class StaticMapEventTest extends TestCase
 {
     private StaticMapEvent $staticMapEvent;
 
-    /**
-     * @var Map|MockObject
-     */
-    private $map;
+    private Map|MockObject $map;
 
     protected function setUp(): void
     {
@@ -72,7 +69,7 @@ class StaticMapEventTest extends TestCase
         $this->staticMapEvent->addParameters($secondParameters = ['baz' => 'bat']);
 
         $this->assertTrue($this->staticMapEvent->hasParameters());
-        $this->assertSame(array_merge($firstParameters, $secondParameters), $this->staticMapEvent->getParameters());
+        $this->assertSame([...$firstParameters, ...$secondParameters], $this->staticMapEvent->getParameters());
     }
 
     public function testSetParameter()
@@ -99,10 +96,7 @@ class StaticMapEventTest extends TestCase
         $this->assertNull($this->staticMapEvent->getParameter('foo'));
     }
 
-    /**
-     * @return MockObject|Map
-     */
-    private function createMapMock()
+    private function createMapMock(): MockObject|Map
     {
         return $this->createMock(Map::class);
     }

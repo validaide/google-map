@@ -147,18 +147,12 @@ class PlaceSearchResponseTest extends TestCase
         $this->assertEmpty($this->response->getHtmlAttributions());
     }
 
-    /**
-     * @return MockObject|PlaceSearchRequestInterface
-     */
-    private function createRequestMock()
+    private function createRequestMock(): MockObject|PlaceSearchRequestInterface
     {
         return $this->createMock(PlaceSearchRequestInterface::class);
     }
 
-    /**
-     * @return MockObject|Place
-     */
-    private function createResultMock()
+    private function createResultMock(): MockObject|Place
     {
         return $this->createMock(Place::class);
     }

@@ -21,10 +21,7 @@ use PHPUnit\Framework\TestCase;
  */
 class EventTest extends TestCase
 {
-    /**
-     * @var AbstractEvent
-     */
-    private $event;
+    private AbstractEvent|MockObject $event;
 
     protected function setUp(): void
     {
@@ -60,10 +57,7 @@ class EventTest extends TestCase
         $this->assertSame($firstCode.$secondCode, $this->event->getCode());
     }
 
-    /**
-     * @return MockObject|AbstractEvent
-     */
-    private function createAbstractEventMock()
+    private function createAbstractEventMock(): MockObject|AbstractEvent
     {
         return $this->getMockForAbstractClass(AbstractEvent::class);
     }

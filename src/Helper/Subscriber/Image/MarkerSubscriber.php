@@ -22,14 +22,8 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class MarkerSubscriber implements EventSubscriberInterface
 {
-    private MarkerCollector $markerCollector;
-
-    private MarkerRenderer $markerRenderer;
-
-    public function __construct(MarkerCollector $markerCollector, MarkerRenderer $markerRenderer)
+    public function __construct(private readonly MarkerCollector $markerCollector, private readonly MarkerRenderer $markerRenderer)
     {
-        $this->markerCollector = $markerCollector;
-        $this->markerRenderer = $markerRenderer;
     }
 
     public function handleMap(StaticMapEvent $event): void

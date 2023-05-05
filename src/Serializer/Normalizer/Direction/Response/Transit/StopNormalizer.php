@@ -12,8 +12,8 @@ class StopNormalizer extends Normalizer
     {
         $details = new DirectionTransitStop();
 
-        $this->setIfPresent('name', $data, [$details, 'setName']);
-        $this->setIfPresentDenormalize('location', $data, [$details, 'setLocation'], Coordinate::class, $format, $context);
+        $this->setIfPresent('name', $data, $details->setName(...));
+        $this->setIfPresentDenormalize('location', $data, $details->setLocation(...), Coordinate::class, $format, $context);
 
         return $details;
     }

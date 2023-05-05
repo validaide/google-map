@@ -55,10 +55,7 @@ class HttpServiceTest extends TestCase
         $this->assertSame($client, $this->service->getClient());
     }
 
-    /**
-     * @return MockObject|HttpClient
-     */
-    private function createHttpClientMock()
+    private function createHttpClientMock(): MockObject|HttpClient
     {
         return $this->createMock(HttpClient::class);
     }

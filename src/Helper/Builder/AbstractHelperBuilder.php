@@ -25,14 +25,6 @@ abstract class AbstractHelperBuilder
      */
     private array $subscribers = [];
 
-    /**
-     * @return static
-     */
-    public static function create()
-    {
-        return new static();
-    }
-
     public function hasSubscribers(): bool
     {
         return !empty($this->subscribers);
@@ -48,8 +40,6 @@ abstract class AbstractHelperBuilder
 
     /**
      * @param EventSubscriberInterface[] $subscribers
-     *
-     * @return $this
      */
     public function setSubscribers(array $subscribers): self
     {
@@ -61,8 +51,6 @@ abstract class AbstractHelperBuilder
 
     /**
      * @param EventSubscriberInterface[] $subscribers
-     *
-     * @return $this
      */
     public function addSubscribers(array $subscribers): self
     {
@@ -78,9 +66,6 @@ abstract class AbstractHelperBuilder
         return in_array($subscriber, $this->subscribers, true);
     }
 
-    /**
-     * @return $this
-     */
     public function addSubscriber(EventSubscriberInterface $subscriber): self
     {
         if (!$this->hasSubscriber($subscriber)) {
@@ -90,9 +75,6 @@ abstract class AbstractHelperBuilder
         return $this;
     }
 
-    /**
-     * @return $this
-     */
     public function removeSubscriber(EventSubscriberInterface $subscriber): self
     {
         unset($this->subscribers[array_search($subscriber, $this->subscribers, true)]);

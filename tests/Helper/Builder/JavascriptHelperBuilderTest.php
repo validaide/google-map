@@ -23,10 +23,7 @@ use PHPUnit\Framework\TestCase;
  */
 class JavascriptHelperBuilderTest extends TestCase
 {
-    /**
-     * @var AbstractJavascriptHelperBuilder
-     */
-    private $helperBuilder;
+    private AbstractJavascriptHelperBuilder|MockObject $helperBuilder;
 
     protected function setUp(): void
     {
@@ -78,28 +75,20 @@ class JavascriptHelperBuilderTest extends TestCase
     /**
      * @param Formatter|null   $formatter
      * @param JsonBuilder|null $jsonBuilder
-     *
-     * @return MockObject|AbstractJavascriptHelperBuilder
      */
-    private function createAbstractJavascriptHelperBuilder(Formatter $formatter = null, JsonBuilder $jsonBuilder = null)
+    private function createAbstractJavascriptHelperBuilder(Formatter $formatter = null, JsonBuilder $jsonBuilder = null): MockObject|AbstractJavascriptHelperBuilder
     {
         return $this->getMockBuilder(AbstractJavascriptHelperBuilder::class)
             ->setConstructorArgs([$formatter, $jsonBuilder])
             ->getMockForAbstractClass();
     }
 
-    /**
-     * @return MockObject|Formatter
-     */
-    private function createFormatterMock()
+    private function createFormatterMock(): MockObject|Formatter
     {
         return $this->createMock(Formatter::class);
     }
 
-    /**
-     * @return MockObject|JsonBuilder
-     */
-    private function createJsonBuilderMock()
+    private function createJsonBuilderMock(): MockObject|JsonBuilder
     {
         return $this->createMock(JsonBuilder::class);
     }

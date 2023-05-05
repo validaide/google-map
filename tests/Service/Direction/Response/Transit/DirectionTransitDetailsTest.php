@@ -114,26 +114,17 @@ class DirectionTransitDetailsTest extends TestCase
         $this->assertSame($numStops, $this->transitDetails->getNumStops());
     }
 
-    /**
-     * @return MockObject|DirectionTransitStop
-     */
-    private function createTransitStopMock()
+    private function createTransitStopMock(): MockObject|DirectionTransitStop
     {
         return $this->createMock(DirectionTransitStop::class);
     }
 
-    /**
-     * @return MockObject|DirectionTransitLine
-     */
-    private function createTransitLineMock()
+    private function createTransitLineMock(): MockObject|DirectionTransitLine
     {
         return $this->createMock(DirectionTransitLine::class);
     }
 
-    /**
-     * @return MockObject|Time
-     */
-    private function createTimeMock()
+    private function createTimeMock(): MockObject|Time
     {
         return $this->createMock(Time::class);
     }

@@ -170,34 +170,22 @@ EOF;
         return $requirements;
     }
 
-    /**
-     * @return MockObject|ApiInitRenderer
-     */
-    private function createApiInitRendererMock()
+    private function createApiInitRendererMock(): MockObject|ApiInitRenderer
     {
         return $this->createMock(ApiInitRenderer::class);
     }
 
-    /**
-     * @return MockObject|LoaderRenderer
-     */
-    private function createLoaderRendererMock()
+    private function createLoaderRendererMock(): MockObject|LoaderRenderer
     {
         return $this->createMock(LoaderRenderer::class);
     }
 
-    /**
-     * @return MockObject|RequirementLoaderRenderer
-     */
-    private function createRequirementLoaderRendererMock()
+    private function createRequirementLoaderRendererMock(): MockObject|RequirementLoaderRenderer
     {
         return $this->createMock(RequirementLoaderRenderer::class);
     }
 
-    /**
-     * @return MockObject|SourceRenderer
-     */
-    private function createSourceRendererMock()
+    private function createSourceRendererMock(): MockObject|SourceRenderer
     {
         return $this->createMock(SourceRenderer::class);
     }

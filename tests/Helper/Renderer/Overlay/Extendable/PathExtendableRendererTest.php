@@ -58,18 +58,12 @@ class PathExtendableRendererTest extends TestCase
         );
     }
 
-    /**
-     * @return MockObject|ExtendableInterface
-     */
-    private function createExtendableMock()
+    private function createExtendableMock(): MockObject|ExtendableInterface
     {
         return $this->createMock(ExtendableInterface::class);
     }
 
-    /**
-     * @return MockObject|Bound
-     */
-    private function createBoundMock()
+    private function createBoundMock(): MockObject|Bound
     {
         return $this->createMock(Bound::class);
     }

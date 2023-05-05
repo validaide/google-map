@@ -24,10 +24,7 @@ use PHPUnit\Framework\TestCase;
  */
 class GeocoderReverseRequestTest extends TestCase
 {
-    /**
-     * @var AbstractGeocoderReverseRequest|MockObject
-     */
-    private $request;
+    private AbstractGeocoderReverseRequest|MockObject $request;
 
     protected function setUp(): void
     {
@@ -152,10 +149,7 @@ class GeocoderReverseRequestTest extends TestCase
         $this->assertSame(['location_type' => implode('|', $locationTypes)], $this->request->buildQuery());
     }
 
-    /**
-     * @return MockObject|AbstractGeocoderReverseRequest
-     */
-    private function createAbstractReverseRequestMock()
+    private function createAbstractReverseRequestMock(): MockObject|AbstractGeocoderReverseRequest
     {
         return $this->getMockForAbstractClass(AbstractGeocoderReverseRequest::class);
     }

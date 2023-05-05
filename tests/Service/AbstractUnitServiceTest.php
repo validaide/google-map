@@ -36,50 +36,32 @@ abstract class AbstractUnitServiceTest extends TestCase
         $this->serializer = $this->createSerializerMock();
     }
 
-    /**
-     * @return MockObject|HttpClient
-     */
-    protected function createHttpClientMock()
+    protected function createHttpClientMock(): MockObject|HttpClient
     {
         return $this->createMock(HttpClient::class);
     }
 
-    /**
-     * @return MockObject|SerializerInterface
-     */
-    protected function createSerializerMock()
+    protected function createSerializerMock(): MockObject|SerializerInterface
     {
         return $this->createMock(SerializerInterface::class);
     }
 
-    /**
-     * @return MockObject|RequestInterface
-     */
-    protected function createHttpRequestMock()
+    protected function createHttpRequestMock(): MockObject|RequestInterface
     {
         return $this->createMock(RequestInterface::class);
     }
 
-    /**
-     * @return MockObject|ResponseInterface
-     */
-    protected function createHttpResponseMock()
+    protected function createHttpResponseMock(): MockObject|ResponseInterface
     {
         return $this->createMock(ResponseInterface::class);
     }
 
-    /**
-     * @return MockObject|StreamInterface
-     */
-    protected function createHttpStreamMock()
+    protected function createHttpStreamMock(): MockObject|StreamInterface
     {
         return $this->createMock(StreamInterface::class);
     }
 
-    /**
-     * @return MockObject|BusinessAccount
-     */
-    protected function createBusinessAccountMock()
+    protected function createBusinessAccountMock(): MockObject|BusinessAccount
     {
         return $this->createMock(BusinessAccount::class);
     }

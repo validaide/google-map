@@ -439,50 +439,32 @@ class PlaceTest extends TestCase
         $this->assertTrue($this->result->isPermanentlyClose());
     }
 
-    /**
-     * @return MockObject|AddressComponent
-     */
-    private function createAddressComponentMock()
+    private function createAddressComponentMock(): MockObject|AddressComponent
     {
         return $this->createMock(AddressComponent::class);
     }
 
-    /**
-     * @return MockObject|Geometry
-     */
-    private function createGeometryMock()
+    private function createGeometryMock(): MockObject|Geometry
     {
         return $this->createMock(Geometry::class);
     }
 
-    /**
-     * @return MockObject|OpeningHours
-     */
-    private function createOpeningHoursMock()
+    private function createOpeningHoursMock(): MockObject|OpeningHours
     {
         return $this->createMock(OpeningHours::class);
     }
 
-    /**
-     * @return MockObject|Photo
-     */
-    private function createPhotoMock()
+    private function createPhotoMock(): MockObject|Photo
     {
         return $this->createMock(Photo::class);
     }
 
-    /**
-     * @return MockObject|AlternatePlaceId
-     */
-    private function createAlternatePlaceIdMock()
+    private function createAlternatePlaceIdMock(): MockObject|AlternatePlaceId
     {
         return $this->createMock(AlternatePlaceId::class);
     }
 
-    /**
-     * @return MockObject|Review
-     */
-    private function createReviewMock()
+    private function createReviewMock(): MockObject|Review
     {
         return $this->createMock(Review::class);
     }

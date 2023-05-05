@@ -168,12 +168,9 @@ abstract class AbstractApiFunctionalTest extends AbstractFunctionalTest
         $this->assertSameVariable($expected, $object->getVariable(), $formatter);
     }
 
-    /**
-     * @return ApiHelper
-     */
-    protected function createApiHelper()
+    protected function createApiHelper(): ApiHelper
     {
-        return ApiHelperBuilder::create()->build();
+        return (new ApiHelperBuilder())->build();
     }
 
     /**

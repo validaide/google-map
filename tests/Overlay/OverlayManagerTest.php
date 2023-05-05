@@ -33,15 +33,9 @@ class OverlayManagerTest extends TestCase
 {
     private OverlayManager $overlayManager;
 
-    /**
-     * @var MockObject|Map
-     */
-    private $map;
+    private Map|MockObject $map;
 
-    /**
-     * @var MockObject|Bound
-     */
-    private $bound;
+    private Bound|MockObject $bound;
 
     protected function setUp(): void
     {
@@ -1096,10 +1090,8 @@ class OverlayManagerTest extends TestCase
 
     /**
      * @param Bound|null $bound
-     *
-     * @return MockObject|Map
      */
-    private function createMapMock(Bound $bound = null)
+    private function createMapMock(Bound $bound = null): MockObject|Map
     {
         $map = $this->createMock(Map::class);
         $map
@@ -1110,82 +1102,52 @@ class OverlayManagerTest extends TestCase
         return $map;
     }
 
-    /**
-     * @return MockObject|Bound
-     */
-    private function createBoundMock()
+    private function createBoundMock(): MockObject|Bound
     {
         return $this->createMock(Bound::class);
     }
 
-    /**
-     * @return MockObject|MarkerCluster
-     */
-    private function createMarkerClusterMock()
+    private function createMarkerClusterMock(): MockObject|MarkerCluster
     {
         return $this->createMock(MarkerCluster::class);
     }
 
-    /**
-     * @return MockObject|Marker
-     */
-    private function createMarkerMock()
+    private function createMarkerMock(): MockObject|Marker
     {
         return $this->createMock(Marker::class);
     }
 
-    /**
-     * @return MockObject|InfoWindow
-     */
-    private function createInfoWindowMock()
+    private function createInfoWindowMock(): MockObject|InfoWindow
     {
         return $this->createMock(InfoWindow::class);
     }
 
-    /**
-     * @return MockObject|Polyline
-     */
-    private function createPolylineMock()
+    private function createPolylineMock(): MockObject|Polyline
     {
         return $this->createMock(Polyline::class);
     }
 
-    /**
-     * @return MockObject|EncodedPolyline
-     */
-    private function createEncodedPolylineMock()
+    private function createEncodedPolylineMock(): MockObject|EncodedPolyline
     {
         return $this->createMock(EncodedPolyline::class);
     }
 
-    /**
-     * @return MockObject|Polygon
-     */
-    private function createPolygonMock()
+    private function createPolygonMock(): MockObject|Polygon
     {
         return $this->createMock(Polygon::class);
     }
 
-    /**
-     * @return MockObject|Rectangle
-     */
-    private function createRectangleMock()
+    private function createRectangleMock(): MockObject|Rectangle
     {
         return $this->createMock(Rectangle::class);
     }
 
-    /**
-     * @return MockObject|Circle
-     */
-    private function createCircleMock()
+    private function createCircleMock(): MockObject|Circle
     {
         return $this->createMock(Circle::class);
     }
 
-    /**
-     * @return MockObject|GroundOverlay
-     */
-    private function createGroundOverlayMock()
+    private function createGroundOverlayMock(): MockObject|GroundOverlay
     {
         return $this->createMock(GroundOverlay::class);
     }

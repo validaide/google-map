@@ -14,9 +14,9 @@ class DistanceMatrixResponseNormalizer extends Normalizer
     {
         $distanceMatrixResponse = new DistanceMatrixResponse();
 
-        $this->setIfPresent('status', $data, [$distanceMatrixResponse, 'setStatus']);
-        $this->setIfPresent('origin_addresses', $data, [$distanceMatrixResponse, 'setOrigins']);
-        $this->setIfPresent('destination_addresses', $data, [$distanceMatrixResponse, 'setDestinations']);
+        $this->setIfPresent('status', $data, $distanceMatrixResponse->setStatus(...));
+        $this->setIfPresent('origin_addresses', $data, $distanceMatrixResponse->setOrigins(...));
+        $this->setIfPresent('destination_addresses', $data, $distanceMatrixResponse->setDestinations(...));
         foreach($data['rows'] as $elevationResultData) {
             $distanceMatrixResponse->addRow($this->denormalizer->denormalize($elevationResultData, DistanceMatrixRow::class, $format, $context));
         }

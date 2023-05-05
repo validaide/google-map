@@ -23,20 +23,11 @@ use PHPUnit\Framework\TestCase;
  */
 class JsonRendererTest extends TestCase
 {
-    /**
-     * @var AbstractJsonRenderer|MockObject
-     */
-    private $jsonRenderer;
+    private AbstractJsonRenderer|MockObject $jsonRenderer;
 
-    /**
-     * @var JsonBuilder|MockObject
-     */
-    private $jsonBuilder;
+    private MockObject|JsonBuilder $jsonBuilder;
 
-    /**
-     * @var Formatter|MockObject
-     */
-    private $formatter;
+    private Formatter|MockObject $formatter;
 
     protected function setUp(): void
     {
@@ -69,10 +60,8 @@ class JsonRendererTest extends TestCase
     /**
      * @param Formatter|null   $formatter
      * @param JsonBuilder|null $jsonBuilder
-     *
-     * @return MockObject|AbstractJsonRenderer
      */
-    private function createAbstractJsonRendererMock(Formatter $formatter = null, JsonBuilder $jsonBuilder = null)
+    private function createAbstractJsonRendererMock(Formatter $formatter = null, JsonBuilder $jsonBuilder = null): MockObject|AbstractJsonRenderer
     {
         return $this->getMockBuilder(AbstractJsonRenderer::class)
             ->setConstructorArgs([
@@ -82,18 +71,12 @@ class JsonRendererTest extends TestCase
             ->getMockForAbstractClass();
     }
 
-    /**
-     * @return MockObject|Formatter
-     */
-    private function createFormatterMock()
+    private function createFormatterMock(): MockObject|Formatter
     {
         return $this->createMock(Formatter::class);
     }
 
-    /**
-     * @return MockObject|JsonBuilder
-     */
-    private function createJsonBuilderMock()
+    private function createJsonBuilderMock(): MockObject|JsonBuilder
     {
         $jsonBuilder = $this->createMock(JsonBuilder::class);
         $jsonBuilder

@@ -67,7 +67,7 @@ class ScaleControlRenderer extends AbstractJsonRenderer implements ControlRender
             throw new InvalidArgumentException(sprintf(
                 'Expected a "%s", got "%s".',
                 ScaleControl::class,
-                is_object($control) ? get_class($control) : gettype($control)
+                get_debug_type($control)
             ));
         }
 

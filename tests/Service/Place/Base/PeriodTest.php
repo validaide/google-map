@@ -52,10 +52,7 @@ class PeriodTest extends TestCase
         $this->assertSame($close, $this->period->getClose());
     }
 
-    /**
-     * @return MockObject|OpenClosePeriod
-     */
-    private function createOpenClosePeriodMock()
+    private function createOpenClosePeriodMock(): MockObject|OpenClosePeriod
     {
         return $this->createMock(OpenClosePeriod::class);
     }

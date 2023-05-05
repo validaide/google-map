@@ -91,12 +91,12 @@ class ExtendableRenderer implements ExtendableRendererInterface
 
     public function render(ExtendableInterface $extendable, Bound $bound): string
     {
-        $renderer = $this->getRenderer(get_class($extendable));
+        $renderer = $this->getRenderer($extendable::class);
 
         if ($renderer === null) {
             throw new InvalidArgumentException(sprintf(
                 'The extendable renderer for "%s" could not be found.',
-                get_class($extendable)
+                $extendable::class
             ));
         }
 

@@ -241,18 +241,12 @@ class GeocoderResultTest extends TestCase
         $this->assertEmpty($this->result->getTypes());
     }
 
-    /**
-     * @return MockObject|AddressComponent
-     */
-    private function createAddressComponentMock()
+    private function createAddressComponentMock(): MockObject|AddressComponent
     {
         return $this->createMock(AddressComponent::class);
     }
 
-    /**
-     * @return MockObject|Geometry
-     */
-    private function createGeometryMock()
+    private function createGeometryMock(): MockObject|Geometry
     {
         return $this->createMock(Geometry::class);
     }

@@ -51,10 +51,7 @@ class MarkerShapeCollectorTest extends TestCase
         $this->assertSame([$markerShape], $this->markerShapeCollector->collect($map));
     }
 
-    /**
-     * @return MockObject|MarkerCollector
-     */
-    private function createMarkerCollectorMock()
+    private function createMarkerCollectorMock(): MockObject|MarkerCollector
     {
         return $this->createMock(MarkerCollector::class);
     }

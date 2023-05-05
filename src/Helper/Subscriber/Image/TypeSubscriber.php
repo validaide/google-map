@@ -31,7 +31,7 @@ class TypeSubscriber implements EventSubscriberInterface
         }
 
         if (isset($type)) {
-            $event->setParameter('maptype', strtolower($type));
+            $event->setParameter('maptype', strtolower((string) $type));
         }
     }
 

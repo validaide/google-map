@@ -20,23 +20,23 @@ class PlaceNormalizer extends Normalizer
 
         $place->setPlaceId($data['place_id']);
         $place->setName($data['name']);
-        $this->setIfPresent('formatted_address', $data, [$place, 'setFormattedAddress']);
-        $this->setIfPresent('formatted_phone_number', $data, [$place, 'setFormattedPhoneNumber']);
-        $this->setIfPresent('international_phone_number', $data, [$place, 'setInternationalPhoneNumber']);
-        $this->setIfPresent('url', $data, [$place, 'setUrl']);
-        $this->setIfPresent('icon', $data, [$place, 'setIcon']);
-        $this->setIfPresent('scope', $data, [$place, 'setScope']);
-        $this->setIfPresent('price_level', $data, [$place, 'setPriceLevel']);
-        $this->setIfPresent('utc_offset', $data, [$place, 'setUtcOffset']);
-        $this->setIfPresent('vicinity', $data, [$place, 'setVicinity']);
-        $this->setIfPresent('website', $data, [$place, 'setWebsite']);
-        $this->setIfPresent('types', $data, [$place, 'setTypes']);
-        $this->setIfPresentFloat('rating', $data, [$place, 'setRating']);
-        $this->setIfPresent('business_status', $data, [$place, 'setBusinessStatus']);
-        $this->setIfPresentDenormalize('geometry', $data, [$place, 'setGeometry'], Geometry::class, $format, $context);
-        $this->setIfPresentDenormalize('opening_hours', $data, [$place, 'setOpeningHours'], OpeningHours::class, $format, $context);
-        $this->setIfPresentDenormalize('plus_code', $data, [$place, 'setPlusCode'], PlusCode::class, $format, $context);
-        $this->setIfPresent('price_level', $data, [$place, 'setPriceLevel']);
+        $this->setIfPresent('formatted_address', $data, $place->setFormattedAddress(...));
+        $this->setIfPresent('formatted_phone_number', $data, $place->setFormattedPhoneNumber(...));
+        $this->setIfPresent('international_phone_number', $data, $place->setInternationalPhoneNumber(...));
+        $this->setIfPresent('url', $data, $place->setUrl(...));
+        $this->setIfPresent('icon', $data, $place->setIcon(...));
+        $this->setIfPresent('scope', $data, $place->setScope(...));
+        $this->setIfPresent('price_level', $data, $place->setPriceLevel(...));
+        $this->setIfPresent('utc_offset', $data, $place->setUtcOffset(...));
+        $this->setIfPresent('vicinity', $data, $place->setVicinity(...));
+        $this->setIfPresent('website', $data, $place->setWebsite(...));
+        $this->setIfPresent('types', $data, $place->setTypes(...));
+        $this->setIfPresentFloat('rating', $data, $place->setRating(...));
+        $this->setIfPresent('business_status', $data, $place->setBusinessStatus(...));
+        $this->setIfPresentDenormalize('geometry', $data, $place->setGeometry(...), Geometry::class, $format, $context);
+        $this->setIfPresentDenormalize('opening_hours', $data, $place->setOpeningHours(...), OpeningHours::class, $format, $context);
+        $this->setIfPresentDenormalize('plus_code', $data, $place->setPlusCode(...), PlusCode::class, $format, $context);
+        $this->setIfPresent('price_level', $data, $place->setPriceLevel(...));
         if (array_key_exists('address_components', $data)) {
             foreach ($data['address_components'] as $addressComponentData) {
                 $place->addAddressComponent($this->denormalizer->denormalize($addressComponentData, AddressComponent::class, $format, $context));

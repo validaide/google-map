@@ -77,18 +77,12 @@ class ScaleControlRendererTest extends TestCase
         $this->scaleControlRenderer->render('foo');
     }
 
-    /**
-     * @return MockObject|ControlPositionRenderer
-     */
-    private function createControlPositionRendererMock()
+    private function createControlPositionRendererMock(): MockObject|ControlPositionRenderer
     {
         return $this->createMock(ControlPositionRenderer::class);
     }
 
-    /**
-     * @return MockObject|ScaleControlStyleRenderer
-     */
-    private function createScaleControlStyleRendererMock()
+    private function createScaleControlStyleRendererMock(): MockObject|ScaleControlStyleRenderer
     {
         return $this->createMock(ScaleControlStyleRenderer::class);
     }

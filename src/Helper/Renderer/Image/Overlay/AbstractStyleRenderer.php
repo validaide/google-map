@@ -18,10 +18,8 @@ abstract class AbstractStyleRenderer
 {
     /**
      * @param mixed[] $styles
-     *
-     * @return string
      */
-    public function renderStyle(array $styles):?string
+    public function renderStyle(array $styles): ?string
     {
         if (empty($styles)) {
             return null;
@@ -31,7 +29,7 @@ abstract class AbstractStyleRenderer
         ksort($styles);
 
         foreach ($styles as $style => $value) {
-            $result[] = $style.':'.$value;
+            $result[] = $style . ':' . $value;
         }
 
         return implode('|', $result);

@@ -75,7 +75,7 @@ abstract class AbstractFunctionalServiceTest extends TestCase
      */
     protected function getDateTime($key, $value = 'now')
     {
-        $item = $this->pool->getItem(sha1(get_class() . '::' . $key));
+        $item = $this->pool->getItem(sha1(self::class . '::' . $key));
 
         if (!$item->isHit()) {
             $item->set(new DateTime($value));

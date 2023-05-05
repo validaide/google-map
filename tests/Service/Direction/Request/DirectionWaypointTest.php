@@ -23,10 +23,7 @@ class DirectionWaypointTest extends TestCase
 {
     private DirectionWaypoint $waypoint;
 
-    /**
-     * @var LocationInterface|MockObject
-     */
-    private $location;
+    private LocationInterface|MockObject $location;
 
     protected function setUp(): void
     {
@@ -74,10 +71,7 @@ class DirectionWaypointTest extends TestCase
         $this->assertNull($this->waypoint->getStopover());
     }
 
-    /**
-     * @return MockObject|LocationInterface
-     */
-    private function createLocationMock()
+    private function createLocationMock(): MockObject|LocationInterface
     {
         return $this->createMock(LocationInterface::class);
     }

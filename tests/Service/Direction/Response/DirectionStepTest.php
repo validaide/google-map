@@ -189,42 +189,27 @@ class DirectionStepTest extends TestCase
         $this->assertNull($this->step->getTransitDetails());
     }
 
-    /**
-     * @return MockObject|Distance
-     */
-    private function createDistanceMock()
+    private function createDistanceMock(): MockObject|Distance
     {
         return $this->createMock(Distance::class);
     }
 
-    /**
-     * @return MockObject|Duration
-     */
-    private function createDurationMock()
+    private function createDurationMock(): MockObject|Duration
     {
         return $this->createMock(Duration::class);
     }
 
-    /**
-     * @return MockObject|Coordinate
-     */
-    private function createCoordinateMock()
+    private function createCoordinateMock(): MockObject|Coordinate
     {
         return $this->createMock(Coordinate::class);
     }
 
-    /**
-     * @return MockObject|EncodedPolyline
-     */
-    private function createEncodedPolylineMock()
+    private function createEncodedPolylineMock(): MockObject|EncodedPolyline
     {
         return $this->createMock(EncodedPolyline::class);
     }
 
-    /**
-     * @return MockObject|DirectionTransitDetails
-     */
-    private function createTransitDetailsMock()
+    private function createTransitDetailsMock(): MockObject|DirectionTransitDetails
     {
         return $this->createMock(DirectionTransitDetails::class);
     }
