@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a82afeda5b30af095537ac5a420643dc",
+    "content-hash": "55192dcf566f081f55c2b59199646f35",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -2598,16 +2598,16 @@
         },
         {
             "name": "validaide/common",
-            "version": "dev-chore/184011118_symfony5",
+            "version": "dev-development",
             "source": {
                 "type": "git",
                 "url": "https://github.com/validaide/common.git",
-                "reference": "b9ef38c05e66ce179aa63866c095b5acb5ef726f"
+                "reference": "64614fedfc73dc699a9a4a7c4acbd88bf5ef8f22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/validaide/common/zipball/b9ef38c05e66ce179aa63866c095b5acb5ef726f",
-                "reference": "b9ef38c05e66ce179aa63866c095b5acb5ef726f",
+                "url": "https://api.github.com/repos/validaide/common/zipball/64614fedfc73dc699a9a4a7c4acbd88bf5ef8f22",
+                "reference": "64614fedfc73dc699a9a4a7c4acbd88bf5ef8f22",
                 "shasum": ""
             },
             "require": {
@@ -2627,6 +2627,7 @@
                 "rector/rector": "^0.15.0",
                 "symplify/easy-coding-standard": "^9.4"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -2648,7 +2649,7 @@
                 }
             ],
             "description": "Common Library for Validaide projects",
-            "time": "2023-05-05T08:46:12+00:00"
+            "time": "2023-07-17T09:00:05+00:00"
         }
     ],
     "packages-dev": [
@@ -6450,7 +6451,7 @@
     "aliases": [
         {
             "package": "validaide/common",
-            "version": "dev-chore/184011118_symfony5",
+            "version": "dev-development",
             "alias": "5.9.0",
             "alias_normalized": "5.9.0.0"
         }
