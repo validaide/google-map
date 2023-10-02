@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "55192dcf566f081f55c2b59199646f35",
+    "content-hash": "a3d88ce7186335af2bddad3f01c7d73f",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -2598,16 +2598,16 @@
         },
         {
             "name": "validaide/common",
-            "version": "dev-development",
+            "version": "6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/validaide/common.git",
-                "reference": "64614fedfc73dc699a9a4a7c4acbd88bf5ef8f22"
+                "reference": "a5cb22b6fbd026e78339e100efa2fc13a09e249b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/validaide/common/zipball/64614fedfc73dc699a9a4a7c4acbd88bf5ef8f22",
-                "reference": "64614fedfc73dc699a9a4a7c4acbd88bf5ef8f22",
+                "url": "https://api.github.com/repos/validaide/common/zipball/a5cb22b6fbd026e78339e100efa2fc13a09e249b",
+                "reference": "a5cb22b6fbd026e78339e100efa2fc13a09e249b",
                 "shasum": ""
             },
             "require": {
@@ -2627,7 +2627,6 @@
                 "rector/rector": "^0.15.0",
                 "symplify/easy-coding-standard": "^9.4"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -2649,7 +2648,7 @@
                 }
             ],
             "description": "Common Library for Validaide projects",
-            "time": "2023-07-17T09:00:05+00:00"
+            "time": "2023-10-02T11:09:57+00:00"
         }
     ],
     "packages-dev": [
@@ -6448,18 +6447,9 @@
             "time": "2021-07-28T10:34:58+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "validaide/common",
-            "version": "dev-development",
-            "alias": "5.9.0",
-            "alias_normalized": "5.9.0.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "validaide/common": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
