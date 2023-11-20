@@ -43,19 +43,28 @@ class MapHtmlRenderer extends AbstractTagRenderer
 
     public function render(Map $map): string
     {
-        $styles = [];
-        $stylesheets = [
-            'width'  => $map->hasStylesheetOption('width') ? $map->getStylesheetOption('width') : '300px',
-            'height' => $map->hasStylesheetOption('height') ? $map->getStylesheetOption('height') : '300px',
-        ];
+        $styles      = [];
+        $stylesheets = [];
+        if ($map->hasStylesheetOption('width')) {
+            $stylesheets['width'] = $map->getStylesheetOption('width');
+        }
+
+        if ($map->hasStylesheetOption('height')) {
+            $stylesheets['height'] = $map->getStylesheetOption('height');
+        }
 
         foreach ($stylesheets as $stylesheet => $value) {
             $styles[] = $this->stylesheetRenderer->render($stylesheet, $value);
         }
 
-        return $this->getTagRenderer()->render('div', null, array_merge($map->getHtmlAttributes(), [
-            'id'    => $map->getHtmlId(),
-            'style' => implode('', $styles),
-        ]));
+        $attributes = array_merge($map->getHtmlAttributes(), [
+            'id' => $map->getHtmlId(),
+        ]);
+
+        if (!empty($stylesheets)) {
+            $attributes['style'] = implode('', $styles);
+        }
+
+        return $this->getTagRenderer()->render('div', null, $attributes);
     }
 }
