@@ -51,7 +51,7 @@ class MapHtmlRendererTest extends TestCase
     public function testRender()
     {
         $this->assertSame(
-            '<div id="map_canvas" style="width:300px;height:300px;"></div>',
+            '<div id="map_canvas"></div>',
             $this->mapHtmlRenderer->render(new Map())
         );
     }
@@ -74,7 +74,20 @@ class MapHtmlRendererTest extends TestCase
         $map->setHtmlAttributes(['class' => 'my-class']);
 
         $this->assertSame(
-            '<div class="my-class" id="map_canvas" style="width:300px;height:300px;"></div>',
+            '<div class="my-class" id="map_canvas"></div>',
+            $this->mapHtmlRenderer->render($map)
+        );
+    }
+
+    public function testRenderWithSizesAndAttributes()
+    {
+        $map = new Map();
+        $map->setStylesheetOption('width', '100px');
+        $map->setStylesheetOption('height', '200px');
+        $map->setHtmlAttributes(['class' => 'my-class']);
+
+        $this->assertSame(
+            '<div class="my-class" id="map_canvas" style="width:100px;height:200px;"></div>',
             $this->mapHtmlRenderer->render($map)
         );
     }
@@ -84,7 +97,7 @@ class MapHtmlRendererTest extends TestCase
         $this->mapHtmlRenderer->getFormatter()->setDebug(true);
 
         $this->assertSame(
-            '<div id="map_canvas" style="width: 300px;height: 300px;"></div>'."\n",
+            '<div id="map_canvas"></div>'."\n",
             $this->mapHtmlRenderer->render(new Map())
         );
     }
