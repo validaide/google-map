@@ -16,7 +16,7 @@ use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Utility\RequirementRenderer;
 use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\MarkerCluster;
-use Validaide\Common\JsonBuilder\JsonBuilder;
+use Ivory\GoogleMap\Helper\Builder\JsonBuilder;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>

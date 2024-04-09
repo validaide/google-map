@@ -12,7 +12,7 @@
 namespace Ivory\GoogleMap\Helper\Renderer\Control;
 
 use Ivory\GoogleMap\Control\ControlManager;
-use Validaide\Common\JsonBuilder\JsonBuilder;
+use Ivory\GoogleMap\Helper\Builder\JsonBuilder;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>

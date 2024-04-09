@@ -17,7 +17,7 @@ use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Layer\HeatmapLayerRenderer;
 use Ivory\GoogleMap\Layer\HeatmapLayer;
 use Ivory\GoogleMap\Map;
-use Validaide\Common\JsonBuilder\JsonBuilder;
+use Ivory\GoogleMap\Helper\Builder\JsonBuilder;
 use PHPUnit\Framework\TestCase;
 
 /**
