@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1c29aa98097e655bd610465ae9e16ea6",
+    "content-hash": "2e375e2599a567cdba9dffb70a9e9309",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -2598,16 +2598,16 @@
         },
         {
             "name": "validaide/common",
-            "version": "6.2.0",
+            "version": "7.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/validaide/common.git",
-                "reference": "6d72945eb6139fc2e33cae0efce153c69c06e96d"
+                "reference": "af6bc3d17513ca93e08a47583bd8def5ab28539d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/validaide/common/zipball/6d72945eb6139fc2e33cae0efce153c69c06e96d",
-                "reference": "6d72945eb6139fc2e33cae0efce153c69c06e96d",
+                "url": "https://api.github.com/repos/validaide/common/zipball/af6bc3d17513ca93e08a47583bd8def5ab28539d",
+                "reference": "af6bc3d17513ca93e08a47583bd8def5ab28539d",
                 "shasum": ""
             },
             "require": {
@@ -2648,7 +2648,7 @@
                 }
             ],
             "description": "Common Library for Validaide projects",
-            "time": "2023-12-12T08:22:11+00:00"
+            "time": "2024-04-22T11:29:24+00:00"
         }
     ],
     "packages-dev": [
