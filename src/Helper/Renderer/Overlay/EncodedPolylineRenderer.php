@@ -16,7 +16,7 @@ use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Geometry\EncodingRenderer;
 use Ivory\GoogleMap\Map;
 use Ivory\GoogleMap\Overlay\EncodedPolyline;
-use Validaide\Common\JsonBuilder\JsonBuilder;
+use Ivory\GoogleMap\Helper\Builder\JsonBuilder;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>

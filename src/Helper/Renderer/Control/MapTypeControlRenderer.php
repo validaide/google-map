@@ -16,7 +16,7 @@ use Ivory\GoogleMap\Control\MapTypeControl;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
 use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Helper\Renderer\MapTypeIdRenderer;
-use Validaide\Common\JsonBuilder\JsonBuilder;
+use Ivory\GoogleMap\Helper\Builder\JsonBuilder;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>

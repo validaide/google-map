@@ -20,7 +20,7 @@ use Ivory\GoogleMap\Helper\Renderer\Overlay\AbstractInfoWindowRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Overlay\InfoWindowRendererInterface;
 use Ivory\GoogleMap\Overlay\InfoWindow;
 use Ivory\GoogleMap\Overlay\InfoWindowType;
-use Validaide\Common\JsonBuilder\JsonBuilder;
+use Ivory\GoogleMap\Helper\Builder\JsonBuilder;
 use PHPUnit\Framework\TestCase;
 
 /**

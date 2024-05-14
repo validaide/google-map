@@ -16,7 +16,7 @@ use Ivory\GoogleMap\Helper\Renderer\AbstractJsonRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Overlay\MarkerShapeRenderer;
 use Ivory\GoogleMap\Overlay\MarkerShape;
 use Ivory\GoogleMap\Overlay\MarkerShapeType;
-use Validaide\Common\JsonBuilder\JsonBuilder;
+use Ivory\GoogleMap\Helper\Builder\JsonBuilder;
 use PHPUnit\Framework\TestCase;
 
 /**
