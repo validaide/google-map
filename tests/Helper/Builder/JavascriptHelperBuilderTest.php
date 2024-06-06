@@ -15,7 +15,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use Ivory\GoogleMap\Helper\Builder\AbstractHelperBuilder;
 use Ivory\GoogleMap\Helper\Builder\AbstractJavascriptHelperBuilder;
 use Ivory\GoogleMap\Helper\Formatter\Formatter;
-use Validaide\Common\JsonBuilder\JsonBuilder;
+use Ivory\GoogleMap\Helper\Builder\JsonBuilder;
 use PHPUnit\Framework\TestCase;
 
 /**

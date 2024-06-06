@@ -19,7 +19,7 @@ use Ivory\GoogleMap\Helper\Renderer\ApiRenderer;
 use Ivory\GoogleMap\Helper\Renderer\LoaderRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Utility\RequirementLoaderRenderer;
 use Ivory\GoogleMap\Helper\Renderer\Utility\SourceRenderer;
-use Validaide\Common\JsonBuilder\JsonBuilder;
+use Ivory\GoogleMap\Helper\Builder\JsonBuilder;
 use PHPUnit\Framework\TestCase;
 use SplObjectStorage;
 use stdClass;

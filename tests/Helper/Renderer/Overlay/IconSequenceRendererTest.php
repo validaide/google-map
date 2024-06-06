@@ -17,7 +17,7 @@ use Ivory\GoogleMap\Helper\Renderer\Overlay\IconSequenceRenderer;
 use Ivory\GoogleMap\Overlay\IconSequence;
 use Ivory\GoogleMap\Overlay\Symbol;
 use Ivory\GoogleMap\Overlay\SymbolPath;
-use Validaide\Common\JsonBuilder\JsonBuilder;
+use Ivory\GoogleMap\Helper\Builder\JsonBuilder;
 use PHPUnit\Framework\TestCase;
 
 /**
