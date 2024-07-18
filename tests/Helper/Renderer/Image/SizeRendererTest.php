@@ -30,7 +30,7 @@ class SizeRendererTest extends TestCase
     public function testRender()
     {
         $this->assertSame(
-            '300x300',
+            '640x640',
             $this->sizeRenderer->render(new Map())
         );
     }
@@ -41,7 +41,7 @@ class SizeRendererTest extends TestCase
         $map->setStaticOption('height', 400);
 
         $this->assertSame(
-            '300x400',
+            '640x400',
             $this->sizeRenderer->render($map)
         );
     }
@@ -52,7 +52,7 @@ class SizeRendererTest extends TestCase
         $map->setStaticOption('width', 400);
 
         $this->assertSame(
-            '400x300',
+            '400x640',
             $this->sizeRenderer->render($map)
         );
     }

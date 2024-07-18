@@ -28,8 +28,20 @@ class EncodedPolylineSubscriber implements EventSubscriberInterface
 
     public function handleMap(StaticMapEvent $event): void
     {
+        $result = [];
+
         foreach ($this->encodedPolylineCollector->collect($event->getMap()) as $encodedPolylines) {
-            $event->setParameter('path', $this->encodedPolylineRenderer->render($encodedPolylines));
+            $result[] = $this->encodedPolylineRenderer->render($encodedPolylines);
+        }
+
+        if (!empty($result)) {
+            if ($event->hasParameter('path')) {
+                $event->setParameter('path', array_merge($event->getParameter('path'), $result));
+
+                return;
+            }
+
+            $event->setParameter('path', $result);
         }
     }
 
