@@ -29,6 +29,6 @@ class SizeRenderer
      */
     private function getDimension(Map $map, $side): string
     {
-        return $map->hasStaticOption($side) ? $map->getStaticOption($side) : '300';
+        return $map->hasStaticOption($side) ? $map->getStaticOption($side) : '640';
     }
 }

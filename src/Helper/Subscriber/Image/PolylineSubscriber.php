@@ -35,6 +35,12 @@ class PolylineSubscriber implements EventSubscriberInterface
         }
 
         if (!empty($result)) {
+            if ($event->hasParameter('path')) {
+                $event->setParameter('path', array_merge($event->getParameter('path'), $result));
+
+                return;
+            }
+
             $event->setParameter('path', $result);
         }
     }
