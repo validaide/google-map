@@ -139,7 +139,7 @@ EOF;
     public function test_render_source_without_libraries()
     {
         $result = $this->loaderRenderer->renderSource('callback');
-        $this->assertSame('https://maps.googleapis.com/maps/api/js?language=en&callback=callback', $result);
+        $this->assertSame('https://maps.googleapis.com/maps/api/js?language=en&callback=callback&loading=async', $result);
     }
 
     /**
@@ -148,6 +148,6 @@ EOF;
     public function test_render_source_with_libraries()
     {
         $result = $this->loaderRenderer->renderSource('init_google_map', ['places', 'charts']);
-        $this->assertSame(sprintf('https://maps.googleapis.com/maps/api/js?language=en&libraries=%s&callback=init_google_map', urlencode('places,charts')), $result);
+        $this->assertSame(sprintf('https://maps.googleapis.com/maps/api/js?language=en&libraries=%s&callback=init_google_map&loading=async', urlencode('places,charts')), $result);
     }
 }
