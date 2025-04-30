@@ -52,9 +52,8 @@ interface StaticOptionsAwareInterface
 
     /**
      * @param string $option
-     * @param mixed  $value
      */
-    public function setStaticOption($option, $value);
+    public function setStaticOption($option, mixed $value);
 
     /**
      * @param string $option

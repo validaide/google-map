@@ -11,8 +11,8 @@
 
 namespace Ivory\Tests\GoogleMap\Service;
 
+use Http\Adapter\Guzzle7\Client;
 use DateTime;
-use Http\Adapter\Guzzle6\Client;
 use Http\Client\Common\Plugin\CachePlugin;
 use Http\Client\Common\Plugin\ErrorPlugin as HttpErrorPlugin;
 use Http\Client\Common\Plugin\HistoryPlugin;

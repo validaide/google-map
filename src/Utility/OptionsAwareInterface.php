@@ -52,9 +52,8 @@ interface OptionsAwareInterface
 
     /**
      * @param string $option
-     * @param mixed  $value
      */
-    public function setOption($option, $value);
+    public function setOption($option, mixed $value);
 
     /**
      * @param string $option

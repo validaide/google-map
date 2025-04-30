@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+    php: &php
+        build: docker/php
+        env_file:
+            - .env
+        environment:
+            XDEBUG_CONFIG: remote_host=${XDEBUG_HOST} remote_port=${XDEBUG_PORT} idekey=${XDEBUG_IDEKEY}
+            PHP_IDE_CONFIG: serverName=${IDE_SERVER_NAME}
+        volumes:
+            - ~/.composer:/var/www/.composer
+            - .:/var/www/html
+            - tmp:/tmp/ivory-google-map
+#    hhvm:
+#        <<: *php
+#        build: docker/hhvm
+    selenium:
+        image: seleniarm/standalone-chromium:latest
+        ports:
+            - "4444:4444"
+        volumes:
+            - tmp:/tmp/ivory-google-map
+
+volumes:
+    tmp: {}
