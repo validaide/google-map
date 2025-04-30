@@ -11,8 +11,8 @@
 
 namespace Ivory\GoogleMap\Service;
 
-use Http\Client\HttpClient;
 use Ivory\GoogleMap\Service\Serializer\SerializerBuilder;
+use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
@@ -26,7 +26,7 @@ abstract class AbstractSerializableService extends AbstractHttpService
 
     private SerializerInterface $serializer;
 
-    public function __construct(string $url, HttpClient $client, ?SerializerInterface $serializer = null)
+    public function __construct(string $url, ClientInterface $client, ?SerializerInterface $serializer = null)
     {
         parent::__construct($url, $client);
 
