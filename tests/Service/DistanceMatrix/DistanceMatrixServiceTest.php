@@ -193,8 +193,9 @@ class DistanceMatrixServiceTest extends AbstractSerializableServiceTest
     protected function assertDistanceMatrixResponse($response, $request)
     {
         $options = array_merge([
-            'origin_addresses'      => ["Av. Gustave Eiffel, 75007 Paris, France"],
-            'destination_addresses' => ['Almere Poort, Almere, Netherlands'],
+            'origin_addresses'      => [],
+            'destination_addresses' => [],
+            'rows'                  => [],
         ], self::$journal->getData());
 
         $options['status'] = DistanceMatrixStatus::OK;
@@ -204,9 +205,12 @@ class DistanceMatrixServiceTest extends AbstractSerializableServiceTest
         $this->assertSame($request, $response->getRequest());
         $this->assertSame($options['origin_addresses'], $response->getOrigins());
         $this->assertSame($options['destination_addresses'], $response->getDestinations());
-        $this->assertCount(1, $response->getRows());
-        $this->assertCount(1, $response->getRows()[0]->getElements());
-        $this->assertEquals(DistanceMatrixStatus::OK, $response->getRows()[0]->getElements()[0]->getStatus());;
+        $this->assertCount(is_countable($options['rows']) ? count($options['rows']) : 0, $rows = $response->getRows());
+
+        foreach ($options['rows'] as $key => $row) {
+            $this->assertArrayHasKey($key, $rows);
+            $this->assertDistanceMatrixRow($rows[$key], $row);
+        }
     }
 
     /**
