@@ -20,7 +20,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 /**
  * @author GeLo <geloen.eric@gmail.com>
  *
- * @see https://developers.google.com/maps/documentation/directions
+ * @see    https://developers.google.com/maps/documentation/directions
  */
 class DirectionService extends AbstractSerializableService
 {

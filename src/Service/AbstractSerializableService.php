@@ -38,7 +38,7 @@ abstract class AbstractSerializableService extends AbstractHttpService
         return $this->serializer;
     }
 
-    public function setSerializer(SerializerInterface $serializer)
+    public function setSerializer(SerializerInterface $serializer): void
     {
         $this->serializer = $serializer;
     }
@@ -48,10 +48,7 @@ abstract class AbstractSerializableService extends AbstractHttpService
         return parent::createBaseUrl($request) . '/json';
     }
 
-    /**
-     * @return object
-     */
-    protected function deserialize(ResponseInterface $response, string $type, ?array $context = null)
+    protected function deserialize(ResponseInterface $response, string $type, ?array $context = null): object
     {
         return $this->serializer->deserialize((string)$response->getBody(), $type, 'json', $context);
     }

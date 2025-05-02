@@ -11,14 +11,13 @@
 
 namespace Ivory\Tests\GoogleMap\Service;
 
-use Http\Adapter\Guzzle7\Client;
 use DateTime;
+use GuzzleHttp\Psr7\HttpFactory;
+use Http\Adapter\Guzzle7\Client;
 use Http\Client\Common\Plugin\CachePlugin;
 use Http\Client\Common\Plugin\ErrorPlugin as HttpErrorPlugin;
 use Http\Client\Common\Plugin\HistoryPlugin;
 use Http\Client\Common\PluginClient;
-use Http\Message\MessageFactory\GuzzleMessageFactory;
-use Http\Message\StreamFactory\GuzzleStreamFactory;
 use Ivory\GoogleMap\Service\Plugin\ErrorPlugin;
 use Ivory\Tests\GoogleMap\Service\Utility\Journal;
 use PHPUnit\Framework\TestCase;
@@ -33,8 +32,6 @@ abstract class AbstractFunctionalServiceTest extends TestCase
 
     protected PluginClient $client;
 
-    protected GuzzleMessageFactory $messageFactory;
-
     protected FilesystemAdapter $pool;
 
     public static function setUpBeforeClass(): void
@@ -46,10 +43,6 @@ abstract class AbstractFunctionalServiceTest extends TestCase
 
     protected function setUp(): void
     {
-        if (isset($_SERVER['CACHE_RESET']) && $_SERVER['CACHE_RESET']) {
-            sleep(2);
-        }
-
         $this->pool   = new FilesystemAdapter('', 0, $_SERVER['CACHE_PATH']);
         $this->client = new PluginClient(new Client(), [
             new HttpErrorPlugin(),
@@ -57,7 +50,7 @@ abstract class AbstractFunctionalServiceTest extends TestCase
             new HistoryPlugin(self::$journal),
             new CachePlugin(
                 $this->pool,
-                new GuzzleStreamFactory(),
+                new HttpFactory(),
                 [
                     'cache_lifetime'                    => null,
                     'default_ttl'                       => null,

@@ -299,7 +299,7 @@ abstract class AbstractMapFunctionalTest extends AbstractApiFunctionalTest
 
         if ($marker->hasAnimation()) {
             $this->assertSameVariable(
-                'google.maps.Animation.'.strtoupper((string) $marker->getAnimation()),
+                'google.maps.Animation.'.strtoupper($marker->getAnimation()),
                 $marker->getVariable().'.getAnimation()'
             );
         }
