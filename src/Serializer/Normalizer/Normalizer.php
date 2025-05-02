@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Ivory\GoogleMap\Serializer\Normalizer;
-
 
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;

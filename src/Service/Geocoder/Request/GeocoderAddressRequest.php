@@ -159,7 +159,7 @@ class GeocoderAddressRequest extends AbstractGeocoderRequest
         $query = ['address' => $this->address];
 
         if ($this->hasComponents()) {
-            $query['components'] = implode('|', array_map(fn($type, $value) => $type.':'.$value, array_keys($this->components), $this->components));
+            $query['components'] = implode('|', array_map(fn ($type, $value) => $type.':'.$value, array_keys($this->components), $this->components));
         }
 
         if ($this->hasBound()) {

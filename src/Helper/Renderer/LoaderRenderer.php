@@ -104,7 +104,7 @@ class LoaderRenderer extends AbstractJsonRenderer
         }
 
         $queryParameters['callback'] = $callback;
-	$queryParameters['loading']  = 'async';
+        $queryParameters['loading']  = 'async';
 
         return self::GOOGLE_URL . '?' . http_build_query($queryParameters);
     }

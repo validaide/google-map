@@ -60,7 +60,7 @@ class PlaceSearchResponseIteratorTest extends TestCase
         $this->service
             ->expects($this->once())
             ->method('process')
-            ->with($this->callback(fn($request) => $request instanceof PageTokenPlaceSearchRequest && $request->getResponse() === $this->response))
+            ->with($this->callback(fn ($request) => $request instanceof PageTokenPlaceSearchRequest && $request->getResponse() === $this->response))
             ->will($this->returnValue(new PlaceSearchResponseIterator(
                 $this->service,
                 $response = $this->createResponseMock()

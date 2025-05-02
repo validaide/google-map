@@ -28,7 +28,7 @@ class PlaceSearchService extends AbstractPlaceSerializableService
         $httpResponse = $this->getClient()->sendRequest($httpRequest);
 
         /** @var PlaceSearchResponse $response */
-        $response = $this->deserialize($httpResponse, PlaceSearchResponse::class,[]);
+        $response = $this->deserialize($httpResponse, PlaceSearchResponse::class, []);
         $response->setRequest($request);
 
         return new PlaceSearchResponseIterator($this, $response);
