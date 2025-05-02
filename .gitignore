@@ -24,7 +24,6 @@
 /phpunit.xml
 .phpunit.result.cache
 ###< phpunit/phpunit ###
-tests/.cache/*
 
 ###> phpstan/phpstan ###
 phpstan.neon
