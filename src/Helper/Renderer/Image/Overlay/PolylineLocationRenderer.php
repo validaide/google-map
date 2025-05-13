@@ -32,6 +32,6 @@ class PolylineLocationRenderer
             $locations = $polyline->getCoordinates();
         }
 
-        return implode('|', array_map(fn($location) => $location instanceof Coordinate ? $this->coordinateRenderer->render($location) : $location, $locations));
+        return implode('|', array_map(fn ($location) => $location instanceof Coordinate ? $this->coordinateRenderer->render($location) : $location, $locations));
     }
 }

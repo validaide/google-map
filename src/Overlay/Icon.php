@@ -23,9 +23,8 @@ use Ivory\GoogleMap\Utility\VariableAwareTrait;
  */
 class Icon implements VariableAwareInterface
 {
-    final public const DEFAULT_URL = 'https://maps.gstatic.com/mapfiles/markers/marker.png';
-
     use VariableAwareTrait;
+    final public const DEFAULT_URL = 'https://maps.gstatic.com/mapfiles/markers/marker.png';
 
     private ?string $url = null;
 

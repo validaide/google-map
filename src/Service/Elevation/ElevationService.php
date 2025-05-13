@@ -11,10 +11,10 @@
 
 namespace Ivory\GoogleMap\Service\Elevation;
 
-use Http\Client\HttpClient;
 use Ivory\GoogleMap\Service\AbstractSerializableService;
 use Ivory\GoogleMap\Service\Elevation\Request\ElevationRequestInterface;
 use Ivory\GoogleMap\Service\Elevation\Response\ElevationResponse;
+use Psr\Http\Client\ClientInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
 /**
@@ -22,7 +22,7 @@ use Symfony\Component\Serializer\SerializerInterface;
  */
 class ElevationService extends AbstractSerializableService
 {
-    public function __construct(HttpClient $client, SerializerInterface $serializer = null)
+    public function __construct(ClientInterface $client, SerializerInterface $serializer = null)
     {
         parent::__construct('https://maps.googleapis.com/maps/api/elevation', $client, $serializer);
     }

@@ -23,9 +23,9 @@ class OpeningHoursNormalizer implements DenormalizerAwareInterface, Denormalizer
             }
         }
         if (array_key_exists('weekday_text', $data)) {
-        foreach ($data['weekday_text'] as $weekdayText) {
-            $openingHours->addWeekdayText($weekdayText);
-        }
+            foreach ($data['weekday_text'] as $weekdayText) {
+                $openingHours->addWeekdayText($weekdayText);
+            }
         }
 
         return $openingHours;

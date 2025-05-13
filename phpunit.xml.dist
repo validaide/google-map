@@ -1,26 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<phpunit colors="true" bootstrap="tests/autoload.php">
-    <testsuites>
-        <testsuite name="Ivory Google Map Test Suite">
-            <directory suffix="Test.php">./tests/</directory>
-        </testsuite>
-    </testsuites>
+<!-- https://phpunit.readthedocs.io/en/latest/configuration.html -->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         backupGlobals="false"
+         colors="true"
+         bootstrap="tests/autoload.php"
+         convertDeprecationsToExceptions="false"
+>
     <php>
-        <server name="API_KEY" value="AIzaSyDtwY_hEqr8yBBZ5CrWjVjoc54P_qdL35c" />
-        <server name="API_SECRET" value="hqEBa9KVm8DFFK3_F77fQc8cLq4=" />
-        <server name="BROWSER_NAME" value="chrome" />
-        <server name="SELENIUM_HOST" value="selenium" />
-        <server name="CACHE_PATH" value="tests/.cache" />
-        <server name="CACHE_RESET" value="false" />
+        <ini name="display_errors" value="1"/>
+        <ini name="error_reporting" value="-1"/>
+        <ini name="memory_limit" value="256M"/>
+        <server name="APP_ENV" value="test" force="true"/>
+        <server name="SHELL_VERBOSITY" value="-1"/>
+        <server name="SYMFONY_PHPUNIT_REMOVE" value=""/>
+        <server name="SYMFONY_PHPUNIT_VERSION" value="9.6"/>
 
-        <ini name="memory_limit" value="256M" />
+        <server name="API_KEY" value="AIzaSyDtwY_hEqr8yBBZ5CrWjVjoc54P_qdL35c"/>
+        <server name="API_SECRET" value="hqEBa9KVm8DFFK3_F77fQc8cLq4="/>
+        <server name="BROWSER_NAME" value="chrome"/>
+        <server name="SELENIUM_HOST" value="selenium"/>
+        <server name="CACHE_PATH" value="tests/.cache"/>
+        <server name="CACHE_RESET" value="false"/>
 
-        <env name="SYMFONY_DEPRECATIONS_HELPER" value="disabled" />
+        <env name="SYMFONY_DEPRECATIONS_HELPER" value="disabled"/>
     </php>
+
     <filter>
         <whitelist>
             <directory suffix=".php">./src/</directory>
         </whitelist>
     </filter>
+
+    <testsuites>
+        <testsuite name="Ivory Google Map Test Suite">
+            <directory suffix="Test.php">./tests/</directory>
+        </testsuite>
+    </testsuites>
+
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+    </coverage>
+
+    <listeners>
+        <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener"/>
+    </listeners>
+
+    <extensions>
+    </extensions>
 </phpunit>

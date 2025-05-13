@@ -20,8 +20,8 @@ class LegNormalizer extends Normalizer
     {
         $route = new DirectionLeg();
 
-        $this->setIfPresent('start_address',$data, $route->setStartAddress(...));
-        $this->setIfPresent('end_address',$data, $route->setEndAddress(...));
+        $this->setIfPresent('start_address', $data, $route->setStartAddress(...));
+        $this->setIfPresent('end_address', $data, $route->setEndAddress(...));
         $this->setIfPresentDenormalize('departure_time', $data, $route->setDepartureTime(...), Time::class, $format, $context);
         $this->setIfPresentDenormalize('arrival_time', $data, $route->setArrivalTime(...), Time::class, $format, $context);
         $this->setIfPresentDenormalize('start_location', $data, $route->setStartLocation(...), Coordinate::class, $format, $context);

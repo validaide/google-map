@@ -485,12 +485,12 @@ abstract class AbstractMapFunctionalTest extends AbstractApiFunctionalTest
 
     private function getMapFormatter(): callable
     {
-        return fn($expected, $variable, $formatter) => call_user_func($formatter, $expected, $variable.'.getMap()', $formatter);
+        return fn ($expected, $variable, $formatter) => call_user_func($formatter, $expected, $variable.'.getMap()', $formatter);
     }
 
     private function getJsonFormatter(): callable
     {
-        return fn($expected, $variable, $formatter) => call_user_func($formatter, $expected.'.toString()', $variable.'.toString()');
+        return fn ($expected, $variable, $formatter) => call_user_func($formatter, $expected.'.toString()', $variable.'.toString()');
     }
 
     private function getContainerPropertyPaths(): array

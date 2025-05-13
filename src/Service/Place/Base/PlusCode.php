@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Ivory\GoogleMap\Service\Place\Base;
 
 /**

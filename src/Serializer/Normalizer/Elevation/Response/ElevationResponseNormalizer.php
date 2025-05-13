@@ -13,7 +13,7 @@ class ElevationResponseNormalizer extends Normalizer
         $elevationResponse = new ElevationResponse();
 
         $elevationResponse->setStatus($data['status']);
-        foreach($data['results'] as $elevationResultData) {
+        foreach ($data['results'] as $elevationResultData) {
             $elevationResponse->addResult($this->denormalizer->denormalize($elevationResultData, ElevationResult::class, $format, $context));
         }
 

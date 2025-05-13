@@ -11,10 +11,10 @@
 
 namespace Ivory\GoogleMap\Service\DistanceMatrix;
 
-use Http\Client\HttpClient;
 use Ivory\GoogleMap\Service\AbstractSerializableService;
 use Ivory\GoogleMap\Service\DistanceMatrix\Request\DistanceMatrixRequestInterface;
 use Ivory\GoogleMap\Service\DistanceMatrix\Response\DistanceMatrixResponse;
+use Psr\Http\Client\ClientInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
 /**
@@ -22,7 +22,7 @@ use Symfony\Component\Serializer\SerializerInterface;
  */
 class DistanceMatrixService extends AbstractSerializableService
 {
-    public function __construct(HttpClient $client, SerializerInterface $serializer = null)
+    public function __construct(ClientInterface $client, SerializerInterface $serializer = null)
     {
         parent::__construct('https://maps.googleapis.com/maps/api/distancematrix', $client, $serializer);
     }

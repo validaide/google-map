@@ -20,7 +20,7 @@ class GeocodedWaypointNormalizer implements DenormalizerAwareInterface, Denormal
     {
         $geocodedWaypoint = new DirectionGeocoded();
 
-        if(!empty($data)) {
+        if (!empty($data)) {
             $geocodedWaypoint->setStatus($data['geocoder_status']);
             $geocodedWaypoint->setPlaceId($data['place_id']);
             $geocodedWaypoint->setTypes($data['types']);

@@ -11,21 +11,20 @@
 
 namespace Ivory\GoogleMap\Service\Direction;
 
-use Http\Client\HttpClient;
-use Http\Message\MessageFactory;
 use Ivory\GoogleMap\Service\AbstractSerializableService;
 use Ivory\GoogleMap\Service\Direction\Request\DirectionRequestInterface;
 use Ivory\GoogleMap\Service\Direction\Response\DirectionResponse;
+use Psr\Http\Client\ClientInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * @author GeLo <geloen.eric@gmail.com>
  *
- * @see https://developers.google.com/maps/documentation/directions
+ * @see    https://developers.google.com/maps/documentation/directions
  */
 class DirectionService extends AbstractSerializableService
 {
-    public function __construct(HttpClient $client, SerializerInterface $serializer = null)
+    public function __construct(ClientInterface $client, SerializerInterface $serializer = null)
     {
         parent::__construct('https://maps.googleapis.com/maps/api/directions', $client, $serializer);
     }

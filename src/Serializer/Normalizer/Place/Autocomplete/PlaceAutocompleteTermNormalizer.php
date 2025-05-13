@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Ivory\GoogleMap\Serializer\Normalizer\Place\Autocomplete;
-
 
 use Ivory\GoogleMap\Service\Place\Autocomplete\Response\PlaceAutocompleteTerm;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;

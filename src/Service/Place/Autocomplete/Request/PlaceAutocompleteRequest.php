@@ -164,7 +164,7 @@ class PlaceAutocompleteRequest extends AbstractPlaceAutocompleteRequest
         }
 
         if ($this->hasComponents()) {
-            $query['components'] = implode('|', array_map(fn($key, $value) => $key.':'.$value, array_keys($this->components), array_values($this->components)));
+            $query['components'] = implode('|', array_map(fn ($key, $value) => $key.':'.$value, array_keys($this->components), array_values($this->components)));
         }
 
         return $query;

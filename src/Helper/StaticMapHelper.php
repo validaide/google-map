@@ -32,8 +32,7 @@ class StaticMapHelper extends AbstractHelper
         private ?string $secret = null,
         private ?string $clientId = null,
         private ?string $channel = null
-    )
-    {
+    ) {
         parent::__construct($eventDispatcher);
     }
 

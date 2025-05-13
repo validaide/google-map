@@ -20,8 +20,8 @@ class AlternatePlaceIdNormalizer implements DenormalizerAwareInterface, Denormal
     {
         $place = new AlternatePlaceId();
 
-        $place->setOpen($this->denormalizer->denormalize($data['open'],OpenClosePeriod::class, $format, $context));
-        $place->setClose($this->denormalizer->denormalize($data['close'],OpenClosePeriod::class, $format, $context));
+        $place->setOpen($this->denormalizer->denormalize($data['open'], OpenClosePeriod::class, $format, $context));
+        $place->setClose($this->denormalizer->denormalize($data['close'], OpenClosePeriod::class, $format, $context));
 
         return $place;
     }

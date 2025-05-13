@@ -99,7 +99,7 @@ abstract class AbstractFunctionalTest extends Selenium2TestCase
     protected function assertSameVariable($expected, $variable, $formatter = null)
     {
         $script = null;
-        $defaultFormatter = fn($expected, $variable) => $expected.' === '.$variable;
+        $defaultFormatter = fn ($expected, $variable) => $expected.' === '.$variable;
 
         $formatter = $formatter ?: $defaultFormatter;
 

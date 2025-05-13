@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Ivory\GoogleMap\Helper\Builder;
 
 use Symfony\Component\PropertyAccess\PropertyAccessor;
