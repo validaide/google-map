@@ -51,11 +51,7 @@ class ApiHelperBuilder extends AbstractJavascriptHelperBuilder
     private ?string $language = null;
     private ?string $key      = null;
 
-    public function __construct(
-        Formatter   $formatter = null,
-        JsonBuilder $jsonBuilder = null,
-        string      $language = 'en'
-    )
+    public function __construct(Formatter $formatter = null, JsonBuilder $jsonBuilder = null, string $language = 'en')
     {
         parent::__construct($formatter, $jsonBuilder);
 

@@ -12,6 +12,7 @@
 namespace Ivory\GoogleMap\Helper\Event;
 
 use SplObjectStorage;
+
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */

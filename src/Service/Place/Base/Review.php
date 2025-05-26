@@ -12,6 +12,7 @@
 namespace Ivory\GoogleMap\Service\Place\Base;
 
 use DateTime;
+
 /**
  * @author GeLo <geloen.eric@gmail.com>
  */

@@ -46,19 +46,19 @@ class PlaceAutocompleteServiceTest extends AbstractPlaceSerializableServiceTest
     }
 
     /**
-     * 
+     *
      */
     public function testProcessWithAutocompleteRequest()
     {
         $request = $this->createPlaceAutocompleteRequest();
-        
+
         $response = $this->service->process($request);
 
         $this->assertPlaceAutocompleteResponse($response, $request);
     }
 
     /**
-     * 
+     *
      */
     public function testProcessWithAutocompleteRequestAndOffset()
     {
@@ -176,7 +176,7 @@ class PlaceAutocompleteServiceTest extends AbstractPlaceSerializableServiceTest
         $request->setLocation(new Coordinate(48.856556, 2.351970));
         $request->setRadius(1000);
 
-        
+
         $response = $this->service->process($request);
 
         $this->assertPlaceAutocompleteResponse($response, $request);
@@ -189,7 +189,7 @@ class PlaceAutocompleteServiceTest extends AbstractPlaceSerializableServiceTest
         $request = $this->createPlaceAutocompleteQueryRequest();
         $request->setLanguage('fr');
 
-        
+
         $response = $this->service->process($request);
 
         $this->assertPlaceAutocompleteResponse($response, $request);

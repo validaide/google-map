@@ -8,14 +8,13 @@ use Ivory\GoogleMap\Service\Direction\Response\DirectionWaypoint;
 
 class DirectionResponseWaypointNormalizer extends Normalizer
 {
-
     public function denormalize($data, $type, $format = null, array $context = []): DirectionWaypoint
     {
         $waypoint = new DirectionWaypoint();
 
         $this->setIfPresent('step_index', $data, $waypoint->setStepIndex(...));
         $this->setIfPresent('step_interpolation', $data, $waypoint->setStepInterpolation(...));
-        $this->setIfPresentDenormalize('location', $data, $waypoint->setLocation(...),Coordinate::class, $format, $context);
+        $this->setIfPresentDenormalize('location', $data, $waypoint->setLocation(...), Coordinate::class, $format, $context);
 
         return $waypoint;
     }

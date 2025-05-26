@@ -35,8 +35,7 @@ class ApiRenderer extends AbstractRenderer
         LoaderRenderer $loaderRenderer,
         RequirementLoaderRenderer $requirementLoaderRenderer,
         SourceRenderer $sourceRenderer
-    )
-    {
+    ) {
         parent::__construct($formatter);
 
         $this->setApiInitRenderer($apiInitRenderer);

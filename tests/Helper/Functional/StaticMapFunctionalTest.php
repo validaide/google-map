@@ -11,11 +11,11 @@
 
 namespace Ivory\Tests\GoogleMap\Helper\Functional;
 
+use GuzzleHttp\Psr7\HttpFactory;
 use GuzzleHttp\Psr7\Request;
-use Http\Adapter\Guzzle6\Client;
+use Http\Adapter\Guzzle7\Client;
 use Http\Client\Common\Plugin\CachePlugin;
 use Http\Client\Common\PluginClient;
-use Http\Message\StreamFactory\GuzzleStreamFactory;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Base\Point;
 use Ivory\GoogleMap\Helper\Builder\StaticMapHelperBuilder;
@@ -54,11 +54,12 @@ class StaticMapFunctionalTest extends TestCase
 
         $this->staticMapHelper = $this->createStaticMapHelper();
 
-        $this->pool   = new FilesystemAdapter('', 0, $_SERVER['CACHE_PATH']);
+        $this->pool = new FilesystemAdapter('', 0, $_SERVER['CACHE_PATH']);
+
         $this->client = new PluginClient(new Client(), [
             new CachePlugin(
                 $this->pool,
-                new GuzzleStreamFactory(),
+                new HttpFactory(),
                 [
                     'cache_lifetime'                    => null,
                     'default_ttl'                       => null,

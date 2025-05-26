@@ -65,7 +65,7 @@ abstract class AbstractApiFunctionalTest extends AbstractFunctionalTest
             $bound,
             $expected,
             function ($expected, $variable) {
-                $formatter = fn($expected, $variable, $method) => $expected.'.contains('.$variable.'.'.$method.'())';
+                $formatter = fn ($expected, $variable, $method) => $expected.'.contains('.$variable.'.'.$method.'())';
 
                 return implode(' && ', [
                     call_user_func($formatter, $expected, $variable, 'getSouthWest'),
