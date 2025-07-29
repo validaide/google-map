@@ -61,7 +61,6 @@ class JsonBuilderTest extends TestCase
 
         $jsonBuilder->removeValue('test[secondKey]');
         $this->assertArrayNotHasKey('test[secondKey]', $jsonBuilder->getValues());
-
     }
 
     public function test_reset_values_resets_all_the_values()

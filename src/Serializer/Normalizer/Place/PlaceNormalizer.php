@@ -65,5 +65,4 @@ class PlaceNormalizer extends Normalizer
     {
         return Place::class === $type;
     }
-
 }

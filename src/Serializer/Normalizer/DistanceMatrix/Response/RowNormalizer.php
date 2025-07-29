@@ -15,7 +15,7 @@ class RowNormalizer extends Normalizer
     {
         $row = new DistanceMatrixRow();
 
-        foreach($data['elements'] as $elementDatum) {
+        foreach ($data['elements'] as $elementDatum) {
             $row->addElement($this->denormalizer->denormalize($elementDatum, DistanceMatrixElement::class, $format, $context));
         }
 

@@ -18,11 +18,11 @@ class ElementNormalizer extends Normalizer
     {
         $element = new DistanceMatrixElement();
 
-        $this->setIfPresent('status',$data,$element->setStatus(...));
-        $this->setIfPresentDenormalize('distance',$data,$element->setDistance(...),Distance::class, $format, $context);
-        $this->setIfPresentDenormalize('duration',$data,$element->setDuration(...),Duration::class, $format, $context);
-        $this->setIfPresentDenormalize('duration_in_traffic',$data,$element->setDurationInTraffic(...),Duration::class, $format, $context);
-        $this->setIfPresentDenormalize('fare',$data,$element->setFare(...),Fare::class, $format, $context);
+        $this->setIfPresent('status', $data, $element->setStatus(...));
+        $this->setIfPresentDenormalize('distance', $data, $element->setDistance(...), Distance::class, $format, $context);
+        $this->setIfPresentDenormalize('duration', $data, $element->setDuration(...), Duration::class, $format, $context);
+        $this->setIfPresentDenormalize('duration_in_traffic', $data, $element->setDurationInTraffic(...), Duration::class, $format, $context);
+        $this->setIfPresentDenormalize('fare', $data, $element->setFare(...), Fare::class, $format, $context);
 
         return $element;
     }

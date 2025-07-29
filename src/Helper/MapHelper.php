@@ -46,7 +46,7 @@ class MapHelper extends AbstractHelper
      */
     private function doRender(Map $map, $eventName): ?string
     {
-        $this->getEventDispatcher()->dispatch($event = new MapEvent($map),$eventName);
+        $this->getEventDispatcher()->dispatch($event = new MapEvent($map), $eventName);
 
         return $event->getCode();
     }

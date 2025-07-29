@@ -11,8 +11,8 @@
 
 namespace Ivory\Tests\GoogleMap\Service\DistanceMatrix;
 
-use Http\Client\Common\Exception\ClientErrorException;
 use DateTime;
+use Http\Client\Common\Exception\ClientErrorException;
 use Ivory\GoogleMap\Base\Coordinate;
 use Ivory\GoogleMap\Service\Base\Avoid;
 use Ivory\GoogleMap\Service\Base\Location\AddressLocation;

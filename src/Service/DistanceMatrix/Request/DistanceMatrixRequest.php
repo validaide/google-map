@@ -412,7 +412,7 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
         }
 
         if ($this->hasTravelMode()) {
-            $query['mode'] = strtolower($this->travelMode);
+            $query['mode'] = strtolower((string) $this->travelMode);
         }
 
         if ($this->hasAvoid()) {
@@ -432,7 +432,7 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
         }
 
         if ($this->hasUnitSystem()) {
-            $query['units'] = strtolower($this->unitSystem);
+            $query['units'] = strtolower((string) $this->unitSystem);
         }
 
         if ($this->hasRegion()) {

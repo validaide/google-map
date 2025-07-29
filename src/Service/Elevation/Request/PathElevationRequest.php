@@ -101,7 +101,7 @@ class PathElevationRequest implements ElevationRequestInterface
     public function buildQuery(): array
     {
         return [
-            'path' => implode('|', array_map(fn(LocationInterface $path) => $path->buildQuery(), $this->paths)),
+            'path' => implode('|', array_map(fn (LocationInterface $path) => $path->buildQuery(), $this->paths)),
             'samples' => $this->samples,
         ];
     }

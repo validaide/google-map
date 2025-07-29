@@ -11,10 +11,10 @@
 
 namespace Ivory\Tests\GoogleMap\Service;
 
-use Http\Client\HttpClient;
 use Ivory\GoogleMap\Service\BusinessAccount;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
@@ -25,10 +25,8 @@ use Symfony\Component\Serializer\SerializerInterface;
  */
 abstract class AbstractUnitServiceTest extends TestCase
 {
-    /** @var HttpClient|MockObject */
-    protected MockObject $client;
-    /** @var SerializerInterface|MockObject */
-    protected MockObject $serializer;
+    protected MockObject|ClientInterface     $client;
+    protected MockObject|SerializerInterface $serializer;
 
     protected function setUp(): void
     {
@@ -36,9 +34,9 @@ abstract class AbstractUnitServiceTest extends TestCase
         $this->serializer = $this->createSerializerMock();
     }
 
-    protected function createHttpClientMock(): MockObject|HttpClient
+    protected function createHttpClientMock(): MockObject|ClientInterface
     {
-        return $this->createMock(HttpClient::class);
+        return $this->createMock(ClientInterface::class);
     }
 
     protected function createSerializerMock(): MockObject|SerializerInterface
