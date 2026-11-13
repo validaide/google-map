@@ -33,7 +33,7 @@ class Period
     /**
      * @param OpenClosePeriod|null $open
      */
-    public function setOpen(OpenClosePeriod $open = null): void
+    public function setOpen(?OpenClosePeriod $open = null): void
     {
         $this->open = $open;
     }
@@ -51,7 +51,7 @@ class Period
     /**
      * @param OpenClosePeriod|null $close
      */
-    public function setClose(OpenClosePeriod $close = null): void
+    public function setClose(?OpenClosePeriod $close = null): void
     {
         $this->close = $close;
     }

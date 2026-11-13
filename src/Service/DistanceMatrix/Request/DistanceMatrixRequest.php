@@ -178,7 +178,7 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
     /**
      * @param DateTime|null $departureTime
      */
-    public function setDepartureTime(DateTime $departureTime = null): void
+    public function setDepartureTime(?DateTime $departureTime = null): void
     {
         $this->departureTime = $departureTime;
     }
@@ -196,7 +196,7 @@ class DistanceMatrixRequest implements DistanceMatrixRequestInterface
     /**
      * @param DateTime|null $arrivalTime
      */
-    public function setArrivalTime(DateTime $arrivalTime = null): void
+    public function setArrivalTime(?DateTime $arrivalTime = null): void
     {
         $this->arrivalTime = $arrivalTime;
     }

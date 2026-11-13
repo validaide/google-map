@@ -64,7 +64,7 @@ class DirectionLeg
     /**
      * @param Distance|null $distance
      */
-    public function setDistance(Distance $distance = null): void
+    public function setDistance(?Distance $distance = null): void
     {
         $this->distance = $distance;
     }
@@ -82,7 +82,7 @@ class DirectionLeg
     /**
      * @param Duration|null $duration
      */
-    public function setDuration(Duration $duration = null): void
+    public function setDuration(?Duration $duration = null): void
     {
         $this->duration = $duration;
     }
@@ -100,7 +100,7 @@ class DirectionLeg
     /**
      * @param Duration|null $durationInTraffic
      */
-    public function setDurationInTraffic(Duration $durationInTraffic = null): void
+    public function setDurationInTraffic(?Duration $durationInTraffic = null): void
     {
         $this->durationInTraffic = $durationInTraffic;
     }
@@ -118,7 +118,7 @@ class DirectionLeg
     /**
      * @param Time|null $arrivalTime
      */
-    public function setArrivalTime(Time $arrivalTime = null): void
+    public function setArrivalTime(?Time $arrivalTime = null): void
     {
         $this->arrivalTime = $arrivalTime;
     }
@@ -136,7 +136,7 @@ class DirectionLeg
     /**
      * @param Time|null $departureTime
      */
-    public function setDepartureTime(Time $departureTime = null): void
+    public function setDepartureTime(?Time $departureTime = null): void
     {
         $this->departureTime = $departureTime;
     }
@@ -172,7 +172,7 @@ class DirectionLeg
     /**
      * @param Coordinate|null $endLocation
      */
-    public function setEndLocation(Coordinate $endLocation = null): void
+    public function setEndLocation(?Coordinate $endLocation = null): void
     {
         $this->endLocation = $endLocation;
     }
@@ -208,7 +208,7 @@ class DirectionLeg
     /**
      * @param Coordinate|null $startLocation
      */
-    public function setStartLocation(Coordinate $startLocation = null): void
+    public function setStartLocation(?Coordinate $startLocation = null): void
     {
         $this->startLocation = $startLocation;
     }

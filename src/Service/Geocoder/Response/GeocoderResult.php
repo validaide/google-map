@@ -221,7 +221,7 @@ class GeocoderResult
     /**
      * @param Geometry|null $geometry
      */
-    public function setGeometry(Geometry $geometry = null): void
+    public function setGeometry(?Geometry $geometry = null): void
     {
         $this->geometry = $geometry;
     }

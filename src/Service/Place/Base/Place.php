@@ -349,7 +349,7 @@ class Place
     /**
      * @param Geometry|null $geometry
      */
-    public function setGeometry(Geometry $geometry = null): void
+    public function setGeometry(?Geometry $geometry = null): void
     {
         $this->geometry = $geometry;
     }
@@ -367,7 +367,7 @@ class Place
     /**
      * @param OpeningHours|null $openingHours
      */
-    public function setOpeningHours(OpeningHours $openingHours = null): void
+    public function setOpeningHours(?OpeningHours $openingHours = null): void
     {
         $this->openingHours = $openingHours;
     }

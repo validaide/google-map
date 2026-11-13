@@ -68,7 +68,7 @@ class DistanceMatrixResponse
     /**
      * @param DistanceMatrixRequestInterface|null $request
      */
-    public function setRequest(DistanceMatrixRequestInterface $request = null): void
+    public function setRequest(?DistanceMatrixRequestInterface $request = null): void
     {
         $this->request = $request;
     }

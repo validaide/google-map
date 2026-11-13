@@ -58,7 +58,7 @@ class ElevationResponse
     /**
      * @param ElevationRequestInterface|null $request
      */
-    public function setRequest(ElevationRequestInterface $request = null): void
+    public function setRequest(?ElevationRequestInterface $request = null): void
     {
         $this->request = $request;
     }
