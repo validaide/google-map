@@ -58,7 +58,7 @@ class GeocoderResponse
     /**
      * @param GeocoderRequestInterface|null $request
      */
-    public function setRequest(GeocoderRequestInterface $request = null): void
+    public function setRequest(?GeocoderRequestInterface $request = null): void
     {
         $this->request = $request;
     }

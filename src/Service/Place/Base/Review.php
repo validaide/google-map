@@ -120,7 +120,7 @@ class Review
     /**
      * @param DateTime|null $time
      */
-    public function setTime(DateTime $time = null): void
+    public function setTime(?DateTime $time = null): void
     {
         $this->time = $time;
     }

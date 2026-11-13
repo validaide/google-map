@@ -60,7 +60,7 @@ class DirectionRoute
     /**
      * @param Bound|null $bound
      */
-    public function setBound(Bound $bound = null): void
+    public function setBound(?Bound $bound = null): void
     {
         $this->bound = $bound;
     }
@@ -146,7 +146,7 @@ class DirectionRoute
     /**
      * @param EncodedPolyline|null $overviewPolyline
      */
-    public function setOverviewPolyline(EncodedPolyline $overviewPolyline = null): void
+    public function setOverviewPolyline(?EncodedPolyline $overviewPolyline = null): void
     {
         $this->overviewPolyline = $overviewPolyline;
     }
@@ -182,7 +182,7 @@ class DirectionRoute
     /**
      * @param Fare|null $fare
      */
-    public function setFare(Fare $fare = null): void
+    public function setFare(?Fare $fare = null): void
     {
         $this->fare = $fare;
     }

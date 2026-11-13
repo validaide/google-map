@@ -131,7 +131,7 @@ class GeocoderAddressRequest extends AbstractGeocoderRequest
     /**
      * @param Bound|null $bound
      */
-    public function setBound(Bound $bound = null): void
+    public function setBound(?Bound $bound = null): void
     {
         $this->bound = $bound;
     }

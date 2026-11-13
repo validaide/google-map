@@ -62,7 +62,7 @@ abstract class AbstractService
         return $this->businessAccount;
     }
 
-    public function setBusinessAccount(BusinessAccount $businessAccount = null)
+    public function setBusinessAccount(?BusinessAccount $businessAccount = null)
     {
         $this->businessAccount = $businessAccount;
     }

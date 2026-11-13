@@ -53,7 +53,7 @@ class DirectionTransitStop
     /**
      * @param Coordinate|null $location
      */
-    public function setLocation(Coordinate $location = null): void
+    public function setLocation(?Coordinate $location = null): void
     {
         $this->location = $location;
     }
