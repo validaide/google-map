@@ -25,7 +25,7 @@ class InfoWindowOpenRenderer extends AbstractRenderer
      * @param Marker|null $marker
      *
      */
-    public function render(InfoWindow $infoWindow, Map $map, Marker $marker = null): string
+    public function render(InfoWindow $infoWindow, Map $map, ?Marker $marker = null): string
     {
         $arguments = [$map->getVariable()];
 

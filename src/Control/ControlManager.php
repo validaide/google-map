@@ -46,7 +46,7 @@ class ControlManager
     /**
      * @param FullscreenControl|null $fullscreenControl
      */
-    public function setFullscreenControl(FullscreenControl $fullscreenControl = null): void
+    public function setFullscreenControl(?FullscreenControl $fullscreenControl = null): void
     {
         $this->fullscreenControl = $fullscreenControl;
     }
@@ -64,7 +64,7 @@ class ControlManager
     /**
      * @param MapTypeControl|null $mapTypeControl
      */
-    public function setMapTypeControl(MapTypeControl $mapTypeControl = null): void
+    public function setMapTypeControl(?MapTypeControl $mapTypeControl = null): void
     {
         $this->mapTypeControl = $mapTypeControl;
     }
@@ -82,7 +82,7 @@ class ControlManager
     /**
      * @param RotateControl|null $rotateControl
      */
-    public function setRotateControl(RotateControl $rotateControl = null): void
+    public function setRotateControl(?RotateControl $rotateControl = null): void
     {
         $this->rotateControl = $rotateControl;
     }
@@ -100,7 +100,7 @@ class ControlManager
     /**
      * @param ScaleControl|null $scaleControl
      */
-    public function setScaleControl(ScaleControl $scaleControl = null): void
+    public function setScaleControl(?ScaleControl $scaleControl = null): void
     {
         $this->scaleControl = $scaleControl;
     }
@@ -118,7 +118,7 @@ class ControlManager
     /**
      * @param StreetViewControl|null $streetViewControl
      */
-    public function setStreetViewControl(StreetViewControl $streetViewControl = null): void
+    public function setStreetViewControl(?StreetViewControl $streetViewControl = null): void
     {
         $this->streetViewControl = $streetViewControl;
     }
@@ -136,7 +136,7 @@ class ControlManager
     /**
      * @param ZoomControl|null $zoomControl
      */
-    public function setZoomControl(ZoomControl $zoomControl = null): void
+    public function setZoomControl(?ZoomControl $zoomControl = null): void
     {
         $this->zoomControl = $zoomControl;
     }

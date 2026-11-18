@@ -61,7 +61,7 @@ class PlaceDetailResponse
     /**
      * @param PlaceDetailRequestInterface|null $request
      */
-    public function setRequest(PlaceDetailRequestInterface $request = null): void
+    public function setRequest(?PlaceDetailRequestInterface $request = null): void
     {
         $this->request = $request;
     }
@@ -79,7 +79,7 @@ class PlaceDetailResponse
     /**
      * @param Place|null $result
      */
-    public function setResult(Place $result = null): void
+    public function setResult(?Place $result = null): void
     {
         $this->result = $result;
     }

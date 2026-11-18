@@ -22,7 +22,7 @@ use Symfony\Component\Serializer\SerializerInterface;
  */
 class TimeZoneService extends AbstractSerializableService
 {
-    public function __construct(ClientInterface $client, SerializerInterface $serializer = null)
+    public function __construct(ClientInterface $client, ?SerializerInterface $serializer = null)
     {
         parent::__construct('https://maps.googleapis.com/maps/api/timezone', $client, $serializer);
     }

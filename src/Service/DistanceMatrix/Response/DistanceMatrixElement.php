@@ -61,7 +61,7 @@ class DistanceMatrixElement
     /**
      * @param Distance|null $distance
      */
-    public function setDistance(Distance $distance = null): void
+    public function setDistance(?Distance $distance = null): void
     {
         $this->distance = $distance;
     }
@@ -79,7 +79,7 @@ class DistanceMatrixElement
     /**
      * @param Duration|null $duration
      */
-    public function setDuration(Duration $duration = null): void
+    public function setDuration(?Duration $duration = null): void
     {
         $this->duration = $duration;
     }
@@ -97,7 +97,7 @@ class DistanceMatrixElement
     /**
      * @param Duration|null $durationInTraffic
      */
-    public function setDurationInTraffic(Duration $durationInTraffic = null): void
+    public function setDurationInTraffic(?Duration $durationInTraffic = null): void
     {
         $this->durationInTraffic = $durationInTraffic;
     }
@@ -115,7 +115,7 @@ class DistanceMatrixElement
     /**
      * @param Fare|null $fare
      */
-    public function setFare(Fare $fare = null): void
+    public function setFare(?Fare $fare = null): void
     {
         $this->fare = $fare;
     }

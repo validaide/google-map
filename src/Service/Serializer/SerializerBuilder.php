@@ -64,7 +64,7 @@ class SerializerBuilder
     /**
      * @param CacheItemPoolInterface|null $pool
      */
-    public static function create(CacheItemPoolInterface $pool = null): Serializer
+    public static function create(?CacheItemPoolInterface $pool = null): Serializer
     {
 //        $classMetadataFactory = new ClassMetadataFactory(new XmlFileLoader(
 //            __DIR__ . DIRECTORY_SEPARATOR .

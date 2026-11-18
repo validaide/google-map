@@ -53,7 +53,7 @@ class DirectionStep
     /**
      * @param Distance|null $distance
      */
-    public function setDistance(Distance $distance = null): void
+    public function setDistance(?Distance $distance = null): void
     {
         $this->distance = $distance;
     }
@@ -71,7 +71,7 @@ class DirectionStep
     /**
      * @param Duration|null $duration
      */
-    public function setDuration(Duration $duration = null): void
+    public function setDuration(?Duration $duration = null): void
     {
         $this->duration = $duration;
     }
@@ -89,7 +89,7 @@ class DirectionStep
     /**
      * @param Coordinate|null $endLocation
      */
-    public function setEndLocation(Coordinate $endLocation = null): void
+    public function setEndLocation(?Coordinate $endLocation = null): void
     {
         $this->endLocation = $endLocation;
     }
@@ -125,7 +125,7 @@ class DirectionStep
     /**
      * @param EncodedPolyline|null $encodedPolyline
      */
-    public function setEncodedPolyline(EncodedPolyline $encodedPolyline = null): void
+    public function setEncodedPolyline(?EncodedPolyline $encodedPolyline = null): void
     {
         $this->encodedPolyline = $encodedPolyline;
     }
@@ -143,7 +143,7 @@ class DirectionStep
     /**
      * @param Coordinate|null $startLocation
      */
-    public function setStartLocation(Coordinate $startLocation = null): void
+    public function setStartLocation(?Coordinate $startLocation = null): void
     {
         $this->startLocation = $startLocation;
     }
@@ -179,7 +179,7 @@ class DirectionStep
     /**
      * @param DirectionTransitDetails|null $transitDetails
      */
-    public function setTransitDetails(DirectionTransitDetails $transitDetails = null): void
+    public function setTransitDetails(?DirectionTransitDetails $transitDetails = null): void
     {
         $this->transitDetails = $transitDetails;
     }

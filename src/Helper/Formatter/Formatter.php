@@ -211,7 +211,7 @@ class Formatter
         VariableAwareInterface $root,
         $declaration,
         $propertyPath = null,
-        VariableAwareInterface $object = null,
+        ?VariableAwareInterface $object = null,
         $semicolon = true,
         $newLine = true
     ): string {
@@ -231,7 +231,7 @@ class Formatter
     public function renderContainerVariable(
         VariableAwareInterface $root,
         $propertyPath = null,
-        VariableAwareInterface $object = null
+        ?VariableAwareInterface $object = null
     ): string {
         $variable = $root->getVariable().'_container';
 

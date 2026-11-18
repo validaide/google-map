@@ -58,7 +58,7 @@ class PlaceAutocompleteResponse
     /**
      * @param PlaceAutocompleteRequestInterface|null $request
      */
-    public function setRequest(PlaceAutocompleteRequestInterface $request = null): void
+    public function setRequest(?PlaceAutocompleteRequestInterface $request = null): void
     {
         $this->request = $request;
     }

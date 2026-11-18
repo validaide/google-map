@@ -156,7 +156,7 @@ class DirectionTransitLine
     /**
      * @param DirectionTransitVehicle|null $vehicle
      */
-    public function setVehicle(DirectionTransitVehicle $vehicle = null): void
+    public function setVehicle(?DirectionTransitVehicle $vehicle = null): void
     {
         $this->vehicle = $vehicle;
     }

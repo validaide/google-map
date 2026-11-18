@@ -18,7 +18,7 @@ class JsonBuilder
 
     private int $jsonEncodeOptions;
 
-    public function __construct(PropertyAccessorInterface $propertyAccessor = null)
+    public function __construct(?PropertyAccessorInterface $propertyAccessor = null)
     {
         $this->accessor = $propertyAccessor ?: new PropertyAccessor();
 

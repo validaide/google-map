@@ -66,7 +66,7 @@ class PlaceSearchResponse
     /**
      * @param PlaceSearchRequestInterface|null $request
      */
-    public function setRequest(PlaceSearchRequestInterface $request = null): void
+    public function setRequest(?PlaceSearchRequestInterface $request = null): void
     {
         $this->request = $request;
     }

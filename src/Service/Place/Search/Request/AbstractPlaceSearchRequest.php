@@ -45,7 +45,7 @@ abstract class AbstractPlaceSearchRequest implements PlaceSearchRequestInterface
     /**
      * @param Coordinate|null $location
      */
-    public function setLocation(Coordinate $location = null)
+    public function setLocation(?Coordinate $location = null)
     {
         $this->location = $location;
     }

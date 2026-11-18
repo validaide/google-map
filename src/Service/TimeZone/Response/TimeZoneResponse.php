@@ -61,7 +61,7 @@ class TimeZoneResponse
     /**
      * @param TimeZoneRequestInterface|null $request
      */
-    public function setRequest(TimeZoneRequestInterface $request = null): void
+    public function setRequest(?TimeZoneRequestInterface $request = null): void
     {
         $this->request = $request;
     }

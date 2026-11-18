@@ -68,7 +68,7 @@ class DirectionResponse
     /**
      * @param DirectionRequestInterface|null $request
      */
-    public function setRequest(DirectionRequestInterface $request = null): void
+    public function setRequest(?DirectionRequestInterface $request = null): void
     {
         $this->request = $request;
     }

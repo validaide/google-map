@@ -28,7 +28,7 @@ class TimeZoneRequest implements TimeZoneRequestInterface
     /**
      * @param DateTime|null $date
      */
-    public function __construct(Coordinate $location, DateTime $date = null)
+    public function __construct(Coordinate $location, ?DateTime $date = null)
     {
         $this->setLocation($location);
         $this->setDate($date);
